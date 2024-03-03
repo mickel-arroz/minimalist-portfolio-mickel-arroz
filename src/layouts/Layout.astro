@@ -36,7 +36,7 @@ const { title } = Astro.props;
 <style is:global>
   html {
     font-family: monospace, "Courier New", Courier;
-    letter-spacing: -0.06rem;
+    letter-spacing: 0.05rem;
   }
 
   body,
@@ -47,6 +47,7 @@ const { title } = Astro.props;
 
   a {
     text-decoration: none;
+    color: #666;
   }
 
   ul {
@@ -70,11 +71,13 @@ const { title } = Astro.props;
     margin: 0;
   }
 
-  p {
+  p,
+  span {
     color: #666;
     font-size: 0.9rem;
     line-height: 1.5;
     margin: 0;
     text-wrap: pretty;
+    padding: 0;
   }
 </style>

@@ -1,7 +1,154 @@
 ---
 import Section from "@/components/Section.astro";
+
+import { work } from "@cv";
 ---
 
-<Section title="Experiencias">
-  <p>prueba</p>
-</Section>
+{
+  work.length ? (
+    <Section title="Experiencia Laboral">
+      <ul>
+        {work.map(
+          ({
+            name,
+            position,
+            url,
+            startDate,
+            endDate,
+            summary,
+            highlights,
+          }) => {
+            const startYear = new Date(startDate).getFullYear();
+            const endYear =
+              endDate != null ? new Date(endDate).getFullYear() : "Actualmente";
+            return (
+              <li>
+                <article>
+                  <header>
+                    <div id="divPosition">
+                      {url != null ? (
+                        <a href={url}>
+                          <h3>{name}</h3>
+                        </a>
+                      ) : (
+                        <h3>{name}</h3>
+                      )}
+                      <h4>{position}</h4>
+                    </div>
+                    <time>
+                      {startYear} - {endYear}
+                    </time>
+                  </header>
+                  <footer>
+                    <p>{summary}</p>
+                    <div id="divHighliht">
+                      {highlights.map((highlight) => {
+                        return <span>{highlight}</span>;
+                      })}
+                    </div>
+                  </footer>
+                </article>
+              </li>
+            );
+          }
+        )}
+      </ul>
+    </Section>
+  ) : null
+}
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    padding-left: 0.5rem;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding-top: 0.3rem;
+  }
+
+  header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  div {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  h3 {
+    font-weight: 600;
+    color: #222;
+  }
+  h4 {
+    font-weight: 500;
+    color: #555;
+    font-size: small;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding-inline: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  time {
+    font-size: 0.85rem;
+    color: #555;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding-inline: 0.5rem;
+  }
+
+  #divHighliht {
+    padding-inline: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding-top: 0.5rem;
+  }
+
+  span {
+    color: #777;
+    font-size: x-small;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding-inline: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    font-weight: normal;
+  }
+
+  @media (max-width: 780px) {
+    ul {
+      padding: 0;
+    }
+    #divPosition {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    header {
+      flex-direction: column-reverse;
+      gap: 0.2rem;
+    }
+
+    footer {
+      padding-inline: 0;
+    }
+    #divHighliht {
+      padding-inline: 0rem;
+    }
+  }
+</style>

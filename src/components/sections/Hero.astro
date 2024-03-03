@@ -2,6 +2,7 @@
 import { basics } from "@cv";
 
 import Section from "@/components/Section.astro";
+import Home from "@/icons/Home.astro";
 import World from "@/icons/World.astro";
 import Email from "@/icons/Email.astro";
 import Phone from "@/icons/Phone.astro";
@@ -10,7 +11,7 @@ import GitHub from "@/icons/GitHub.astro";
 import LinkedIn from "@/icons/LinkedIn.astro";
 import FreeCodeCamp from "@/icons/FreeCodeCamp.astro";
 
-const { name, label, image, email, phone, location, profiles } = basics;
+const { name, label, image, url, email, phone, location, profiles } = basics;
 const { region, city } = location;
 
 const SOCIAL_ICONS: Record<string, any> = {
@@ -29,12 +30,24 @@ const SOCIAL_ICONS: Record<string, any> = {
 
       <!-- Apartado de la Ubicacion -->
       <span>
-        <World />
+        <Home />
         {city}, {region}
       </span>
 
       <!-- Apartado de los enlaces -->
       <footer>
+        {
+          url && (
+            <a
+              href={url}
+              title={`Entrar en la pagina web: ${url}`}
+              target="_blank"
+              rel="nonpener noreferrer"
+            >
+              <World />
+            </a>
+          )
+        }
         {
           email && (
             <a
@@ -113,13 +126,14 @@ const SOCIAL_ICONS: Record<string, any> = {
 
   h1 {
     font-size: 2rem;
+    font-weight: 900;
   }
 
   h2 {
-    color: #444;
+    color: #555;
     font-size: 1.1rem;
     text-wrap: balance;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   img {
@@ -131,7 +145,7 @@ const SOCIAL_ICONS: Record<string, any> = {
 
   footer {
     display: flex;
-    gap: 0.9rem;
+    gap: 0.5rem;
     padding-top: 0.6rem;
     padding-left: 1rem;
   }
@@ -146,14 +160,16 @@ const SOCIAL_ICONS: Record<string, any> = {
     padding: 0.1rem;
     width: 39px;
     height: 39px;
+    transition: all 0.5s ease;
   }
 
   a:hover {
     background: #eee;
     border: 1px solid #777;
+    color: #333;
   }
 
-  @media(max-width: 520px) {
+  @media(max-width: 580px) {
 
     .contenedorPrincipal {
       flex-direction: column-reverse;

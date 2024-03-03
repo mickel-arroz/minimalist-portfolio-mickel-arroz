@@ -1,7 +1,7 @@
 {
     "basics": {
       "name": "Mickel Arroz",
-      "label": "Estudiante de Ingeniería en Informática en la Universidad Católica Andrés Bello. Futuro Profesional del Desarrollo de Software.",
+      "label": "Futuro Profesional del Desarrollo de Software. Estudiante de Ingeniería en Informática en la Universidad Católica Andrés Bello.",
       "image": "./src/images/FotoPerfil.png",
       "email": "arrozmickel@gmail.com",
       "phone": "+58 4242382439",
@@ -31,17 +31,39 @@
       }
     ]
     },
-    "work": [{
-      "name": "",
-      "position": "",
-      "url": "",
-      "startDate": "",
-      "endDate": "",
-      "summary": "",
-      "highlights": [
-        ""
-      ]
-    }],
+    "work": [
+      {
+        "name": "SpaceX",
+        "position": "Gerente",
+        "url": null,
+        "startDate": "01-01-2000",
+        "endDate": null,
+        "summary": "¡Hola! Soy Mickel Arroz, un estudiante de Ingeniería en Informática apasionado por la tecnología e innovación. Con habilidades sólidas en Desarrollo de Software y resolución de problemas, mi enfoque se centra en adaptarme ágilmente a nuevas situaciones. Estoy constantemente buscando oportunidades para crecer profesionalmente y aplicar mis conocimientos en tecnología.",
+        "highlights": [
+          "Trabajo en equipo", 
+          "Proactividad",
+          "Metodologia Scrum",
+          "Trabajo en equipo", 
+          "Proactividad",
+          "Metodologia Scrum",
+          "Trabajo en equipo", 
+          "Proactividad",
+          "Metodologia Scrum", "Trabajo en equipo", 
+          "Proactividad",
+          "Metodologia Scrum"
+        ]
+      },
+      {
+        "name": "Universidad Catolica Andres Bello",
+        "position": "Gerente",
+        "url": "XXXX.COM",
+        "startDate": "01-01-2000",
+        "endDate": "01-01-2001",
+        "summary": "¡Hola! Soy Mickel Arroz, centra en adaptarme ágilmente a nuevas situaciones. Estoy constantemente buscando oportunidades para crecer profesionalmente y aplicar mis conocimientos en tecnología.",
+        "highlights": [
+          "X"
+        ]
+      }],
     "volunteer": [{
       "organization": "",
       "position": "",
@@ -54,16 +76,37 @@
       ]
     }],
     "education": [{
-      "institution": "University",
+      "institution": "Universidad Catolica Andres Bello",
       "url": "https://institution.com/",
       "area": "Ingenieria en Informatica",
-      "studyType": "Bachelor",
+      "studyType": "Universidad",
       "startDate": "2017",
-      "endDate": "Actualidad",
-      "score": "",
+      "endDate": null,
+      "courses": []
+    },{
+      "institution": "Universidad Catolica Andres Bello",
+      "url": "https://institution.com/",
+      "area": "Ingenieria en Informatica",
+      "studyType": "Universidad",
+      "startDate": "2017",
+      "endDate": null,
       "courses": [
-        "DB1101 - Basic SQL"
-      ]
+        {
+        "name": "Curso Básico de Computadores e Informática",
+        "url": null
+      },{
+        "name": "Curso de Pensamiento Lógico: Algoritmos y Diagramas de Flujo",
+        "url": "XXXX.COM"
+      },{
+        "name": "Curso de Pensamiento Lógico: Manejo de Datos, Estructuras y Funciones",
+        "url": "XXXX.COM"
+      },{
+        "name": "Curso de Pensamiento Lógico: Lenguajes de Programación",
+        "url": "XXXX.COM"
+      },{
+        "name": "Curso de Introducción a la Web: Historia y Funcionamiento de Internet",
+        "url": "XXXX.COM"
+      }]
     }],
     "awards": [{
       "title": "Award",
