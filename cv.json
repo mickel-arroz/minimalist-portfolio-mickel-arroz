@@ -41,7 +41,7 @@
         "summary": "¡Hola! Soy Mickel Arroz, un estudiante de Ingeniería en Informática apasionado por la tecnología e innovación. Con habilidades sólidas en Desarrollo de Software y resolución de problemas, mi enfoque se centra en adaptarme ágilmente a nuevas situaciones. Estoy constantemente buscando oportunidades para crecer profesionalmente y aplicar mis conocimientos en tecnología.",
         "highlights": [
           "Trabajo en equipo", 
-          "Proactividad",
+          "HTML",
           "Metodologia Scrum",
           "Trabajo en equipo", 
           "Proactividad",
@@ -128,13 +128,65 @@
       "summary": "Description…"
     }],
     "skills": [{
-      "name": "Web Development",
+      "name": "HTML",
       "level": "Master",
       "keywords": [
         "HTML",
         "CSS",
         "JavaScript"
       ]
+    },{
+      "name": "CSS",
+      "level": "Master",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    },{
+      "name": "JavaScript",
+      "level": "Master",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    },{
+      "name": "TypeScript",
+      "level": "Master",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    },{
+      "name": "Tailwind",
+      "level": "Master",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    },{
+      "name": "React",
+      "level": "Master",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    },{
+      "name": "Next.js",
+      "level": "Master",
+      "keywords": []
+    },{
+      "name": "SQL",
+      "level": "Master",
+      "keywords": []
+    },{
+      "name": "Git",
+      "level": "Master",
+      "keywords": []
     }],
     "languages": [{
       "language": "English",

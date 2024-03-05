@@ -2,23 +2,17 @@
 import { basics } from "@cv";
 
 import Section from "@/components/Section.astro";
-import Home from "@/icons/Home.astro";
-import World from "@/icons/World.astro";
-import Email from "@/icons/Email.astro";
-import Phone from "@/icons/Phone.astro";
+import Home from "@/icons/hero/Home.astro";
+import World from "@/icons/hero/World.astro";
+import Email from "@/icons/hero/Email.astro";
+import Phone from "@/icons/hero/Phone.astro";
 
-import GitHub from "@/icons/GitHub.astro";
-import LinkedIn from "@/icons/LinkedIn.astro";
-import FreeCodeCamp from "@/icons/FreeCodeCamp.astro";
+import {SOCIAL_ICONS} from '@/records.astro'
 
 const { name, label, image, url, email, phone, location, profiles } = basics;
 const { region, city } = location;
 
-const SOCIAL_ICONS: Record<string, any> = {
-  GitHub,
-  LinkedIn,
-  FreeCodeCamp,
-};
+
 ---
 
 <Section>
@@ -76,7 +70,7 @@ const SOCIAL_ICONS: Record<string, any> = {
 
         <!-- Map para recorrer los Profiles -->
         {profiles.map(({network, url}) => {
-          const Icon = SOCIAL_ICONS[network]
+          const Icon = SOCIAL_ICONS[network];
 
           return (
             <a href={url}
@@ -96,6 +90,7 @@ const SOCIAL_ICONS: Record<string, any> = {
         src={image}
         alt={name}
         width="150px"
+        height="150px"
       />
     </figure>
   </div>
