@@ -205,10 +205,127 @@
     }],
     "projects": [{
       "name": "Project",
-      "startDate": "2019-01-01",
-      "endDate": "2021-01-01",
-      "description": "Description...",
+      "isActive": true,
+      "github": "urllll",
+      "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
       "highlights": [
+        "Won award ",
+        " at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016"
+      ],
+      "url": "https://project.com/"
+    },{
+      "name": "Project",
+      "isActive": false,
+      "github": "h",
+      "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
+      "highlights": [
+        "Won award ",
+        " at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016"
+      ],
+      "url": "https://project.com/"
+    },{
+      "name": "Project",
+      "isActive": true,
+      "github": "",
+      "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
+      "highlights": [
+        "Won award ",
+        " at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016"
+      ],
+      "url": "https://project.com/"
+    },{
+      "name": "Project",
+      "isActive": true,
+      "github": "",
+      "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
+      "highlights": [
+        "Won award ",
+        " at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016"
+      ],
+      "url": "https://project.com/"
+    },{
+      "name": "Project",
+      "isActive": true,
+      "github": "",
+      "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
+      "highlights": [
+        "Won award ",
+        " at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016"
+      ],
+      "url": "https://project.com/"
+    },{
+      "name": "Project",
+      "isActive": true,
+      "github": "",
+      "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
+      "highlights": [
+        "Won award ",
+        " at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016"
+      ],
+      "url": "https://project.com/"
+    },{
+      "name": "Project",
+      "isActive": true,
+      "github": "",
+      "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
+      "highlights": [
+        "Won award ",
+        " at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016"
+      ],
+      "url": "https://project.com/"
+    },{
+      "name": "Project",
+      "isActive": true,
+      "github": "",
+      "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
+      "highlights": [
+        "Won award ",
+        " at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016"
+      ],
+      "url": "https://project.com/"
+    },{
+      "name": "Project",
+      "isActive": true,
+      "github": "",
+      "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
+      "highlights": [
+        "Won award ",
+        " at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016",
+        "Won award at AIHacks 2016",
         "Won award at AIHacks 2016"
       ],
       "url": "https://project.com/"

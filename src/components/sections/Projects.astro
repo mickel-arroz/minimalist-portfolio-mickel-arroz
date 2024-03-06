@@ -1,7 +1,151 @@
 ---
 import Section from "@/components/Section.astro";
+import GitHub from "@/icons/hero/GitHub.astro";
+
+import { projects } from "@cv";
 ---
 
 <Section title="Proyectos">
-  <p>prueba</p>
+  <ul>
+    {
+      projects.map(
+        ({ name, description, url, highlights, isActive, github }) => {
+          return (
+            <li>
+              <article>
+                <header>
+                  <div id="contenedorHeader">
+                    <a
+                      href={url}
+                      title={`Ver el proyecto: ${name}`}
+                    >
+                      <h3>{name}</h3>
+                      {isActive && <span>&bull;</span>}
+                    </a>
+
+                    {github && (
+                      <div id="contenedorGitHub">
+                        <a
+                          class="github-code-link"
+                          href={github}
+                          target="_blank"
+                          title={`Ver código fuente del proyecto ${name}`}
+                        >
+                          <GitHub />
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                  <p>{description}</p>
+                </header>
+                <footer>
+                  {highlights.map((highlight) => {
+                    return <span>{highlight}</span>;
+                  })}
+                </footer>
+              </article>
+            </li>
+          );
+        }
+      )
+    }
+  </ul>
 </Section>
+
+<style>
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 1rem;
+    padding-inline: 0.5rem;
+    justify-content: center;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding: 0.7rem;
+    height: 100%;
+  }
+
+  #contenedorHeader {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.3rem;
+  }
+
+  #contenedorGitHub {
+    border-radius: 100%;
+    background: #eee;
+    padding: 0.3rem;
+    display: flex;
+  }
+
+  a {
+    display: inline-flex;
+    color: #444;
+  }
+
+  a span {
+    padding-left: 0.3rem;
+    font-size: medium;
+    color: rgb(61, 197, 40);
+    animation-name: active;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+  }
+
+  a:hover {
+    color: #666;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-inline: 0.5rem;
+  }
+
+  footer span {
+    font-weight: 500;
+    color: #777;
+    font-size: 0.6rem;
+    background: #eee;
+    border-radius: 5px;
+    padding: 0.2rem 0.4rem;
+    line-height: normal;
+  }
+
+  p {
+    font-size: 0.75rem;
+    line-height: 1.2rem;
+    margin-bottom: 0.5rem;
+    padding-inline: 0.5rem;
+  }
+
+  @keyframes active {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.25;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 660px) {
+    ul {
+      padding-inline: 0;
+    }
+  }
+</style>
