@@ -22,7 +22,7 @@
       {
         "network": "LinkedIn",
         "username": "mickel_arroz",
-        "url": "https://twitter.com/john"
+        "url": "www.linkedin.com/in/mickel-arroz"
       },
       {
         "network": "FreeCodeCamp",
@@ -180,6 +180,10 @@
       "level": "Master",
       "keywords": []
     },{
+      "name": "Astro",
+      "level": "Master",
+      "keywords": []
+    },{
       "name": "SQL",
       "level": "Master",
       "keywords": []
@@ -204,8 +208,7 @@
       "reference": "Reference…"
     }],
     "projects": [{
-      "name": "Project",
-      "isActive": true,
+      "name": "SpaceX Launches",
       "github": "urllll",
       "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
       "highlights": [
@@ -219,7 +222,6 @@
       "url": "https://project.com/"
     },{
       "name": "Project",
-      "isActive": false,
       "github": "h",
       "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
       "highlights": [
@@ -233,7 +235,6 @@
       "url": "https://project.com/"
     },{
       "name": "Project",
-      "isActive": true,
       "github": "",
       "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
       "highlights": [
@@ -247,7 +248,6 @@
       "url": "https://project.com/"
     },{
       "name": "Project",
-      "isActive": true,
       "github": "",
       "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
       "highlights": [
@@ -261,7 +261,6 @@
       "url": "https://project.com/"
     },{
       "name": "Project",
-      "isActive": true,
       "github": "",
       "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
       "highlights": [
@@ -275,7 +274,6 @@
       "url": "https://project.com/"
     },{
       "name": "Project",
-      "isActive": true,
       "github": "",
       "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
       "highlights": [
@@ -289,7 +287,6 @@
       "url": "https://project.com/"
     },{
       "name": "Project",
-      "isActive": true,
       "github": "",
       "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
       "highlights": [
@@ -303,7 +300,6 @@
       "url": "https://project.com/"
     },{
       "name": "Project",
-      "isActive": true,
       "github": "",
       "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
       "highlights": [
@@ -317,7 +313,6 @@
       "url": "https://project.com/"
     },{
       "name": "Project",
-      "isActive": true,
       "github": "",
       "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
       "highlights": [

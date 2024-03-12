@@ -10,7 +10,8 @@ import { SKILLS_ICONS } from "@/records.astro";
   <ul>
     {
       skills.map(({ name }) => {
-        const iconName = name === "Next.js" ? "Next" : name;
+        const iconName =
+          name === "Next.js" ? "Next" : name === "Astro" ? "Astrojs" : name;
         const Icon = SKILLS_ICONS[iconName];
         return (
           <li>
@@ -38,6 +39,8 @@ import { SKILLS_ICONS } from "@/records.astro";
     border: 1px solid #888;
     border-radius: 5px;
     padding: 0.1rem 0.5rem;
+    height: 28px;
+    display: flex;
   }
 
   span {

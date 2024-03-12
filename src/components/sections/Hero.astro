@@ -12,6 +12,9 @@ import {SOCIAL_ICONS} from '@/records.astro'
 const { name, label, image, url, email, phone, location, profiles } = basics;
 const { region, city } = location;
 
+const linkedInfo = profiles.find(({ network }) => network === "LinkedIn")
+const linkedUrl = linkedInfo?.url
+
 
 ---
 
@@ -29,7 +32,52 @@ const { region, city } = location;
       </span>
 
       <!-- Apartado de los enlaces -->
-      <footer>
+
+      <!-- Enlaces Print -->
+
+      <footer id="printFooter">
+        {
+          email && (
+            <a
+              href={`mailto:${email}`}
+              title={`Enviar email a ${name}`}
+              target="_blank"
+              rel="nonpener noreferrer"
+            >
+              {email}
+            </a>
+          )
+        }
+
+        {
+          phone && (
+            <a
+              href={`tel:${phone}`}
+              title={`LLamar a ${name} al número ${phone}`}
+              target="_blank"
+              rel="nonpener noreferrer"
+            >
+              {phone}
+            </a>
+          )
+        }
+        {
+          linkedUrl && (
+            <a
+              href={`mailto:${email}`}
+              title={`Enviar email a ${name}`}
+              target="_blank"
+              rel="nonpener noreferrer"
+            >
+              {linkedUrl}
+            </a>
+          )
+        }
+      </footer>
+
+
+      <!-- Enlaces web -->
+      <footer id="webFooter">
         {
           url && (
             <a
@@ -145,7 +193,7 @@ const { region, city } = location;
     padding-left: 1rem;
   }
 
-  a {
+  #webFooter a {
     color: #555;
     border: 1px solid #eee;
     border-radius: 8px;
@@ -163,6 +211,10 @@ const { region, city } = location;
     border: 1px solid #777;
     color: #333;
   }
+
+  #printFooter {
+      display: none;
+    }
 
   @media(max-width: 580px) {
 
@@ -196,6 +248,24 @@ const { region, city } = location;
     
     a {
       justify-content: center;
+    }
+  }
+
+  @media print {
+
+    footer {
+      padding: 0%;
+    }
+    #webFooter {
+      display: none;
+    }
+
+    #printFooter {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      padding-inline: 1rem;
+      font-size: 0.8rem;
     }
   }
 </style>
