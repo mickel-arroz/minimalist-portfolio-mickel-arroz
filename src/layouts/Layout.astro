@@ -4,6 +4,9 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+import { basics } from "@cv";
+const { name } = basics;
 ---
 
 <!doctype html>
@@ -12,7 +15,7 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Portafolio Minimalista de Mickel Arroz"
+      content=`Portafolio Minimalista de ${name}`
     />
     <meta
       name="viewport"
@@ -79,5 +82,12 @@ const { title } = Astro.props;
     margin: 0;
     text-wrap: pretty;
     padding: 0;
+  }
+
+  /* Apartado para ocultar los atajos al imprimir */
+  @media print {
+    ninja-keys {
+      display: none;
+    }
   }
 </style>

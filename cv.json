@@ -22,7 +22,7 @@
       {
         "network": "LinkedIn",
         "username": "mickel_arroz",
-        "url": "www.linkedin.com/in/mickel-arroz"
+        "url": "https://linkedin.com/in/mickel-arroz"
       },
       {
         "network": "FreeCodeCamp",
@@ -184,7 +184,7 @@
       "level": "Master",
       "keywords": []
     },{
-      "name": "SQL",
+      "name": "MySQL",
       "level": "Master",
       "keywords": []
     },{
