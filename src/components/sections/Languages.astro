@@ -1,0 +1,103 @@
+---
+import Section from "@/components/Section.astro";
+import { languages } from "@cv";
+---
+
+{
+  languages.length ? (
+    <Section title="Idiomas">
+      <ul>
+        {languages.map(({ language, fluency, certificates }) => {
+          return (
+            <li>
+              <article>
+                <h3>{language}</h3>
+                <h4>{fluency}</h4>
+              </article>
+              <footer>
+                {certificates.map(({ name, url }) => {
+                  return url ? (
+                    <a
+                      id="courses"
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {name}
+                    </a>
+                  ) : (
+                    <span>{name}</span>
+                  );
+                })}
+              </footer>
+            </li>
+          );
+        })}
+      </ul>
+    </Section>
+  ) : (
+    []
+  )
+}
+
+<style>
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 1rem;
+    padding-inline: 0.5rem;
+    justify-content: center;
+  }
+
+  li {
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    padding: 0.7rem;
+    height: 100%;
+    box-shadow: 0 1px 1px #f2f2f2;
+  }
+
+  h3 {
+    font-weight: 600;
+    color: #222;
+  }
+
+  h4 {
+    color: #555;
+    padding-inline: 0.5rem;
+    padding-block: 0.2rem;
+  }
+
+  footer {
+    padding-block: 0.2rem;
+    padding-inline: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  a,
+  span {
+    color: #777;
+    font-size: 0.65rem;
+    background: #eee;
+    border-radius: 5px;
+    padding-inline: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    transition: all 0.5s ease;
+    line-height: normal;
+  }
+
+  a:hover {
+    background: #cfcfcf;
+    color: #555;
+  }
+
+  @media (max-width: 645px) {
+    ul {
+      padding-inline: 0;
+    }
+  }
+</style>
