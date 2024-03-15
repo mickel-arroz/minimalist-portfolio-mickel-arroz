@@ -5,7 +5,7 @@
       "image": "/images/FotoPerfil.png",
       "email": "arrozmickel@gmail.com",
       "phone": "+58 4242382439",
-      "url": "https://johndoe.com",
+      "url": null,
       "summary": "¡Hola! Soy Mickel Arroz, un estudiante de Ingeniería en Informática apasionado por la tecnología e innovación. Con habilidades sólidas en Desarrollo de Software y resolución de problemas, mi enfoque se centra en adaptarme ágilmente a nuevas situaciones. Estoy constantemente buscando oportunidades para crecer profesionalmente y aplicar mis conocimientos en tecnología.",
       "location": {
         "address": "El Junquito km19, Urb. Junko Contry Club",
@@ -16,8 +16,8 @@
       },
       "profiles": [{
         "network": "GitHub",
-        "username": "mickel_arroz",
-        "url": "https://twitter.com/john"
+        "username": "mickel-arroz",
+        "url": "https://github.com/mickel-arroz"
       },
       {
         "network": "LinkedIn",
@@ -27,363 +27,101 @@
       {
         "network": "FreeCodeCamp",
         "username": "mickel_arroz",
-        "url": "https://twitter.com/john"
+        "url": "https://www.freecodecamp.org/espanol/mickel_arroz"
       }
     ]
     },
-    "work": [
-      {
-        "name": "SpaceX",
-        "position": "Gerente",
-        "url": null,
-        "startDate": "01-01-2000",
-        "endDate": null,
-        "summary": "¡Hola! Soy Mickel Arroz, un estudiante de Ingeniería en Informática apasionado por la tecnología e innovación. Con habilidades sólidas en Desarrollo de Software y resolución de problemas, mi enfoque se centra en adaptarme ágilmente a nuevas situaciones. Estoy constantemente buscando oportunidades para crecer profesionalmente y aplicar mis conocimientos en tecnología.",
-        "highlights": [
-          "Trabajo en equipo", 
-          "HTML",
-          "Metodologia Scrum",
-          "Trabajo en equipo", 
-          "Proactividad",
-          "Metodologia Scrum",
-          "Trabajo en equipo", 
-          "Proactividad",
-          "Metodologia Scrum", "Trabajo en equipo", 
-          "Proactividad",
-          "Metodologia Scrum"
-        ]
-      },
-      {
-        "name": "Universidad Catolica Andres Bello",
-        "position": "Gerente",
-        "url": "XXXX.COM",
-        "startDate": "01-01-2000",
-        "endDate": "01-01-2001",
-        "summary": "¡Hola! Soy Mickel Arroz, centra en adaptarme ágilmente a nuevas situaciones. Estoy constantemente buscando oportunidades para crecer profesionalmente y aplicar mis conocimientos en tecnología.",
-        "highlights": [
-          "X"
-        ]
-      }],
-    "volunteer": [{
-      "organization": "",
-      "position": "",
-      "url": "",
-      "startDate": "",
-      "endDate": "",
-      "summary": "",
-      "highlights": [
-        ""
-      ]
-    }],
+    "work": [],
+    "volunteer": [],
     "education": [{
       "institution": "Universidad Catolica Andres Bello",
-      "url": "https://institution.com/",
+      "url": "https://www.ucab.edu.ve/",
       "area": "Ingenieria en Informatica",
       "studyType": "Universidad",
       "startDate": "2017",
       "endDate": null,
       "courses": []
-    },{
-      "institution": "Universidad Catolica Andres Bello",
-      "url": "https://institution.com/",
-      "area": "Ingenieria en Informatica",
-      "studyType": "Universidad",
-      "startDate": "2017",
-      "endDate": null,
-      "courses": [
-        {
-        "name": "Curso Básico de Computadores e Informática",
-        "url": null
-      },{
-        "name": "Curso de Pensamiento Lógico: Algoritmos y Diagramas de Flujo",
-        "url": "XXXX.COM"
-      },{
-        "name": "Curso de Pensamiento Lógico: Manejo de Datos, Estructuras y Funciones",
-        "url": "XXXX.COM"
-      },{
-        "name": "Curso de Pensamiento Lógico: Lenguajes de Programación",
-        "url": "XXXX.COM"
-      },{
-        "name": "Curso de Introducción a la Web: Historia y Funcionamiento de Internet",
-        "url": "XXXX.COM"
-      }]
     }],
-    "awards": [{
-      "title": "Award",
-      "date": "2014-11-01",
-      "awarder": "Company",
-      "summary": "There is no spoon."
-    }],
-    "certificates": [{
-      "name": "Certificate",
-      "date": "2021-11-07",
-      "issuer": "Company",
-      "url": "https://certificate.com"
-    }],
-    "publications": [{
-      "name": "Publication",
-      "publisher": "Company",
-      "releaseDate": "2014-10-01",
-      "url": "https://publication.com",
-      "summary": "Description…"
-    }],
+    "awards": [],
+    "certificates": [],
+    "publications": [],
     "skills": [{
       "name": "HTML",
-      "level": "Master",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ]
+      "level": "Avanzado",
+      "keywords": []
     },{
       "name": "CSS",
-      "level": "Master",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ]
+      "level": "Avanzado",
+      "keywords": []
     },{
       "name": "JavaScript",
-      "level": "Master",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ]
+      "level": "Intermedio",
+      "keywords": []
     },{
       "name": "TypeScript",
-      "level": "Master",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ]
+      "level": "Novato",
+      "keywords": []
     },{
       "name": "Tailwind",
-      "level": "Master",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ]
+      "level": "Intermedio",
+      "keywords": []
     },{
       "name": "React",
-      "level": "Master",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ]
+      "level": "Intermedio",
+      "keywords": []
     },{
       "name": "Next.js",
-      "level": "Master",
+      "level": "Intermedio",
       "keywords": []
     },{
       "name": "Astro",
-      "level": "Master",
+      "level": "Intermedio",
       "keywords": []
     },{
       "name": "MySQL",
-      "level": "Master",
+      "level": "Avanzado",
       "keywords": []
     },{
       "name": "Git",
-      "level": "Master",
+      "level": "Avanzado",
       "keywords": []
     }],
     "languages": [{
-      "language": "English",
-      "fluency": "Native speaker",
-      "certificates": [{
-        "name": "aaaa",
-      "url": "jjj"
-      },{
-        "name": "aaaa",
-      "url": "jjj"
-      },{
-        "name": "aaaa",
-      "url": "jjj"
-      },{
-        "name": "aaaa",
-      "url": "jjj"
-      },{
-        "name": "aaaa",
-      "url": "jjj"
-      }
-      ]
-    },{
-      "language": "English",
-      "fluency": "Native speaker",
-      "certificates": [{
-        "name": "aaaa",
-      "url": "jjj"
-      },{
-        "name": "aaaa",
-      "url": "jjj"
-      },{
-        "name": "aaaa",
-      "url": "jjj"
-      },{
-        "name": "aaaa",
-      "url": "jjj"
-      },{
-        "name": "aaaa",
-      "url": "jjj"
-      }
-      ]
-    },{
-      "language": "English",
-      "fluency": "Native speaker",
+      "language": "Español",
+      "fluency": "Idioma Nativo",
       "certificates": []
     },{
-      "language": "English",
-      "fluency": "Native speaker",
-      "certificates": [{
-        "name": "aaaa",
-      "url": "jjj"
-      },{
-        "name": "aaaa",
-      "url": "jjj"
-      },{
-        "name": "aaaa",
-      "url": "jjj"
-      },{
-        "name": "aaaa",
-      "url": "jjj"
-      },{
-        "name": "aaaa",
-      "url": "jjj"
-      }
-      ]
+      "language": "Ingles",
+      "fluency": "Nivel Intermedio",
+      "certificates": []
+    },{
+      "language": "Portugues",
+      "fluency": "Nivel Intermedio",
+      "certificates": []
     }],
-    "interests": [{
-      "name": "Wildlife",
-      "keywords": [
-        "Ferrets",
-        "Unicorns"
-      ]
-    }],
-    "references": [{
-      "name": "Jane Doe",
-      "reference": "Reference…"
-    }],
+    "interests": [],
+    "references": [],
     "projects": [{
+      "name": "Porfolio Minimalista",
+      "github": "https://github.com/mickel-arroz/minimalist-portfolio-mickel-arroz",
+      "description": "Proyecto web de una página estática que mediante un unico json se puede personalizar todos los datos del portfolio dinamicamente.",
+      "highlights": [
+        "Alta modularidad",
+        "Facil configuracion mediante un unico archivo .json",
+        "Minimalista y elegante",
+        "Responsive para cualquier tipo de pantalla"
+      ],
+      "url": "https://project.com/"
+    },{
       "name": "SpaceX Launches",
-      "github": "urllll",
-      "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
+      "github": "https://github.com/mickel-arroz/SpaceXPageAPI",
+      "description": "Proyecto web desarrollado en Astro 4.0 se centra en una página estática que consulta el API gratuito de SpaceX para mostrar detalles de lanzamientos de cohetes.",
       "highlights": [
-        "Won award ",
-        " at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016"
+        "Informacion de todos los lanzamientos de SpaceX",
+        "Videos y galeria de imagenes sobre los lanzamientos",
+        "Clasificacion de lanzamientos por distintos parametros",
+        "Contenido Adaptativo a cualquier tipo de pantalla"
       ],
-      "url": "https://project.com/"
-    },{
-      "name": "Project",
-      "github": "h",
-      "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
-      "highlights": [
-        "Won award ",
-        " at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016"
-      ],
-      "url": "https://project.com/"
-    },{
-      "name": "Project",
-      "github": "",
-      "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
-      "highlights": [
-        "Won award ",
-        " at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016"
-      ],
-      "url": "https://project.com/"
-    },{
-      "name": "Project",
-      "github": "",
-      "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
-      "highlights": [
-        "Won award ",
-        " at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016"
-      ],
-      "url": "https://project.com/"
-    },{
-      "name": "Project",
-      "github": "",
-      "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
-      "highlights": [
-        "Won award ",
-        " at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016"
-      ],
-      "url": "https://project.com/"
-    },{
-      "name": "Project",
-      "github": "",
-      "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
-      "highlights": [
-        "Won award ",
-        " at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016"
-      ],
-      "url": "https://project.com/"
-    },{
-      "name": "Project",
-      "github": "",
-      "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
-      "highlights": [
-        "Won award ",
-        " at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016"
-      ],
-      "url": "https://project.com/"
-    },{
-      "name": "Project",
-      "github": "",
-      "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
-      "highlights": [
-        "Won award ",
-        " at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016"
-      ],
-      "url": "https://project.com/"
-    },{
-      "name": "Project",
-      "github": "",
-      "description": " Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description...",
-      "highlights": [
-        "Won award ",
-        " at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016",
-        "Won award at AIHacks 2016"
-      ],
-      "url": "https://project.com/"
+      "url": "https://space-x-launches-page.netlify.app/"
     }]
   }
