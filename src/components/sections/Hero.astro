@@ -8,6 +8,7 @@ import Email from "@/icons/hero/Email.astro";
 import Phone from "@/icons/hero/Phone.astro";
 
 import {SOCIAL_ICONS} from '@/records.astro'
+import { Image } from "astro:assets";
 
 const { name, label, image, url, email, phone, location, profiles } = basics;
 const { region, city } = location;
@@ -134,11 +135,12 @@ const linkedUrl = linkedInfo?.url
       </footer>
     </div>
     <figure>
-      <img
+      <Image 
         src={image}
         alt={name}
-        width="150px"
-        height="150px"
+        width="150"
+        height="150"
+        loading="eager"
       />
     </figure>
   </div>

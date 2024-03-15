@@ -2,7 +2,7 @@
     "basics": {
       "name": "Mickel Arroz",
       "label": "Futuro Profesional del Desarrollo de Software. Estudiante de Ingeniería en Informática en la Universidad Católica Andrés Bello.",
-      "image": "./src/images/FotoPerfil.png",
+      "image": "/images/FotoPerfil.png",
       "email": "arrozmickel@gmail.com",
       "phone": "+58 4242382439",
       "url": "https://johndoe.com",
