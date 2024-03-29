@@ -18,6 +18,14 @@ import { work } from "@cv";
             endDate,
             summary,
             highlights,
+          }: {
+            name: string;
+            position: string;
+            url: string | null;
+            startDate: string;
+            endDate: string | null;
+            summary: string;
+            highlights: string[];
           }) => {
             const startYear = new Date(startDate).getFullYear();
             const endYear =

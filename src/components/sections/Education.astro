@@ -17,6 +17,14 @@ import { education } from "@cv";
             startDate,
             endDate,
             courses,
+          }: {
+            institution: string;
+            url: string;
+            area: string;
+            studyType: string;
+            startDate: string;
+            endDate: string | null;
+            courses: { name: string; url?: string }[];
           }) => {
             const startYear = new Date(startDate).getFullYear();
             const endYear =
