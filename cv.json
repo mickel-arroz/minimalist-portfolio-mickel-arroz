@@ -34,11 +34,11 @@
     "work": [],
     "volunteer": [],
     "education": [{
-      "institution": "Universidad Catolica Andres Bello",
+      "institution": "Universidad Católica Andrés Bello",
       "url": "https://www.ucab.edu.ve/",
-      "area": "Ingenieria en Informatica",
+      "area": "Ingeniería en Informática",
       "studyType": "Universidad",
-      "startDate": "2017",
+      "startDate": "01-01-2017",
       "endDate": null,
       "courses": []
     }],
@@ -104,23 +104,21 @@
     "projects": [{
       "name": "Porfolio Minimalista",
       "github": "https://github.com/mickel-arroz/minimalist-portfolio-mickel-arroz",
-      "description": "Proyecto web de una página estática que mediante un unico json se puede personalizar todos los datos del portfolio dinamicamente.",
+      "description": "Proyecto web de una página estática que mediante un único json se puede personalizar todos los datos del porfolio dinámicamente.",
       "highlights": [
         "Alta modularidad",
-        "Facil configuracion mediante un unico archivo .json",
+        "Fácil configuración mediante un único archivo .json",
         "Minimalista y elegante",
-        "Responsive para cualquier tipo de pantalla"
+        "Responsivo para cualquier tipo de pantalla"
       ],
-      "url": "https://project.com/"
+      "url": "/"
     },{
       "name": "SpaceX Launches",
       "github": "https://github.com/mickel-arroz/SpaceXPageAPI",
-      "description": "Proyecto web desarrollado en Astro 4.0 se centra en una página estática que consulta el API gratuito de SpaceX para mostrar detalles de lanzamientos de cohetes.",
+      "description": "Proyecto web desarrollado en Astro 4.0 se centra en una página estática que consulta la API gratuito de SpaceX para mostrar detalles de lanzamientos de cohetes.",
       "highlights": [
-        "Informacion de todos los lanzamientos de SpaceX",
-        "Videos y galeria de imagenes sobre los lanzamientos",
-        "Clasificacion de lanzamientos por distintos parametros",
-        "Contenido Adaptativo a cualquier tipo de pantalla"
+        "Información de todos los lanzamientos de SpaceX",
+        "Videos y galería de imágenes sobre los lanzamientos","Clasificación de lanzamientos por distintos parámetros","Contenido Adaptativo a cualquier tipo de pantalla"
       ],
       "url": "https://space-x-launches-page.netlify.app/"
     }]
