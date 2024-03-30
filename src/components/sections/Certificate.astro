@@ -1,0 +1,149 @@
+---
+import Section from "@/components/Section.astro";
+
+import { certificates } from "@cv";
+---
+
+{
+  certificates.length ? (
+    <Section title="Certificados">
+      <ul>
+        {certificates.map(
+          ({
+            name,
+            url,
+            date,
+            issuer,
+            summary,
+            issuerUrl,
+          }: {
+            name: string;
+            url: string;
+            date: string;
+            issuer: string;
+            summary: string;
+            issuerUrl: string | null;
+          }) => {
+            const startYear = new Date(date).getFullYear();
+            return (
+              <li>
+                <article>
+                  <header>
+                    <div>
+                      <a
+                        href={url}
+                        target="_blank"
+                        title={`Ver el Certificado de ${name}`}
+                        rel="noopener noreferrer"
+                      >
+                        <h3>{name}</h3>
+                      </a>
+                      <a
+                        href={issuerUrl}
+                        target="_blank"
+                        title={`Ir a la pagina de ${issuer}`}
+                        rel="noopener noreferrer"
+                      >
+                        <h4>{issuer}</h4>
+                      </a>
+                    </div>
+                    <time>{startYear + 1}</time>
+                  </header>
+                  <p>{summary}</p>
+                </article>
+              </li>
+            );
+          }
+        )}
+      </ul>
+    </Section>
+  ) : null
+}
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+    padding-inline: 0.5rem;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  div {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  p {
+    padding-inline: 0.5rem;
+  }
+
+  h3 {
+    font-weight: 600;
+    color: #222;
+  }
+  h4 {
+    font-weight: 500;
+    color: #555;
+    font-size: small;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding-inline: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  time {
+    font-size: 0.85rem;
+    color: #555;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-inline: 0.5rem;
+  }
+
+  h3:hover {
+    color: #444;
+    text-decoration: underline;
+  }
+
+  a:hover h4 {
+    background-color: #f6f6f6;
+  }
+  @media (max-width: 800px) {
+    ul,
+    p {
+      padding: 0;
+    }
+
+    div {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    header {
+      flex-direction: column-reverse;
+      gap: 0.2rem;
+    }
+
+    footer {
+      padding-inline: 0;
+    }
+  }
+</style>

@@ -47,55 +47,45 @@
     "publications": [],
     "skills": [{
       "name": "HTML",
-      "level": "Avanzado",
-      "keywords": []
+      "level": "Avanzado"
     },{
       "name": "CSS",
-      "level": "Avanzado",
-      "keywords": []
+      "level": "Avanzado"
     },{
       "name": "JavaScript",
-      "level": "Intermedio",
-      "keywords": []
+      "level": "Intermedio"
     },{
       "name": "TypeScript",
-      "level": "Novato",
-      "keywords": []
+      "level": "Novato"
     },{
       "name": "Tailwind",
-      "level": "Intermedio",
-      "keywords": []
+      "level": "Intermedio"
     },{
       "name": "React",
-      "level": "Intermedio",
-      "keywords": []
+      "level": "Intermedio"
     },{
       "name": "Next.js",
-      "level": "Intermedio",
-      "keywords": []
+      "level": "Intermedio"
     },{
       "name": "Astro",
-      "level": "Intermedio",
-      "keywords": []
+      "level": "Intermedio"
     },{
       "name": "MySQL",
-      "level": "Avanzado",
-      "keywords": []
+      "level": "Avanzado"
     },{
       "name": "Git",
-      "level": "Avanzado",
-      "keywords": []
+      "level": "Avanzado"
     }],
     "languages": [{
       "language": "Español",
       "fluency": "Idioma Nativo",
       "certificates": []
     },{
-      "language": "Ingles",
+      "language": "Inglés",
       "fluency": "Nivel Intermedio",
       "certificates": []
     },{
-      "language": "Portugues",
+      "language": "Portugués",
       "fluency": "Nivel Intermedio",
       "certificates": []
     }],

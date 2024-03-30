@@ -64,7 +64,6 @@ export interface CV {
   interface Skills {
     name: string
     level: string
-    keywords: Array<string>
   }
   
   interface Awards {
@@ -78,7 +77,9 @@ export interface CV {
     name: string,
     date: DateStr,
     issuer: string,
-    url: string
+    issuerUrl: string,
+    url: string,
+    summary: string
   }
   
   interface Publications {
@@ -102,7 +103,8 @@ export interface CV {
   
   interface Languages {
     language: Language
-    fluency: string
+    fluency: string,
+    certificates: Array<string>
   }
   
   type Language =
