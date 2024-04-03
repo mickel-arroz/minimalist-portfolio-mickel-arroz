@@ -109,28 +109,10 @@ export interface CV {
   }
   
   interface Languages {
-    language: Language
+    language: string
     fluency: string,
     certificates: Array<Url>
   }
-  
-  type Language =
-    "Spanish"
-    | "English"
-    | "German"
-    | "France"
-    | "Italian"
-    | "Korean"
-    | "Portuguese"
-    | "Chinese"
-    | "Arabic"
-    | "Dutch"
-    | "Finnish"
-    | "Russian"
-    | "Turkish"
-    | "Hindi"
-    | "Bengali"
-    | string
   
   interface Projects {
     name: string

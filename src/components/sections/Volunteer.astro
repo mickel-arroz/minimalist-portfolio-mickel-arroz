@@ -2,16 +2,16 @@
 import Section from "@/components/Section.astro";
 import { SKILLS_ICONS } from "@/records.astro";
 
-import { work } from "@cv";
+import { volunteer } from "@cv";
 ---
 
 {
-  work.length ? (
-    <Section title="Experiencia Laboral">
+  volunteer.length ? (
+    <Section title="Voluntariado">
       <ul>
-        {work.map(
+        {volunteer.map(
           ({
-            name,
+            organization,
             position,
             url,
             startDate,
@@ -19,7 +19,7 @@ import { work } from "@cv";
             summary,
             highlights,
           }: {
-            name: string;
+            organization: string;
             position: string;
             url: string | null;
             startDate: string;
@@ -38,14 +38,14 @@ import { work } from "@cv";
                       {url != null ? (
                         <a
                           href={url}
-                          title={`Ver la Empresa: ${name}`}
+                          title={`Ver la página de la organización ${organization}`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <h3 class="titulo">{name}</h3>
+                          <h3>{organization}</h3>
                         </a>
                       ) : (
-                        <h3>{name}</h3>
+                        <h3>{organization}</h3>
                       )}
                       <h4>{position}</h4>
                     </div>

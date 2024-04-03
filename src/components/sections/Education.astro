@@ -37,6 +37,9 @@ import { education } from "@cv";
                       <a
                         href={url}
                         target="_blank"
+                        id="titulo"
+                        title={`Ver la página de ${institution}`}
+                        rel="noopener noreferrer"
                       >
                         <h3>{institution}</h3>
                       </a>
@@ -159,6 +162,14 @@ import { education } from "@cv";
     padding-inline: 0.5rem;
     flex-wrap: wrap;
     gap: 0.5rem 1rem;
+  }
+
+  #titulo:hover {
+    text-decoration: underline;
+  }
+
+  h3:hover {
+    color: #666;
   }
 
   @media (max-width: 800px) {

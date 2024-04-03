@@ -33,6 +33,7 @@
     },
     "work": [],
     "volunteer": [],
+
     "education": [{
       "institution": "Universidad Católica Andrés Bello",
       "url": "https://www.ucab.edu.ve/",
@@ -103,9 +104,9 @@
     },{
       "name": "SpaceX Launches",
       "github": "https://github.com/mickel-arroz/SpaceXPageAPI",
-      "description": "Proyecto web desarrollado en Astro 4.0 se centra en una página estática que consulta la API gratuito de SpaceX para mostrar detalles de lanzamientos de cohetes.",
+      "description": "Proyecto web de páginas estáticas, que consulta la API gratuita de SpaceX para mostrar detalles de lanzamientos de sus cohetes.",
       "highlights": [
-        "HTML", "CSS", "Tailwind", "JavaScript", "Astro", "Next.js"
+        "HTML", "CSS", "Tailwind", "JavaScript", "Astro"
       ],
       "url": "https://space-x-launches-page.netlify.app/"
     }]
