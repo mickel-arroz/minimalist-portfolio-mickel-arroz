@@ -96,10 +96,8 @@
       "github": "https://github.com/mickel-arroz/minimalist-portfolio-mickel-arroz",
       "description": "Proyecto web de una página estática que mediante un único json se puede personalizar todos los datos del porfolio dinámicamente.",
       "highlights": [
-        "Alta modularidad",
-        "Fácil configuración mediante un único archivo .json",
-        "Minimalista y elegante",
-        "Responsivo para cualquier tipo de pantalla"
+        "HTML", "CSS", "TypeScript", "Astro"
+
       ],
       "url": "/"
     },{
@@ -107,8 +105,7 @@
       "github": "https://github.com/mickel-arroz/SpaceXPageAPI",
       "description": "Proyecto web desarrollado en Astro 4.0 se centra en una página estática que consulta la API gratuito de SpaceX para mostrar detalles de lanzamientos de cohetes.",
       "highlights": [
-        "Información de todos los lanzamientos de SpaceX",
-        "Videos y galería de imágenes sobre los lanzamientos","Clasificación de lanzamientos por distintos parámetros","Contenido Adaptativo a cualquier tipo de pantalla"
+        "HTML", "CSS", "Tailwind", "JavaScript", "Astro", "Next.js"
       ],
       "url": "https://space-x-launches-page.netlify.app/"
     }]

@@ -98,13 +98,18 @@ export interface CV {
     startDate: DateStr
     endDate: DateStr
     score: string
-    courses: Array<string>
+    courses: Array<Url>
+  }
+  
+  interface Url {
+    name: Language
+    url: string,
   }
   
   interface Languages {
     language: Language
     fluency: string,
-    certificates: Array<string>
+    certificates: Array<Url>
   }
   
   type Language =

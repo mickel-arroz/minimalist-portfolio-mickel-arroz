@@ -1,6 +1,7 @@
 ---
 import Section from "@/components/Section.astro";
 import GitHub from "@/icons/hero/GitHub.astro";
+import { SKILLS_ICONS } from "@/records.astro";
 
 import { projects } from "@cv";
 ---
@@ -40,9 +41,28 @@ import { projects } from "@cv";
                 <p>{description}</p>
               </header>
               <footer>
-                {highlights.map((highlight) => {
-                  return <span>{highlight}</span>;
-                })}
+                <div id="divHighliht">
+                  {highlights.map((highlight) => {
+                    const iconName =
+                      highlight === "Next.js"
+                        ? "Next"
+                        : highlight === "Astro"
+                          ? "Astrojs"
+                          : highlight;
+
+                    const Icon = SKILLS_ICONS[iconName];
+
+                    const IconFinal = !SKILLS_ICONS[Icon]
+                      ? SKILLS_ICONS["Generic"]
+                      : SKILLS_ICONS[Icon];
+                    return (
+                      <span>
+                        {IconFinal && <Icon />}
+                        {highlight}
+                      </span>
+                    );
+                  })}
+                </div>
               </footer>
             </article>
           </li>
@@ -99,16 +119,6 @@ import { projects } from "@cv";
     text-decoration: underline;
   }
 
-  a span {
-    padding-left: 0.3rem;
-    font-size: medium;
-    color: rgb(61, 197, 40);
-    animation-name: active;
-    animation-duration: 3s;
-    animation-timing-function: ease-in;
-    animation-iteration-count: infinite;
-  }
-
   a:hover {
     color: #666;
   }
@@ -116,17 +126,29 @@ import { projects } from "@cv";
   footer {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 1.5rem;
     padding-inline: 0.5rem;
   }
 
+  #divHighliht {
+    display: flex;
+    padding-inline: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding-top: 0.5rem;
+  }
+
   footer span {
+    display: flex;
     color: #777;
     font-size: 0.6rem;
     background-color: #f6f6f6;
     border-radius: 5px;
     padding: 0.2rem 0.4rem;
     line-height: normal;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   p {
@@ -134,18 +156,6 @@ import { projects } from "@cv";
     line-height: 1.1rem;
     margin-bottom: 0.5rem;
     padding-inline: 0.5rem;
-  }
-
-  @keyframes active {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.25;
-    }
-    100% {
-      opacity: 1;
-    }
   }
 
   @media (max-width: 660px) {
