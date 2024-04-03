@@ -70,7 +70,9 @@ export interface CV {
     title: string
     date: string
     awarder: string
+    awarderUrl: string
     summary: string
+    url: string
   }
   
   interface Certificates {
