@@ -6,25 +6,27 @@ import { skills } from "@cv";
 import { SKILLS_ICONS } from "@/records.astro";
 ---
 
-<Section title="Habilidades">
-  <ul>
-    {
-      skills.map(({ name }) => {
-        const iconName =
-          name === "Next.js" ? "Next" : name === "Astro" ? "Astrojs" : name;
-        const Icon = SKILLS_ICONS[iconName];
-        return (
-          <li>
-            <span>
-              {Icon && <Icon />}
-              {name}
-            </span>
-          </li>
-        );
-      })
-    }
-  </ul>
-</Section>
+{
+  skills.length ? (
+    <Section title="Habilidades">
+      <ul>
+        {skills.map(({ name }) => {
+          const iconName =
+            name === "Next.js" ? "Next" : name === "Astro" ? "Astrojs" : name;
+          const Icon = SKILLS_ICONS[iconName];
+          return (
+            <li>
+              <span>
+                {Icon && <Icon />}
+                {name}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    </Section>
+  ) : null
+}
 
 <style>
   ul {

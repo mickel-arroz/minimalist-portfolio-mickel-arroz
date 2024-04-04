@@ -130,7 +130,11 @@ export interface CV {
   
   interface References {
     name: string
+    relationship: string
     reference: string
+    url: string
+    image: string
+
   }
   
   type Highlight = Array<String>

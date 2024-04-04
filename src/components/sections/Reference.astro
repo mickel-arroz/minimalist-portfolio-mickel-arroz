@@ -1,0 +1,199 @@
+---
+import Section from "@/components/Section.astro";
+
+import { references } from "@cv";
+import { Image } from "astro:assets";
+---
+
+{
+  references.length ? (
+    <Section title="Referencias">
+      <ul>
+        {references.map(({ name, reference, url, image, relationship }) => {
+          return (
+            <li>
+              <article>
+                <header>
+                  <div id="contenedorHeader">
+                    <figure>
+                      <Image
+                        src={image}
+                        alt={name}
+                        width="60"
+                        height="60"
+                        loading="lazy"
+                      />
+                    </figure>
+                    <div id="contenedorData">
+                      <a
+                        id="titulo"
+                        href={url}
+                        title={`Ver el perfil de ${name}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <h3>{name}</h3>
+                      </a>
+                      <h4>{relationship}</h4>
+                    </div>
+                  </div>
+                  <p>"{reference}"</p>
+                </header>
+              </article>
+            </li>
+          );
+        })}
+      </ul>
+    </Section>
+  ) : null
+}
+
+<style>
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 1rem;
+    padding-inline: 0.5rem;
+    justify-content: center;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    padding: 0.7rem;
+    height: 100%;
+    box-shadow: 0 1px 1px #f2f2f2;
+  }
+
+  img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border: 0.1rem solid #777;
+    border-radius: 100%;
+  }
+
+  #contenedorHeader {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: start;
+    padding-bottom: 0.5rem;
+    min-height: 36px;
+  }
+
+  #contenedorData {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.3rem;
+  }
+
+  #contenedorGitHub {
+    border-radius: 100%;
+    background: #f6f6f6;
+    padding: 0.3rem;
+    display: flex;
+  }
+
+  a {
+    display: inline-flex;
+    color: #444;
+  }
+
+  #titulo:hover {
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: #666;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-inline: 0.5rem;
+  }
+
+  #divHighliht {
+    display: flex;
+    padding-inline: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding-top: 0.5rem;
+  }
+
+  footer span {
+    display: flex;
+    color: #777;
+    font-size: 0.6rem;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    padding: 0.2rem 0.4rem;
+    line-height: normal;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    height: 28.38px;
+  }
+
+  p {
+    font-size: 0.75rem;
+    line-height: 1.1rem;
+    padding-inline: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+  }
+
+  h4 {
+    font-weight: 500;
+    color: #555;
+    font-size: x-small;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding-inline: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  @media (max-width: 660px) {
+    ul {
+      grid-template-columns: 1fr;
+    }
+    ul,
+    p {
+      padding-inline: 0;
+    }
+  }
+
+  @media (max-width: 280px) {
+    #contenedorHeader {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    #contenedorData {
+      align-items: center;
+    }
+  }
+
+  @media print {
+    a span {
+      display: none;
+    }
+
+    #contenedorGitHub {
+      display: none;
+    }
+
+    #contenedorHeader {
+      padding-bottom: 0.5rem;
+    }
+  }
+</style>

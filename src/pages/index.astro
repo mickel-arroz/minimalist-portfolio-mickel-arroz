@@ -7,13 +7,13 @@ import Education from "@/components/sections/Education.astro";
 import Certificate from "@/components/sections/Certificate.astro";
 import Projects from "@/components/sections/Projects.astro";
 import Skills from "@/components/sections/Skills.astro";
-
 import Languages from "@/components/sections/Languages.astro";
 import KeyboardManager from "@/components/KeyboardManager.astro";
-
 import { basics } from "@cv";
 import Award from "@/components/sections/Award.astro";
 import Volunteer from "@/components/sections/Volunteer.astro";
+import Reference from "@/components/sections/Reference.astro";
+
 const { name } = basics;
 ---
 
@@ -25,8 +25,9 @@ const { name } = basics;
     <Volunteer />
     <Education />
     <Certificate />
-    <Award />
     <Projects />
+    <Award />
+    <Reference />
     <Skills />
     <Languages />
   </main>
