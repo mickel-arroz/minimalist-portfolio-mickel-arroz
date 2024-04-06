@@ -49,13 +49,14 @@ import { projects } from "@cv";
                           ? "Next"
                           : highlight === "Astro"
                             ? "Astrojs"
-                            : highlight;
-
-                      const Icon = SKILLS_ICONS[iconName];
-
-                      const IconFinal = !SKILLS_ICONS[Icon]
-                        ? SKILLS_ICONS["Generic"]
-                        : SKILLS_ICONS[Icon];
+                            : highlight === "C/C++"
+                              ? "CPlusPlus"
+                              : highlight;
+                      let IconFinal;
+                      const Icon =
+                        SKILLS_ICONS[iconName] !== undefined
+                          ? (IconFinal = SKILLS_ICONS[iconName])
+                          : (IconFinal = SKILLS_ICONS["Generic"]);
                       return (
                         <span>
                           {IconFinal && <Icon />}

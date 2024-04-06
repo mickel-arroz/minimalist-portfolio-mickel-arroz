@@ -12,12 +12,23 @@ import { SKILLS_ICONS } from "@/records.astro";
       <ul>
         {skills.map(({ name }) => {
           const iconName =
-            name === "Next.js" ? "Next" : name === "Astro" ? "Astrojs" : name;
-          const Icon = SKILLS_ICONS[iconName];
+            name === "Next.js"
+              ? "Next"
+              : name === "Astro"
+                ? "Astrojs"
+                : name === "C/C++"
+                  ? "CPlusPlus"
+                  : name;
+          let IconFinal;
+          const Icon =
+            SKILLS_ICONS[iconName] !== undefined
+              ? (IconFinal = SKILLS_ICONS[iconName])
+              : (IconFinal = SKILLS_ICONS["Generic"]);
+
           return (
             <li>
               <span>
-                {Icon && <Icon />}
+                {IconFinal && <Icon />}
                 {name}
               </span>
             </li>

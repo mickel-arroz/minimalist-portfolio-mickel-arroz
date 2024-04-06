@@ -32,7 +32,16 @@
     ]
     },
     "work": [],
-    "volunteer": [],
+    "volunteer": [{
+      "organization": "Federación Internacional de Fe y Alegría",
+      "position": "Docente",
+      "url": "https://www.feyalegria.org/venezuela/",
+      "startDate":"01-01-2023",
+      "endDate": null,
+      "summary": "Como parte de mi compromiso con el Servicio Comunitario, desempeño el rol de Docente, impartiendo clases a estudiantes de 3ro, 4to y 5to año. Me especializo en enseñar sobre programación web, desarrollo de software y conceptos básicos de la tecnología.",
+      "highlights": ["HTML", "CSS", "JavaScript"]
+    }
+    ],
 
     "education": [{
       "institution": "Universidad Católica Andrés Bello",
@@ -74,6 +83,12 @@
       "name": "MySQL",
       "level": "Avanzado"
     },{
+      "name": "C/C++",
+      "level": "Intermedio"
+    },{
+      "name": "Java",
+      "level": "Intermedio"
+    },{
       "name": "Git",
       "level": "Avanzado"
     }],
@@ -83,7 +98,7 @@
       "certificates": []
     },{
       "language": "Inglés",
-      "fluency": "Nivel Intermedio",
+      "fluency": "Nivel B2",
       "certificates": []
     },{
       "language": "Portugués",

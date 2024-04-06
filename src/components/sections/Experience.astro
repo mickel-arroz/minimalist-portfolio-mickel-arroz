@@ -62,7 +62,9 @@ import { work } from "@cv";
                             ? "Next"
                             : highlight === "Astro"
                               ? "Astrojs"
-                              : highlight;
+                              : highlight === "C/C++"
+                                ? "CPlusPlus"
+                                : highlight;
 
                         const Icon = SKILLS_ICONS[iconName];
 
