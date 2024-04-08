@@ -55,7 +55,8 @@
     "awards": [],
     "certificates": [],
     "publications": [],
-    "skills": [{
+    "skills": [
+      {
       "name": "HTML",
       "level": "Avanzado"
     },{

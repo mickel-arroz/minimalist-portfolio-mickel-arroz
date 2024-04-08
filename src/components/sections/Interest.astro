@@ -1,0 +1,56 @@
+---
+import Section from "@/components/Section.astro";
+
+import { interests } from "@cv";
+
+import { SKILLS_ICONS } from "@/records.astro";
+
+const Icon = SKILLS_ICONS["Generic"];
+---
+
+{
+  interests.length ? (
+    <Section title="Intereses">
+      <ul>
+        {interests.map((interest) => {
+          return (
+            <li>
+              <span>
+                {Icon && <Icon />}
+                {interest}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    </Section>
+  ) : null
+}
+
+<style>
+  ul {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-inline: 0.5rem;
+  }
+
+  li {
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding: 0.1rem 0.5rem;
+    height: 28.38px;
+    display: flex;
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #444;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    line-height: normal;
+  }
+</style>

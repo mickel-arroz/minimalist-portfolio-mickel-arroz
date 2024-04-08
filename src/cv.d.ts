@@ -8,7 +8,7 @@ export interface CV {
     publications: Array<Publications>
     skills: Array<Skills>
     languages: Array<Languages>
-    interests: Array<Interests>
+    interests: Array<string>
     references: Array<References>
     projects: Array<Projects>
   }
@@ -121,10 +121,6 @@ export interface CV {
     highlights: Highlight
     url: string
     github?: string
-  }
-  
-  interface Interests {
-    name: string
   }
   
   interface References {
