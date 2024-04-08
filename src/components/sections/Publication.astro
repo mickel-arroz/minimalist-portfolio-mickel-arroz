@@ -1,0 +1,153 @@
+---
+import Section from "@/components/Section.astro";
+
+import { publications } from "@cv";
+---
+
+{
+  publications.length ? (
+    <Section title="Publicaciones">
+      <ul>
+        {publications.map(
+          ({
+            name,
+            publisher,
+            releaseDate,
+            url,
+            summary,
+          }: {
+            name: string;
+            url: string;
+            publisher: string;
+            summary: string;
+            releaseDate: string;
+          }) => {
+            const startYear = new Date(releaseDate).getFullYear();
+            return (
+              <li>
+                <article>
+                  <header>
+                    <div>
+                      <a
+                        href={url}
+                        target="_blank"
+                        id="titulo"
+                        title={`Ver la publicación sobre ${name}`}
+                        rel="noopener noreferrer"
+                      >
+                        <h3>{name}</h3>
+                      </a>
+                      <h4>{publisher}</h4>
+                    </div>
+                    <time>{startYear}</time>
+                  </header>
+                  <footer>
+                    <p>{summary}</p>
+                  </footer>
+                </article>
+              </li>
+            );
+          }
+        )}
+      </ul>
+    </Section>
+  ) : null
+}
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+    padding-inline: 0.5rem;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  div {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  h3 {
+    font-weight: 600;
+    color: #222;
+  }
+  h4 {
+    font-weight: 500;
+    color: #555;
+    font-size: small;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding-inline: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  h5 {
+    color: #555;
+  }
+
+  time {
+    font-size: 0.85rem;
+    color: #555;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-inline: 0.5rem;
+  }
+
+  span {
+    color: #777;
+    font-size: 0.65rem;
+    background: #f6f6f6;
+    border-radius: 5px;
+    padding-inline: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    transition: all 0.5s ease;
+    line-height: normal;
+  }
+
+  #titulo:hover {
+    text-decoration: underline;
+  }
+
+  h3:hover {
+    color: #666;
+  }
+
+  @media (max-width: 800px) {
+    ul {
+      padding: 0;
+    }
+    div {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    header {
+      flex-direction: column-reverse;
+      gap: 0.2rem;
+    }
+
+    footer {
+      padding-inline: 0;
+    }
+  }
+</style>

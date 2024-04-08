@@ -125,7 +125,6 @@ export interface CV {
   
   interface Interests {
     name: string
-    keywords: Array<string>
   }
   
   interface References {
