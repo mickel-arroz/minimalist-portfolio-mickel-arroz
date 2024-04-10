@@ -16,4 +16,13 @@ const { title } = Astro.props;
   h2 {
     margin-bottom: 1rem;
   }
+
+  @media print {
+    section {
+      margin-bottom: 2.5rem;
+    }
+    section > h2 {
+      margin-bottom: 0.5rem;
+    }
+  }
 </style>
