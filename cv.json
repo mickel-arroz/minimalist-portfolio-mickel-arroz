@@ -2,11 +2,11 @@
     "basics": {
       "name": "Mickel Arroz",
       "label": "Futuro Profesional del Desarrollo de Software. Estudiante de Ingeniería en Informática en la Universidad Católica Andrés Bello.",
-      "image": "/images/FotoPerfil.png",
+      "image": "/images/FotoPerfil.jpg",
       "email": "arrozmickel@gmail.com",
       "phone": "+58 4242382439",
       "url": null,
-      "summary": "¡Hola! Soy Mickel Arroz, un estudiante de Ingeniería en Informática apasionado por la tecnología e innovación. Con habilidades sólidas en Desarrollo de Software y resolución de problemas, mi enfoque se centra en adaptarme ágilmente a nuevas situaciones. Estoy constantemente buscando oportunidades para crecer profesionalmente y aplicar mis conocimientos en tecnología.",
+      "summary": "¡Encantado de conocerte! Soy Mickel Arroz, un amante de la tecnología e innovación, cursando actualmente la recta final en mi carrera de Ingeniería en Informática. Mi recorrido académico ha sido desafiante, con énfasis en el desarrollo de software, análisis de problemas informáticos y gestión empresarial. Me mantengo al día con los avances tecnológicos, cultivando habilidades técnicas y blandas esenciales. Ansío colaborar en soluciones innovadoras y conectar con profesionales inspiradores.",
       "location": {
         "address": "El Junquito km19, Urb. Junko Contry Club",
         "postalCode": "1030",
@@ -38,7 +38,7 @@
       "url": "https://www.feyalegria.org/venezuela/",
       "startDate":"01-01-2023",
       "endDate": null,
-      "summary": "Como parte de mi compromiso con el Servicio Comunitario, desempeño el rol de Docente, impartiendo clases a estudiantes de 3ro, 4to y 5to año. Me especializo en enseñar sobre programación web, desarrollo de software y conceptos básicos de la tecnología.",
+      "summary": "Como parte de mi compromiso con el Servicio Comunitario, desempeño el rol de Docente, impartiendo clases a estudiantes del Liceo/Bachillerato. Me especializo en enseñar sobre programación web, desarrollo de software y conceptos básicos de la tecnología.",
       "highlights": ["HTML", "CSS", "JavaScript"]
     }
     ],
@@ -109,9 +109,9 @@
     "interests": [],
     "references": [],
     "projects": [{
-      "name": "Porfolio Minimalista",
+      "name": "Portfolio Minimalista",
       "github": "https://github.com/mickel-arroz/minimalist-portfolio-mickel-arroz",
-      "description": "Proyecto web de una página estática que mediante un único json se puede personalizar todos los datos del porfolio dinámicamente.",
+      "description": "Proyecto web de un Portafolio minimalista el cual mediante un único archivo .json se puede personalizar completamente los datos dinámicamente.",
       "highlights": [
         "HTML", "CSS", "TypeScript", "Astro"
 
