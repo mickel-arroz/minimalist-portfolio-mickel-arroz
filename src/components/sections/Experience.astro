@@ -1,6 +1,7 @@
 ---
 import Section from "@/components/Section.astro";
 import { SKILLS_ICONS } from "@/records.astro";
+import { validateHighlight } from "@/services/validateHighliht";
 
 import { work } from "@cv";
 ---
@@ -57,14 +58,7 @@ import { work } from "@cv";
                     <p>{summary}</p>
                     <div id="divHighliht">
                       {highlights.map((highlight) => {
-                        const iconName =
-                          highlight === "Next.js"
-                            ? "Next"
-                            : highlight === "Astro"
-                              ? "Astrojs"
-                              : highlight === "C/C++"
-                                ? "CPlusPlus"
-                                : highlight;
+                        const iconName = validateHighlight(highlight);
 
                         const Icon = SKILLS_ICONS[iconName];
 

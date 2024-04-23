@@ -90,7 +90,13 @@
       "name": "Java",
       "level": "Intermedio"
     },{
+      "name": "Python",
+      "level": "Intermedio"
+    },{
       "name": "Git",
+      "level": "Avanzado"
+    },{
+      "name": "Docker",
       "level": "Avanzado"
     }],
     "languages": [{
@@ -113,9 +119,7 @@
       "github": "https://github.com/mickel-arroz/minimalist-portfolio-mickel-arroz",
       "description": "Proyecto web de un Portafolio minimalista el cual mediante un único archivo .json se puede personalizar completamente los datos dinámicamente.",
       "highlights": [
-        "HTML", "CSS", "TypeScript", "Astro"
-
-      ],
+        "HTML", "CSS", "TypeScript", "Astro"],
       "url": "/"
     },{
       "name": "SpaceX Launches",

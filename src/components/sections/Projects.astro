@@ -2,6 +2,7 @@
 import Section from "@/components/Section.astro";
 import GitHub from "@/icons/hero/GitHub.astro";
 import { SKILLS_ICONS } from "@/records.astro";
+import { validateHighlight } from "@/services/validateHighliht";
 
 import { projects } from "@cv";
 ---
@@ -44,14 +45,7 @@ import { projects } from "@cv";
                 <footer>
                   <div id="divHighliht">
                     {highlights.map((highlight) => {
-                      const iconName =
-                        highlight === "Next.js"
-                          ? "Next"
-                          : highlight === "Astro"
-                            ? "Astrojs"
-                            : highlight === "C/C++"
-                              ? "CPlusPlus"
-                              : highlight;
+                      const iconName = validateHighlight(highlight);
                       let IconFinal;
                       const Icon =
                         SKILLS_ICONS[iconName] !== undefined

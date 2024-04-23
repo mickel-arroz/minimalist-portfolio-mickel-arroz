@@ -4,6 +4,7 @@ import Section from "@/components/Section.astro";
 import { skills } from "@cv";
 
 import { SKILLS_ICONS } from "@/records.astro";
+import { validateHighlight } from "@/services/validateHighliht";
 ---
 
 {
@@ -11,14 +12,8 @@ import { SKILLS_ICONS } from "@/records.astro";
     <Section title="Habilidades">
       <ul>
         {skills.map(({ name }) => {
-          const iconName =
-            name === "Next.js"
-              ? "Next"
-              : name === "Astro"
-                ? "Astrojs"
-                : name === "C/C++"
-                  ? "CPlusPlus"
-                  : name;
+          const iconName = validateHighlight(name);
+
           let IconFinal;
           const Icon =
             SKILLS_ICONS[iconName] !== undefined
