@@ -67,7 +67,7 @@
       "level": "Intermedio"
     },{
       "name": "TypeScript",
-      "level": "Novato"
+      "level": "Principiante"
     },{
       "name": "Tailwind",
       "level": "Intermedio"
@@ -80,6 +80,9 @@
     },{
       "name": "Astro",
       "level": "Intermedio"
+    },{
+      "name": "SQL",
+      "level": "Avanzado"
     },{
       "name": "MySQL",
       "level": "Avanzado"
@@ -97,19 +100,19 @@
       "level": "Avanzado"
     },{
       "name": "Docker",
-      "level": "Avanzado"
+      "level": "Principiante"
     }],
     "languages": [{
       "language": "Español",
-      "fluency": "Idioma Nativo",
+      "fluency": "Nivel C2 (Nativo)",
       "certificates": []
     },{
       "language": "Inglés",
-      "fluency": "Nivel B2",
+      "fluency": "Nivel B1",
       "certificates": []
     },{
       "language": "Portugués",
-      "fluency": "Nivel Intermedio",
+      "fluency": "Nivel B1",
       "certificates": []
     }],
     "interests": [],
@@ -117,17 +120,24 @@
     "projects": [{
       "name": "Portfolio Minimalista",
       "github": "https://github.com/mickel-arroz/minimalist-portfolio-mickel-arroz",
-      "description": "Proyecto web de un Portafolio minimalista el cual mediante un único archivo .json se puede personalizar completamente los datos dinámicamente.",
+      "description": "Proyecto web de un Portafolio minimalista y responsivo a cualquier pantalla, el cual mediante un único archivo .json se puede personalizar completamente los datos dinámicamente del usuario.",
       "highlights": [
         "HTML", "CSS", "TypeScript", "Astro"],
       "url": "/"
     },{
       "name": "SpaceX Launches",
       "github": "https://github.com/mickel-arroz/SpaceXPageAPI",
-      "description": "Proyecto web de páginas estáticas, que consulta la API gratuita de SpaceX para mostrar detalles de lanzamientos de sus cohetes.",
+      "description": "Proyecto web de páginas estáticas y responsivas, el cual consume la API gratuita de SpaceX para mostrar detalles de lanzamientos de sus cohetes y archivos relacionados a ellos.",
       "highlights": [
         "HTML", "CSS", "Tailwind", "JavaScript", "Astro"
       ],
       "url": "https://space-x-launches-page.netlify.app/"
+    },{
+      "name": "AttackerVictim",
+      "github": "https://github.com/mickel-arroz/DSW_GrupoG_AttackerVictim-DEPLOY-WEB/tree/develop",
+      "description": "Proyecto universitario, sobre un sistema de control y protección entre usuarios Víctima y Atacante, me encargué del apartado web y conexión con la API.",
+      "highlights": [
+        "HTML", "CSS", "Tailwind", "JavaScript", "Next.js", "Patrones de Diseño"],
+      "url": null
     }]
   }

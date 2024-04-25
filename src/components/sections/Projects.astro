@@ -17,16 +17,24 @@ import { projects } from "@cv";
               <article>
                 <header>
                   <div id="contenedorHeader">
-                    <a
-                      id="tituloProyecto"
-                      href={url}
-                      title={`Ver el proyecto: ${name}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <h3>{name}</h3>
-                    </a>
-
+                    {url ? (
+                      <a
+                        id="tituloProyecto"
+                        href={url}
+                        title={`Ver el proyecto: ${name}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <h3>{name}</h3>
+                      </a>
+                    ) : (
+                      <span
+                        id="tituloNoRef"
+                        title={`No se puede acceder al despliegue del proyecto ${name}`}
+                      >
+                        <h3>{name}</h3>
+                      </span>
+                    )}
                     {github && (
                       <div id="contenedorGitHub">
                         <a
@@ -72,7 +80,7 @@ import { projects } from "@cv";
 <style>
   ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: 1fr;
     gap: 1rem;
     padding-inline: 0.5rem;
@@ -82,8 +90,7 @@ import { projects } from "@cv";
   article {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 0.5rem;
+    gap: 1rem;
     border: 1px solid #f2f2f2;
     border-radius: 5px;
     padding: 0.7rem;
@@ -112,6 +119,10 @@ import { projects } from "@cv";
     color: #444;
   }
 
+  #tituloNoRef {
+    color: #444;
+    font-size: 1rem;
+  }
   #tituloProyecto:hover {
     text-decoration: underline;
   }
@@ -123,7 +134,7 @@ import { projects } from "@cv";
   footer {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 0.5rem;
     padding-inline: 0.5rem;
   }
 
@@ -132,7 +143,6 @@ import { projects } from "@cv";
     padding-inline: 0.5rem;
     flex-wrap: wrap;
     gap: 0.5rem 1rem;
-    padding-top: 0.5rem;
   }
 
   footer span {
@@ -163,6 +173,9 @@ import { projects } from "@cv";
   }
 
   @media print {
+    ul {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
     a span {
       display: none;
     }
