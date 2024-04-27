@@ -4,7 +4,7 @@
       "label": "Futuro Profesional del Desarrollo de Software. Estudiante de Ingeniería en Informática en la Universidad Católica Andrés Bello.",
       "image": "/images/FotoPerfil.jpg",
       "email": "arrozmickel@gmail.com",
-      "phone": "+58 4242382439",
+      "phone": "584242382439",
       "url": null,
       "summary": "¡Encantado de conocerte! Soy Mickel Arroz, un amante de la tecnología e innovación, cursando actualmente la recta final en mi carrera de Ingeniería en Informática. Mi recorrido académico ha sido desafiante, con énfasis en el desarrollo de software, análisis de problemas informáticos y gestión empresarial. Me mantengo al día con los avances tecnológicos, cultivando habilidades técnicas y blandas esenciales. Ansío colaborar en soluciones innovadoras y conectar con profesionales inspiradores.",
       "location": {
@@ -53,7 +53,16 @@
       "courses": []
     }],
     "awards": [],
-    "certificates": [],
+    "certificates": [{
+      "name": "Responsive Web Design",
+      "date": "04-27-2024",
+      "issuer": "FreeCodeCamp",
+      "issuerUrl": "https://www.freecodecamp.org/",
+      "url": "https://www.freecodecamp.org/espanol/certification/mickel_arroz/responsive-web-design",
+      "summary": "Este certificado me ha equipado con habilidades y conocimientos esenciales para diseñar y desarrollar sitios web modernos, accesibles y adaptables a cualquier dispositivo. Dominando HTML, CSS y las últimas técnicas de diseño, incluyendo las mejores prácticas para la accesibilidad web y el uso de Flexbox y CSS Grid.",
+      "highlights": [
+        "HTML", "CSS"]
+    }],
     "publications": [],
     "skills": [
       {

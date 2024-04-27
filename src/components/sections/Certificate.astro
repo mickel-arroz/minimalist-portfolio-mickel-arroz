@@ -1,5 +1,7 @@
 ---
 import Section from "@/components/Section.astro";
+import { SKILLS_ICONS } from "@/records.astro";
+import { validateHighlight } from "@/services/validateHighliht";
 
 import { certificates } from "@cv";
 ---
@@ -16,6 +18,7 @@ import { certificates } from "@cv";
             issuer,
             summary,
             issuerUrl,
+            highlights,
           }: {
             name: string;
             url: string;
@@ -23,13 +26,14 @@ import { certificates } from "@cv";
             issuer: string;
             summary: string;
             issuerUrl: string | null;
+            highlights: string[];
           }) => {
             const startYear = new Date(date).getFullYear();
             return (
               <li>
                 <article>
                   <header>
-                    <div>
+                    <div id="divHeader">
                       <a
                         href={url}
                         target="_blank"
@@ -49,7 +53,26 @@ import { certificates } from "@cv";
                     </div>
                     <time>{startYear}</time>
                   </header>
-                  <p>{summary}</p>
+                  <footer>
+                    <p>{summary}</p>
+                    <div id="divHighliht">
+                      {highlights.map((highlight) => {
+                        const iconName = validateHighlight(highlight);
+
+                        let IconFinal;
+                        const Icon =
+                          SKILLS_ICONS[iconName] !== undefined
+                            ? (IconFinal = SKILLS_ICONS[iconName])
+                            : (IconFinal = SKILLS_ICONS["Generic"]);
+                        return (
+                          <span>
+                            {IconFinal && <Icon />}
+                            {highlight}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  </footer>
                 </article>
               </li>
             );
@@ -72,6 +95,7 @@ import { certificates } from "@cv";
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    padding-top: 0.3rem;
   }
 
   header {
@@ -83,7 +107,6 @@ import { certificates } from "@cv";
   div {
     display: flex;
     gap: 1.5rem;
-    align-items: flex-start;
   }
 
   p {
@@ -112,9 +135,30 @@ import { certificates } from "@cv";
 
   footer {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 0.5rem;
     padding-inline: 0.5rem;
+  }
+
+  #divHighliht {
+    display: flex;
+    padding-inline: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+
+  footer span {
+    display: flex;
+    color: #777;
+    font-size: 0.6rem;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    padding: 0.2rem 0.4rem;
+    line-height: normal;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    height: 28.38px;
   }
 
   h3:hover {
@@ -131,7 +175,7 @@ import { certificates } from "@cv";
       padding: 0;
     }
 
-    div {
+    #divHeader {
       flex-direction: column;
       align-items: flex-start;
       gap: 0.5rem;
@@ -144,6 +188,10 @@ import { certificates } from "@cv";
 
     footer {
       padding-inline: 0;
+    }
+
+    #divHighliht {
+      padding-inline: 0rem;
     }
   }
 </style>

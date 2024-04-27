@@ -81,7 +81,8 @@ export interface CV {
     issuer: string,
     issuerUrl: string,
     url: string,
-    summary: string
+    summary: string,
+    highlights: Highlight
   }
   
   interface Publications {
