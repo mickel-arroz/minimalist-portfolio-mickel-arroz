@@ -6,7 +6,9 @@ export function validateHighlight(highlight: string): string {
     case "Astro":
       return "Astrojs";
     case "C/C++":
-      return "CPlusPlus";  
+      return "CPlusPlus"; 
+    case "Adobe XD":
+      return "AdobeXD";  
 
     default:
       return highlight;

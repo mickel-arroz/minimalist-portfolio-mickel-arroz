@@ -38,7 +38,7 @@
       "url": "https://www.feyalegria.org/venezuela/",
       "startDate":"01-01-2023",
       "endDate": null,
-      "summary": "Como parte de mi compromiso con el Servicio Comunitario, desempeño el rol de Docente, impartiendo clases a estudiantes del Liceo/Bachillerato. Me especializo en enseñar sobre programación web, desarrollo de software y conceptos básicos de la tecnología.",
+      "summary": "Como parte de mi compromiso con el Servicio Comunitario, desempeño el rol de Docente, impartiendo clases a estudiantes del Liceo/Bachillerato en zonas de necesidad educativa. Me especializo en enseñar sobre programación web básica, lógica de programación, además de conceptos básicos sobre la tecnología.",
       "highlights": ["HTML", "CSS", "JavaScript"]
     }
     ],
@@ -62,6 +62,15 @@
       "summary": "Este certificado me ha equipado con habilidades y conocimientos esenciales para diseñar y desarrollar sitios web modernos, accesibles y adaptables a cualquier dispositivo. Dominando HTML, CSS y las últimas técnicas de diseño, incluyendo las mejores prácticas para la accesibilidad web y el uso de Flexbox y CSS Grid.",
       "highlights": [
         "HTML", "CSS"]
+    },{
+      "name": "Adobe XD: Aprende a crear prototipos profesionales desde 0",
+      "date": "12-27-2019",
+      "issuer": "Udemy",
+      "issuerUrl": "https://www.udemy.com/",
+      "url": "https://www.udemy.com/certificate/UC-TCVS7XGW/",
+      "summary": "Este certificado me acredita como diseñador de UX/UI competente en Adobe XD, capaz de crear prototipos dinámicos y profesionales para sitios web, aplicaciones móviles y software. Dominé las herramientas del programa a través de lecciones prácticas y proyectos reales, adquiriendo las habilidades necesarias para satisfacer las demandas actuales del diseño de interfaces de usuario.",
+      "highlights": [
+        "Adobe XD", "Prototipos de interfaces de usuario"]
     }],
     "publications": [],
     "skills": [
@@ -109,6 +118,9 @@
       "level": "Avanzado"
     },{
       "name": "Docker",
+      "level": "Principiante"
+    },{
+      "name": "Adobe XD",
       "level": "Principiante"
     }],
     "languages": [{
