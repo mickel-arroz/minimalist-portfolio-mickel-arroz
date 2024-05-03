@@ -16,10 +16,10 @@ import { projects } from "@cv";
             <li>
               <article>
                 <header>
-                  <div id="contenedorHeader">
+                  <div class="contenedorHeader">
                     {url ? (
                       <a
-                        id="tituloProyecto"
+                        class="tituloProyecto"
                         href={url}
                         title={`Ver el proyecto: ${name}`}
                         target="_blank"
@@ -29,14 +29,14 @@ import { projects } from "@cv";
                       </a>
                     ) : (
                       <span
-                        id="tituloNoRef"
+                        class="tituloNoRef"
                         title={`No se puede acceder al despliegue del proyecto ${name}`}
                       >
                         <h3>{name}</h3>
                       </span>
                     )}
                     {github && (
-                      <div id="contenedorGitHub">
+                      <div class="contenedorGitHub">
                         <a
                           class="github-code-link"
                           href={github}
@@ -98,7 +98,7 @@ import { projects } from "@cv";
     box-shadow: 0 1px 1px #f2f2f2;
   }
 
-  #contenedorHeader {
+  .contenedorHeader {
     display: flex;
     gap: 0.25rem;
     align-items: center;
@@ -107,7 +107,7 @@ import { projects } from "@cv";
     min-height: 36px;
   }
 
-  #contenedorGitHub {
+  .contenedorGitHub {
     border-radius: 100%;
     background: #f6f6f6;
     padding: 0.3rem;
@@ -119,11 +119,11 @@ import { projects } from "@cv";
     color: #444;
   }
 
-  #tituloNoRef {
+  .tituloNoRef {
     color: #444;
     font-size: 1rem;
   }
-  #tituloProyecto:hover {
+  .tituloProyecto:hover {
     text-decoration: underline;
   }
 
@@ -180,11 +180,11 @@ import { projects } from "@cv";
       display: none;
     }
 
-    #contenedorGitHub {
+    .contenedorGitHub {
       display: none;
     }
 
-    #contenedorHeader {
+    .contenedorHeader {
       padding-bottom: 0.5rem;
     }
   }
