@@ -105,6 +105,9 @@
       "name": "MySQL",
       "level": "Avanzado"
     },{
+      "name": "PostgreSQL",
+      "level": "Avanzado"
+    },{
       "name": "C/C++",
       "level": "Intermedio"
     },{
