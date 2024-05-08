@@ -5,8 +5,9 @@ interface Props {
 
 const { title } = Astro.props;
 
-import { basics } from "@cv";
+import { basics, openGraph } from "@cv";
 const { name } = basics;
+const { titleOG, description, url, previewImage } = openGraph;
 ---
 
 <!doctype html>
@@ -14,12 +15,20 @@ const { name } = basics;
   <head>
     <meta charset="UTF-8" />
     <meta
+      name="author"
+      content=`${name}`
+    />
+    <meta
+      name="keywords"
+      content="portfolio, portafolio, porfolio, cv, curriculum vitae, portafolio minimalista, Mickel Arroz"
+    />
+    <meta
       name="description"
       content=`Portafolio Minimalista de ${name}`
     />
     <meta
       name="viewport"
-      content="width=device-width"
+      content="width=device-width, initial-scale=1.0"
     />
     <link
       rel="icon"
@@ -30,6 +39,51 @@ const { name } = basics;
       name="generator"
       content={Astro.generator}
     />
+
+    <!-- Open Graph / Facebook -->
+    <meta
+      property="og:type"
+      content="website"
+    />
+    <meta
+      property="og:url"
+      content={url}
+    />
+    <meta
+      property="og:title"
+      content={titleOG}
+    />
+    <meta
+      property="og:description"
+      content={description}
+    />
+    <meta
+      property="og:image"
+      content={previewImage}
+    />
+
+    <!-- Twitter -->
+    <meta
+      property="twitter:card"
+      content="summary_large_image"
+    />
+    <meta
+      property="twitter:url"
+      content={url}
+    />
+    <meta
+      property="twitter:title"
+      content={titleOG}
+    />
+    <meta
+      property="twitter:description"
+      content={description}
+    />
+    <meta
+      property="twitter:image"
+      content={previewImage}
+    />
+
     <title>{title}</title>
   </head>
   <body>

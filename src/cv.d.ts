@@ -11,6 +11,7 @@ export interface CV {
     interests: Array<string>
     references: Array<References>
     projects: Array<Projects>
+    openGraph: OpenGraph
   }
   
   interface Basics {
@@ -132,5 +133,13 @@ export interface CV {
     image: string
 
   }
+
+  interface OpenGraph {
+    titleOG: string
+    description: string
+    url: string
+    previewImage: string
+  }
+
   
   type Highlight = Array<String>
