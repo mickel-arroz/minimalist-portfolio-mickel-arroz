@@ -36,11 +36,8 @@ import { validateHighlight } from "@/services/validateHighliht";
 
 <style>
   ul {
-    display: flex;
+    flex-direction: row;
     gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-    padding-inline: 0.5rem;
   }
 
   li {
@@ -52,9 +49,8 @@ import { validateHighlight } from "@/services/validateHighliht";
   }
 
   span {
-    font-weight: 600;
-    font-size: 0.8rem;
-    color: #444;
+    color: var(--colorSkill);
+    font-weight: var(--weightSkill);
     display: flex;
     gap: 0.5rem;
     align-items: center;

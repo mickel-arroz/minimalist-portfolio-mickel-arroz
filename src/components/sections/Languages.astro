@@ -43,56 +43,58 @@ import { languages } from "@cv";
 <style>
   ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-auto-rows: 1fr;
     gap: 1rem;
-    padding-inline: 0.5rem;
     justify-content: center;
   }
 
   li {
-    border: 1px solid #f2f2f2;
+    border: var(--borderCard);
     border-radius: 5px;
     padding: 0.7rem;
     height: 100%;
     box-shadow: 0 1px 1px #f2f2f2;
   }
 
-  h3 {
-    font-weight: 600;
-    color: #222;
+  article {
+    gap: 0.15rem;
+  }
+
+  h3:hover {
+    color: var(--colorTitleElement);
+    text-decoration: none;
   }
 
   h4 {
     color: #555;
-    padding-inline: 0.5rem;
-    padding-block: 0.2rem;
+    font-weight: 900;
+    border: none;
+    font-size: 1rem;
   }
 
   footer {
     padding-block: 0.2rem;
     padding-inline: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
   }
 
+  a {
+    padding-inline: 0.5rem;
+  }
   a,
   span {
-    color: #777;
+    color: var(--colorButton);
     font-size: 0.65rem;
-    background: #f6f6f6;
-    border-radius: 5px;
-    padding-inline: 4px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    border: var(--borderSkill);
+    border-radius: var(--borderRadius);
+    padding-block: 0.2rem;
     transition: all 0.5s ease;
     line-height: normal;
   }
 
   a:hover {
-    background: #cfcfcf;
-    color: #555;
+    background: var(--bgButtonHover);
+    color: var(--colorButtonHover);
   }
 
   @media (max-width: 645px) {

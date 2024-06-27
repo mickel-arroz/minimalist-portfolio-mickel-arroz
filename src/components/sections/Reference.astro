@@ -51,30 +51,27 @@ import { Image } from "astro:assets";
 <style>
   ul {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 1fr;
     gap: 1rem;
-    padding-inline: 0.5rem;
     justify-content: center;
   }
 
   article {
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    gap: 0.5rem;
-    border: 1px solid #f2f2f2;
-    border-radius: 5px;
+    border: var(--borderCard);
+    border-radius: var(--borderRadius);
     padding: 0.7rem;
     height: 100%;
-    box-shadow: 0 1px 1px #f2f2f2;
+    box-shadow: var(--shadowCard);
   }
 
   img {
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border: 0.1rem solid #777;
-    border-radius: 100%;
+    border-width: 0.1rem;
+  }
+
+  header {
+    display: block;
   }
 
   #contenedorHeader {
@@ -94,7 +91,7 @@ import { Image } from "astro:assets";
   }
 
   #contenedorGitHub {
-    border-radius: 100%;
+    border-radius: 5px;
     background: #f6f6f6;
     padding: 0.3rem;
     display: flex;
@@ -113,13 +110,6 @@ import { Image } from "astro:assets";
     color: #666;
   }
 
-  footer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    padding-inline: 0.5rem;
-  }
-
   #divHighliht {
     display: flex;
     padding-inline: 0.5rem;
@@ -128,39 +118,13 @@ import { Image } from "astro:assets";
     padding-top: 0.5rem;
   }
 
-  footer span {
-    display: flex;
-    color: #777;
-    font-size: 0.6rem;
-    background-color: #f6f6f6;
-    border-radius: 5px;
-    padding: 0.2rem 0.4rem;
-    line-height: normal;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    height: 28.38px;
-  }
-
   p {
     font-size: 0.75rem;
     line-height: 1.1rem;
-    padding-inline: 0.5rem;
   }
 
   h3 {
     font-size: 1.05rem;
-  }
-
-  h4 {
-    font-weight: 500;
-    color: #555;
-    font-size: x-small;
-    border: 1px solid #888;
-    border-radius: 5px;
-    padding-inline: 4px;
-    padding-top: 2px;
-    padding-bottom: 2px;
   }
 
   @media (max-width: 660px) {
@@ -184,10 +148,6 @@ import { Image } from "astro:assets";
   }
 
   @media print {
-    a span {
-      display: none;
-    }
-
     #contenedorGitHub {
       display: none;
     }

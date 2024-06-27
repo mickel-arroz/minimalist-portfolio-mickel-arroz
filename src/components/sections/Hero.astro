@@ -164,32 +164,19 @@ const linkedUrl = linkedInfo?.url
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    margin: 0.3rem;
-    color: #666;
+    margin-block: 0.3rem;
     letter-spacing: -0.1rem;
   }
 
-  h1 {
-    font-size: 2rem;
-    font-weight: 900;
-  }
-
   h2 {
-    color: #555;
+    color: var(--colorSummary);
     font-size: 1.1rem;
     text-wrap: balance;
-    font-weight: 600;
+    font-weight: var(--weightSkill);
   }
 
-  img {
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border: 0.2rem solid #777;
-    border-radius: 100%;
-  }
 
   footer {
-    display: flex;
     gap: 0.7rem;
     padding-top: 0.6rem;
     padding-left: 1rem;
@@ -198,14 +185,13 @@ const linkedUrl = linkedInfo?.url
   #webFooter a {
     color: #555;
     border: 1px solid #f6f6f6;
-    border-radius: 8px;
+    border-radius: 5px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 0.1rem;
     width: 39px;
     height: 39px;
-    transition: all 0.5s ease;
   }
 
   a:hover {
@@ -213,6 +199,7 @@ const linkedUrl = linkedInfo?.url
     border: 1px solid #777;
     color: #333;
   }
+
 
   #printFooter {
       display: none;
@@ -257,7 +244,7 @@ const linkedUrl = linkedInfo?.url
   @media print {
 
     footer {
-      padding: 0%;
+      padding: 0;
     }
     #webFooter {
       display: none;

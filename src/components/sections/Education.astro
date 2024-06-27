@@ -24,7 +24,7 @@ import { education } from "@cv";
             studyType: string;
             startDate: string;
             endDate: string | null;
-            courses: { name: string; url?: string }[];
+            courses: { name: string; url?: string | null }[];
           }) => {
             const startYear = new Date(startDate).getFullYear();
             const endYear =
@@ -81,79 +81,34 @@ import { education } from "@cv";
 }
 
 <style>
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 1.7rem;
-    padding-inline: 0.5rem;
-  }
-
-  article {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 1.5rem;
-  }
-
   div {
     display: flex;
     gap: 1rem;
     align-items: center;
   }
 
-  h3 {
-    font-weight: 600;
-    color: #222;
-  }
-  h4 {
-    font-weight: 500;
-    color: #555;
-    font-size: small;
-    border: 1px solid #888;
-    border-radius: 5px;
-    padding-inline: 4px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-  }
-
-  h5 {
-    color: #555;
-  }
-
-  time {
-    font-size: 0.85rem;
-    color: #555;
-  }
-
   footer {
-    display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    padding-inline: 0.5rem;
   }
 
+  #courses {
+    color: var(--colorSummary);
+    font-size: var(--sizeSpanTag);
+  }
   #courses,
   span {
-    color: #777;
-    font-size: 0.65rem;
-    background: #f6f6f6;
-    border-radius: 5px;
-    padding-inline: 4px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    border: var(--borderSkill);
+    border-radius: var(--borderRadius);
+    padding-inline: 0.5rem;
+    padding-block: 0.2rem;
     transition: all 0.5s ease;
     line-height: normal;
+    height: auto;
+    background-color: inherit;
   }
 
   #courses:hover {
-    background: #cfcfcf;
-    color: #555;
+    background: var(--bgButtonHover);
   }
 
   #divCourses {

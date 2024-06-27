@@ -106,13 +106,13 @@ export interface CV {
   }
   
   interface Url {
-    name: Language
-    url: string,
+    name: string
+    url: string
   }
   
   interface Languages {
     language: string
-    fluency: string,
+    fluency: string
     certificates: Array<Url>
   }
   
