@@ -126,6 +126,7 @@ const { titleOG, description, url, previewImage } = openGraph;
       --bgSpanTag: #f6f6f6;
       --bgButtonHover: #f4f4f4;
 
+      /* Bordes de los elementos */
       --borderImg: 0.2rem solid #999;
       --borderCard: 1px solid #f2f2f2;
       --borderSubTitleTag: 1px solid #777;
@@ -155,13 +156,24 @@ const { titleOG, description, url, previewImage } = openGraph;
       background-color: var(--bgBody);
     }
 
-    /*  ----  ESTILOS DE LOS ENLACES   ---- */
-    a {
-      text-decoration: none;
-      transition: all 0.3s ease;
+    article {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
     }
-    a:hover:not(:has(h3)) {
-      scale: 1.1;
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-inline: 0.5rem;
+    }
+
+    header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.5rem;
     }
 
     /*  ----  ESTILOS DE LAS LISTAS ----   */
@@ -176,19 +188,6 @@ const { titleOG, description, url, previewImage } = openGraph;
       gap: 1.5rem;
     }
 
-    article {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    footer {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      padding-inline: 0.5rem;
-    }
-
     footer span {
       display: flex;
       justify-content: center;
@@ -201,13 +200,6 @@ const { titleOG, description, url, previewImage } = openGraph;
       padding: 0.2rem 0.5rem;
       line-height: normal;
       height: 30px;
-    }
-
-    header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1.5rem;
     }
 
     img {
@@ -262,7 +254,20 @@ const { titleOG, description, url, previewImage } = openGraph;
       background-color: var(--bgSpanTag);
     }
 
-    /* ------------------------------------------------- */
+    /*  ----  ESTILOS DE LOS ENLACES   ---- */
+    a {
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    a:hover:not(:has(h3)) {
+      scale: 1.1;
+    }
+
+    /*  ----  ESTILOS PARA LA ETIQUETA TIME ----   */
+    time {
+      font-size: var(--sizeTime);
+      color: var(--colorTime);
+    }
 
     /*  ----  ESTILOS DEL TEXTO NORMAL  ----   */
     p,
@@ -274,12 +279,6 @@ const { titleOG, description, url, previewImage } = openGraph;
       padding: 0;
       text-wrap: pretty;
       padding-inline: 0.5rem;
-    }
-
-    /*  ----  ESTILOS PARA LA ETIQUETA TIME ----   */
-    time {
-      font-size: var(--sizeTime);
-      color: var(--colorTime);
     }
 
     /* Apartado para ocultar los atajos y estilos al imprimir */
