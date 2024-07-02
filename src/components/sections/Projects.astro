@@ -49,7 +49,7 @@ import { projects } from "@cv";
                   <p>{description}</p>
                 </header>
                 <footer>
-                  <div id="divHighliht">
+                  <div class="divHighliht">
                     {highlights.map((highlight) => {
                       const iconName = validateHighlight(highlight);
                       let IconFinal;
@@ -88,7 +88,7 @@ import { projects } from "@cv";
     gap: 1rem;
     border: var(--borderCard);
     border-radius: var(--borderRadius);
-    padding: 0.7rem;
+    padding: 1rem;
     height: 100%;
     box-shadow: var(--shadowCard);
   }
@@ -101,43 +101,47 @@ import { projects } from "@cv";
     gap: 0.25rem;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 0.3rem;
+    padding-bottom: 0.5rem;
     min-height: 36px;
   }
 
   .contenedorGitHub {
-    border: 1px solid #eee;
-    border-radius: 8px;
+    border: var(--borderButton);
+    border-radius: var(--borderRadius);
     padding: 0.3rem;
     display: flex;
   }
 
   .contenedorGitHub:hover {
-    background: #f6f6f6;
-    border-color: #777;
-    color: #555;
+    background: var(--bgButtonHover);
+    border-color: var(--colorBorderButtonHover);
+    color: var(--colorButtonHover);
   }
 
   a {
     display: inline-flex;
-    color: #444;
+    color: var(--colorButton);
   }
 
   .tituloNoRef {
-    color: #444;
-    font-size: 1rem;
+    padding: 0;
   }
+  .tituloNoRef h3:hover {
+    color: var(--colorTitleElement);
+    text-decoration: none;
+  }
+
   .tituloProyecto:hover {
     text-decoration: underline;
   }
 
   a:hover {
-    color: #666;
+    color: var(--colorLinkHover);
   }
 
-  #divHighliht {
+  .divHighliht {
     display: flex;
-    padding-inline: 0.5rem;
+    padding-inline: var(--paddingXGeneric);
     flex-wrap: wrap;
     gap: 0.5rem 1rem;
   }

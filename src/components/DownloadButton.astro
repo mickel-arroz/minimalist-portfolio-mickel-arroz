@@ -31,22 +31,22 @@
     position: fixed;
     right: 1.5rem;
     bottom: 2.5rem;
-    border: 1px solid #eee;
-    border-radius: 5px;
+    border: var(--borderButton);
+    border-radius: var(--borderRadius);
     width: 3rem;
     height: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    color: #777;
+    color: var(--colorButton);
+    background-color: inherit;
     transition: all 0.5s ease;
   }
 
   .printButton:hover {
-    background: #f6f6f6;
-    border-color: #777;
-    color: #555;
+    background: var(--bgButtonHover);
+    border-color: var(--colorBorderButtonHover);
+    color: var(--colorButtonHover);
   }
 
   @media (max-width: 780px) {

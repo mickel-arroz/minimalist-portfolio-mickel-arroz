@@ -40,8 +40,8 @@
       "organization": "Federación Internacional de Fe y Alegría",
       "position": "Docente",
       "url": "https://www.feyalegria.org/venezuela/",
-      "startDate": "01-01-2023",
-      "endDate": null,
+      "startDate": "11-10-2023",
+      "endDate": "07-01-2024",
       "summary": "Como parte de mi compromiso con el Servicio Comunitario, desempeño el rol de Docente, impartiendo clases a estudiantes del Liceo/Bachillerato en zonas de necesidad educativa. Me especializo en enseñar sobre programación web básica, lógica de programación, además de conceptos básicos sobre la tecnología.",
       "highlights": ["HTML", "CSS", "JavaScript"]
     }
@@ -53,7 +53,7 @@
       "url": "https://www.ucab.edu.ve/",
       "area": "Ingeniería en Informática",
       "studyType": "Universidad",
-      "startDate": "01-01-2017",
+      "startDate": "03-1-2017",
       "endDate": null,
       "courses": []
     }
