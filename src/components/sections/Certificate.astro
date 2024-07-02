@@ -29,6 +29,7 @@ import { certificates } from "@cv";
             highlights: string[];
           }) => {
             const startYear = new Date(date).getFullYear();
+            const startMonth = new Date(date).getMonth() + 1;
             return (
               <li>
                 <article>
@@ -51,7 +52,9 @@ import { certificates } from "@cv";
                         <h4>{issuer}</h4>
                       </a>
                     </div>
-                    <time>{startYear}</time>
+                    <time>
+                      {startMonth}/{startYear}
+                    </time>
                   </header>
                   <footer>
                     <p>{summary}</p>

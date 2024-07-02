@@ -25,6 +25,7 @@ import { awards } from "@cv";
             awarderUrl: string | null;
           }) => {
             const startYear = new Date(date).getFullYear();
+            const startMonth = new Date(date).getMonth() + 1;
             return (
               <li>
                 <article>
@@ -47,7 +48,9 @@ import { awards } from "@cv";
                         <h4>{awarder}</h4>
                       </a>
                     </div>
-                    <time>{startYear}</time>
+                    <time>
+                      {startMonth}/{startYear}
+                    </time>
                   </header>
                   <p>{summary}</p>
                 </article>

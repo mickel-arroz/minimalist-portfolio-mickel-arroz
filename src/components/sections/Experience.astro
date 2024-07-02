@@ -28,9 +28,12 @@ import { work } from "@cv";
             summary: string;
             highlights: string[];
           }) => {
+            const startMonth = new Date(startDate).getMonth() + 1 + "/";
             const startYear = new Date(startDate).getFullYear();
             const endYear =
               endDate != null ? new Date(endDate).getFullYear() : "Actualmente";
+            const endMonth =
+              endDate != null ? new Date(endDate).getMonth() + 1 + "/" : "";
             return (
               <li>
                 <article>
@@ -51,7 +54,9 @@ import { work } from "@cv";
                       <h4>{position}</h4>
                     </div>
                     <time>
-                      {startYear} - {endYear}
+                      {startMonth}
+                      {startYear} - {endMonth}
+                      {endYear}
                     </time>
                   </header>
                   <footer>
