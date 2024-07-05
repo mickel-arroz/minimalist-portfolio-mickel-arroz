@@ -20,14 +20,14 @@ const linkedUrl = linkedInfo?.url
 ---
 
 <Section>
-  <div class="contenedorPrincipal">
+  <div class="section__hero" >
     <!-- Apartado de Informacion del Hero -->
-    <div class="informacion">
-      <h1>{name}</h1>
-      <h2>{label}</h2>
+    <header class="hero__header">
+      <h1 class="hero__name">{name}</h1>
+      <h2 class="hero__label">{label}</h2>
 
       <!-- Apartado de la Ubicacion -->
-      <span>
+      <span class="hero__location">
         <Home />
         {city}, {region}
       </span>
@@ -36,10 +36,11 @@ const linkedUrl = linkedInfo?.url
 
       <!-- Enlaces Print -->
 
-      <footer id="printFooter">
+      <footer class="card__footer--print">
         {
           email && (
             <a
+              class="card__link"
               href={`mailto:${email}`}
               title={`Enviar email a ${name}`}
               target="_blank"
@@ -53,6 +54,7 @@ const linkedUrl = linkedInfo?.url
         {
           phone && (
             <a
+              class="card__link"
               href={`https://wa.me/${phone}`}
               title={`Escribir a ${name} al Whatsapp ${phone}`}
               target="_blank"
@@ -65,6 +67,7 @@ const linkedUrl = linkedInfo?.url
         {
           linkedUrl && (
             <a
+              class="card__link"  
               href={`mailto:${email}`}
               title={`Enviar email a ${name}`}
               target="_blank"
@@ -78,11 +81,12 @@ const linkedUrl = linkedInfo?.url
 
 
       <!-- Enlaces web -->
-      <footer id="webFooter">
+      <footer class="card__footer">
         {
           url && (
             <a
-              href={url}
+            class="card__link"
+            href={url}
               title={`Entrar en la pagina web: ${url}`}
               target="_blank"
               rel="nonpener noreferrer"
@@ -94,7 +98,8 @@ const linkedUrl = linkedInfo?.url
         {
           email && (
             <a
-              href={`mailto:${email}`}
+            class="card__link"
+            href={`mailto:${email}`}
               title={`Enviar email a ${name}`}
               target="_blank"
               rel="nonpener noreferrer"
@@ -107,6 +112,7 @@ const linkedUrl = linkedInfo?.url
         {
           phone && (
             <a
+            class="card__link"
               href={`https://wa.me/${phone}`}
               title={`Escribir a ${name} al Whatsapp ${phone}`}
               target="_blank"
@@ -122,7 +128,9 @@ const linkedUrl = linkedInfo?.url
           const Icon = SOCIAL_ICONS[network];
 
           return (
-            <a href={url}
+            <a 
+            class="card__link"
+            href={url}
             title=`Visitar el perfil de ${name} en ${network}`
             target="_blank"
             rel="noopener noreferrer"
@@ -133,9 +141,10 @@ const linkedUrl = linkedInfo?.url
 
         })}
       </footer>
-    </div>
+    </header>
     <figure>
-      <Image 
+      <Image
+        class="profile-img" 
         src={image}
         alt={name}
         width="150"
@@ -147,20 +156,20 @@ const linkedUrl = linkedInfo?.url
 </Section>
 
 <style>
-  .contenedorPrincipal {
+  .section__hero {
     display: flex;
     gap: 1rem;
     justify-content: space-between;
   }
 
-  .informacion {
+  .hero__header {
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
 
   }
 
-  span {
+  .hero__location {
     display: flex;
     gap: 0.5rem;
     align-items: center;
@@ -168,7 +177,7 @@ const linkedUrl = linkedInfo?.url
     letter-spacing: -0.1rem;
   }
 
-  h2 {
+  .hero__label {
     color: var(--colorSummary);
     font-size: 1.1rem;
     text-wrap: balance;
@@ -176,13 +185,13 @@ const linkedUrl = linkedInfo?.url
   }
 
 
-  footer {
+  .card__footer, .card__footer--print {
     gap: 0.7rem;
     padding-top: 0.6rem;
     padding-left: 1rem;
   }
 
-  #webFooter a {
+  .card__footer .card__link {
     color: var(--colorButton);
     border: var(--borderButton);
     border-radius: var(--borderRadius);
@@ -194,63 +203,63 @@ const linkedUrl = linkedInfo?.url
     height: 40px;
   }
 
-  #webFooter a:hover {
+  .card__footer .card__link:hover {
     background: var(--bgButtonHover);
     border-color: var(--colorBorderButtonHover);
     color: var(--colorButtonHover);
   }
 
 
-  #printFooter {
+  .card__footer--print {
       display: none;
     }
 
   @media(max-width: 580px) {
 
-    .contenedorPrincipal {
+    .section__hero {
       flex-direction: column-reverse;
       align-items: center;
     }
 
-    .informacion {
+    .hero__header {
       gap: 1rem;
     }
 
-    h1 {
-      text-align: center;
+    .hero__header {
+      align-items: center;
     }
     
-    h2 {
+    .hero__label {
       text-align: center;
       text-wrap: pretty;
 
     }
     
-    span {
+    .hero__location {
       justify-content: center;
       line-height: 0;
     }
     
-    footer{
+    .card__footer, .card__footer--print{
       padding: 0;
       justify-content: center;
     }
     
-    a {
+    .card__link {
       justify-content: center;
     }
   }
 
   @media print {
 
-    footer {
+    .card__footer, .card__footer--print {
       padding: 0;
     }
-    #webFooter {
+    .card__footer {
       display: none;
     }
 
-    #printFooter {
+    .card__footer--print {
       display: flex;
       flex-direction: column;
       gap: 0.7rem;

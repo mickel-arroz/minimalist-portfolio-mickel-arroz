@@ -89,6 +89,7 @@ export interface CV {
   interface Publications {
     name: string
     publisher: string
+    publisherUrl: string
     releaseDate: DateStr
     url: string
     summary: string

@@ -140,6 +140,8 @@ const { titleOG, description, url, previewImage } = openGraph;
       --shadowCard: 0 1px 1px #f2f2f2;
     }
 
+    /* --------   Resetear estilos CSS  -------- */
+
     *,
     *::before,
     *::after {
@@ -157,6 +159,17 @@ const { titleOG, description, url, previewImage } = openGraph;
       padding: 0;
       background-color: var(--bgBody);
     }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+    }
+
+    /* --------------------------------- */
 
     article {
       display: flex;
@@ -212,14 +225,6 @@ const { titleOG, description, url, previewImage } = openGraph;
     }
 
     /* ----     ESTILOS PARA LOS TITULOS   ----   */
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin: 0;
-    }
 
     h1 {
       color: var(--colorTitle);
@@ -254,6 +259,11 @@ const { titleOG, description, url, previewImage } = openGraph;
 
     a:hover h4 {
       background-color: var(--bgSpanTag);
+    }
+
+    h5 {
+      color: var(--colorSubTitleTag);
+      font-size: var(--sizeSubTitleTag);
     }
 
     /*  ----  ESTILOS DE LOS ENLACES   ---- */

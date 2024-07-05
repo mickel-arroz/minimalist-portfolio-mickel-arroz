@@ -9,7 +9,7 @@ import { certificates } from "@cv";
 {
   certificates.length ? (
     <Section title="Certificados">
-      <ul>
+      <ul class="section__list">
         {certificates.map(
           ({
             name,
@@ -31,34 +31,36 @@ import { certificates } from "@cv";
             const startYear = new Date(date).getFullYear();
             const startMonth = new Date(date).getMonth() + 1;
             return (
-              <li>
-                <article>
-                  <header>
-                    <div id="divHeader">
+              <li class="list__element">
+                <article class="element__card">
+                  <header class="element__card__header">
+                    <div class="header__flex-title">
                       <a
+                        class="card__link--title"
                         href={url}
                         target="_blank"
                         title={`Ver el Certificado de ${name}`}
                         rel="noopener noreferrer"
                       >
-                        <h3>{name}</h3>
+                        <h3 class="card__title">{name}</h3>
                       </a>
                       <a
+                        class="card__link--entity"
                         href={issuerUrl}
                         target="_blank"
                         title={`Ir a la pagina de ${issuer}`}
                         rel="noopener noreferrer"
                       >
-                        <h4>{issuer}</h4>
+                        <h4 class="card__entity">{issuer}</h4>
                       </a>
                     </div>
-                    <time>
+                    <time class="card__date">
                       {startMonth}/{startYear}
                     </time>
                   </header>
-                  <footer>
-                    <p>{summary}</p>
-                    <div id="divHighliht">
+                  <footer class="card__footer">
+                    <p class="card__summary">{summary}</p>
+                    <div class="footer__list">
                       {highlights.map((highlight) => {
                         const iconName = validateHighlight(highlight);
 
@@ -68,7 +70,7 @@ import { certificates } from "@cv";
                             ? (IconFinal = SKILLS_ICONS[iconName])
                             : (IconFinal = SKILLS_ICONS["Generic"]);
                         return (
-                          <span>
+                          <span class="footer__list__element">
                             {IconFinal && <Icon />}
                             {highlight}
                           </span>
@@ -87,48 +89,48 @@ import { certificates } from "@cv";
 }
 
 <style>
-  ul {
+  .section__list {
     flex-direction: column;
   }
 
-  article {
+  .element__card {
     padding-top: 0.3rem;
   }
 
-  div {
+  .header__flex-title {
     display: flex;
     gap: 1.5rem;
   }
 
-  #divHighliht {
+  .footer__list {
     display: flex;
     padding-inline: 0.5rem;
     flex-wrap: wrap;
     gap: 0.5rem 1rem;
   }
 
-  @media (max-width: 800px) {
-    ul,
-    p {
+  @media (max-width: 845px) {
+    .section__list,
+    .card__summary {
       padding: 0;
     }
 
-    #divHeader {
+    .header__flex-title {
       flex-direction: column;
       align-items: flex-start;
       gap: 0.5rem;
     }
 
-    header {
+    .element__card__header {
       flex-direction: column-reverse;
       gap: 0.2rem;
     }
 
-    footer {
+    .card__footer {
       padding-inline: 0;
     }
 
-    #divHighliht {
+    .footer__list {
       padding-inline: 0rem;
     }
   }

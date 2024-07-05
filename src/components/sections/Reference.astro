@@ -8,15 +8,16 @@ import { Image } from "astro:assets";
 {
   references.length ? (
     <Section title="Referencias">
-      <ul>
+      <ul class="section__list">
         {references.map(({ name, reference, url, image, relationship }) => {
           return (
-            <li>
-              <article>
-                <header>
-                  <div id="contenedorHeader">
+            <li class="list__element">
+              <article class="element__card">
+                <header class="element__card__header">
+                  <div class="header__flex-title">
                     <figure>
                       <Image
+                        class="profile-img"
                         src={image}
                         alt={name}
                         width="60"
@@ -24,20 +25,20 @@ import { Image } from "astro:assets";
                         loading="lazy"
                       />
                     </figure>
-                    <div id="contenedorData">
+                    <div class="body-data">
                       <a
-                        id="titulo"
+                        class="card__link--title"
                         href={url}
                         title={`Ver el perfil de ${name}`}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <h3>{name}</h3>
+                        <h3 class="card__title">{name}</h3>
                       </a>
-                      <h4>{relationship}</h4>
+                      <h4 class="card__entity">{relationship}</h4>
                     </div>
                   </div>
-                  <p>"{reference}"</p>
+                  <p class="card__summary">"{reference}"</p>
                 </header>
               </article>
             </li>
@@ -49,7 +50,7 @@ import { Image } from "astro:assets";
 }
 
 <style>
-  ul {
+  .section__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 1fr;
@@ -57,7 +58,7 @@ import { Image } from "astro:assets";
     justify-content: center;
   }
 
-  article {
+  .element__card {
     justify-content: space-between;
     border: var(--borderCard);
     border-radius: var(--borderRadius);
@@ -66,15 +67,15 @@ import { Image } from "astro:assets";
     box-shadow: var(--shadowCard);
   }
 
-  img {
+  .profile-img {
     border-width: 0.1rem;
   }
 
-  header {
+  .element__card__header {
     display: block;
   }
 
-  #contenedorHeader {
+  .header__flex-title {
     display: flex;
     gap: 1rem;
     align-items: center;
@@ -83,76 +84,54 @@ import { Image } from "astro:assets";
     min-height: 36px;
   }
 
-  #contenedorData {
+  .body-data {
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 0.3rem;
   }
 
-  #contenedorGitHub {
-    border-radius: 5px;
-    background: #f6f6f6;
-    padding: 0.3rem;
-    display: flex;
-  }
-
-  a {
+  .card__link--title {
     display: inline-flex;
-    color: #444;
+    color: var(--colorSubTitleTag);
   }
 
-  #titulo:hover {
+  .card__link--title:hover {
     text-decoration: underline;
+    color: var(--colorLinkHover);
   }
 
-  a:hover {
-    color: #666;
-  }
-
-  #divHighliht {
-    display: flex;
-    padding-inline: 0.5rem;
-    flex-wrap: wrap;
-    gap: 0.5rem 1rem;
-    padding-top: 0.5rem;
-  }
-
-  p {
+  .card__summary {
     font-size: 0.75rem;
     line-height: 1.1rem;
   }
 
-  h3 {
+  .card__title {
     font-size: 1.05rem;
   }
 
   @media (max-width: 660px) {
-    ul {
+    .section__list {
       grid-template-columns: 1fr;
     }
-    ul,
-    p {
+    .section__list,
+    .card__summary {
       padding-inline: 0;
     }
   }
 
   @media (max-width: 280px) {
-    #contenedorHeader {
+    .header__flex-title {
       flex-direction: column;
       gap: 0.5rem;
     }
-    #contenedorData {
+    .body-data {
       align-items: center;
     }
   }
 
   @media print {
-    #contenedorGitHub {
-      display: none;
-    }
-
-    #contenedorHeader {
+    .header__flex-title {
       padding-bottom: 0.5rem;
     }
   }

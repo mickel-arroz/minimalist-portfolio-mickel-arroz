@@ -10,10 +10,9 @@ import { validateHighlight } from "@/services/validateHighliht";
 {
   skills.length ? (
     <Section title="Habilidades">
-      <ul>
+      <ul class="section__list">
         {skills.map(({ name }) => {
           const iconName = validateHighlight(name);
-
           let IconFinal;
           const Icon =
             SKILLS_ICONS[iconName] !== undefined
@@ -21,8 +20,8 @@ import { validateHighlight } from "@/services/validateHighliht";
               : (IconFinal = SKILLS_ICONS["Generic"]);
 
           return (
-            <li>
-              <span>
+            <li class="list__element">
+              <span class="footer__list__element">
                 {IconFinal && <Icon />}
                 {name}
               </span>
@@ -35,20 +34,20 @@ import { validateHighlight } from "@/services/validateHighliht";
 }
 
 <style>
-  ul {
+  .section__list {
     flex-direction: row;
     gap: 1rem;
   }
 
-  li {
-    border: 1px solid #888;
-    border-radius: 5px;
+  .list__element {
+    border: var(--borderSkill);
+    border-radius: var(--borderRadius);
     padding: 0.1rem 0.5rem;
-    height: 28.38px;
+    height: 30px;
     display: flex;
   }
 
-  span {
+  .footer__list__element {
     color: var(--colorSkill);
     font-weight: var(--weightSkill);
     display: flex;
@@ -58,7 +57,7 @@ import { validateHighlight } from "@/services/validateHighliht";
   }
 
   @media print {
-    ul {
+    .section__list {
       margin-top: 1rem;
     }
   }

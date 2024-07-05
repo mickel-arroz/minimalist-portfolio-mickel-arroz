@@ -7,7 +7,7 @@ import { awards } from "@cv";
 {
   awards.length ? (
     <Section title="Reconocimientos">
-      <ul>
+      <ul class="section__list">
         {awards.map(
           ({
             title,
@@ -27,32 +27,34 @@ import { awards } from "@cv";
             const startYear = new Date(date).getFullYear();
             const startMonth = new Date(date).getMonth() + 1;
             return (
-              <li>
-                <article>
-                  <header>
-                    <div>
+              <li class="list__element">
+                <article class="element__card">
+                  <header class="element__card__header">
+                    <div class="header__flex-title">
                       <a
+                        class="card__link--title"
                         href={url}
                         target="_blank"
                         title={`Ver el Reconocimiento de ${title}`}
                         rel="noopener noreferrer"
                       >
-                        <h3>{title}</h3>
+                        <h3 class="card__title">{title}</h3>
                       </a>
                       <a
+                        class="card__link--entity"
                         href={awarderUrl}
                         target="_blank"
                         title={`Ir a la pagina de ${awarder}`}
                         rel="noopener noreferrer"
                       >
-                        <h4>{awarder}</h4>
+                        <h4 class="card__entity">{awarder}</h4>
                       </a>
                     </div>
-                    <time>
+                    <time class="card__header__date">
                       {startMonth}/{startYear}
                     </time>
                   </header>
-                  <p>{summary}</p>
+                  <p class="card__summary">{summary}</p>
                 </article>
               </li>
             );
@@ -64,35 +66,31 @@ import { awards } from "@cv";
 }
 
 <style>
-  ul {
+  .section__list {
     flex-direction: column;
   }
 
-  div {
+  .header__flex-title {
     display: flex;
     gap: 1.5rem;
     align-items: flex-start;
   }
 
-  @media (max-width: 800px) {
-    ul,
-    p {
+  @media (max-width: 845px) {
+    .section__list,
+    .card__summary {
       padding: 0;
     }
 
-    div {
+    .header__flex-title {
       flex-direction: column;
       align-items: flex-start;
       gap: 0.5rem;
     }
 
-    header {
+    .element__card__header {
       flex-direction: column-reverse;
       gap: 0.2rem;
-    }
-
-    footer {
-      padding-inline: 0;
     }
   }
 </style>

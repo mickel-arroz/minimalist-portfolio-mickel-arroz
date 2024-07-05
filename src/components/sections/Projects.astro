@@ -10,34 +10,34 @@ import { projects } from "@cv";
 {
   projects.length ? (
     <Section title="Proyectos">
-      <ul>
+      <ul class="section__list">
         {projects.map(({ name, description, url, highlights, github }) => {
           return (
-            <li>
-              <article>
-                <header>
-                  <div class="contenedorHeader">
+            <li class="list__element">
+              <article class="element__card">
+                <header class="element__card__header">
+                  <div class="header__flex-title">
                     {url ? (
                       <a
-                        class="tituloProyecto"
+                        class="card__link--title"
                         href={url}
                         title={`Ver el proyecto: ${name}`}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <h3>{name}</h3>
+                        <h3 class="flex-title__title">{name}</h3>
                       </a>
                     ) : (
                       <span
-                        class="tituloNoRef"
+                        class="card__title"
                         title={`No se puede acceder al despliegue del proyecto ${name}`}
                       >
-                        <h3>{name}</h3>
+                        <h3 class="flex-title__title">{name}</h3>
                       </span>
                     )}
                     {github && (
                       <a
-                        class="contenedorGitHub"
+                        class="card__link--github"
                         href={github}
                         target="_blank"
                         title={`Ver código fuente del proyecto ${name}`}
@@ -46,10 +46,10 @@ import { projects } from "@cv";
                       </a>
                     )}
                   </div>
-                  <p>{description}</p>
+                  <p class="card__summary">{description}</p>
                 </header>
-                <footer>
-                  <div class="divHighliht">
+                <footer class="card__footer">
+                  <div class="footer__list">
                     {highlights.map((highlight) => {
                       const iconName = validateHighlight(highlight);
                       let IconFinal;
@@ -58,7 +58,7 @@ import { projects } from "@cv";
                           ? (IconFinal = SKILLS_ICONS[iconName])
                           : (IconFinal = SKILLS_ICONS["Generic"]);
                       return (
-                        <span>
+                        <span class="footer__list__element">
                           {IconFinal && <Icon />}
                           {highlight}
                         </span>
@@ -76,7 +76,7 @@ import { projects } from "@cv";
 }
 
 <style>
-  ul {
+  .section__list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-auto-rows: 1fr;
@@ -84,7 +84,7 @@ import { projects } from "@cv";
     justify-content: center;
   }
 
-  article {
+  .element__card {
     gap: 1rem;
     border: var(--borderCard);
     border-radius: var(--borderRadius);
@@ -93,10 +93,10 @@ import { projects } from "@cv";
     box-shadow: var(--shadowCard);
   }
 
-  header {
+  .element__card__header {
     display: block;
   }
-  .contenedorHeader {
+  .header__flex-title {
     display: flex;
     gap: 0.25rem;
     align-items: center;
@@ -105,72 +105,71 @@ import { projects } from "@cv";
     min-height: 36px;
   }
 
-  .contenedorGitHub {
+  .card__link--github {
     border: var(--borderButton);
     border-radius: var(--borderRadius);
     padding: 0.3rem;
     display: flex;
   }
 
-  .contenedorGitHub:hover {
+  .card__link--github:hover {
     background: var(--bgButtonHover);
     border-color: var(--colorBorderButtonHover);
     color: var(--colorButtonHover);
   }
 
-  a {
+  .card__link--github,
+  .card__link--title {
     display: inline-flex;
     color: var(--colorButton);
   }
 
-  .tituloNoRef {
+  .card__title {
     padding: 0;
   }
-  .tituloNoRef h3:hover {
+  .card__title .flex-title__title:hover {
     color: var(--colorTitleElement);
     text-decoration: none;
   }
 
-  .tituloProyecto:hover {
+  .card__link--title:hover {
     text-decoration: underline;
   }
 
-  a:hover {
+  .card__link--github:hover,
+  .card__link--title:hover {
     color: var(--colorLinkHover);
   }
 
-  .divHighliht {
+  .footer__list {
     display: flex;
     padding-inline: var(--paddingXGeneric);
     flex-wrap: wrap;
     gap: 0.5rem 1rem;
   }
 
-  p {
+  .card__summary {
     font-size: 0.75rem;
     line-height: 1.1rem;
     margin-bottom: 0.5rem;
   }
 
   @media (max-width: 660px) {
-    ul {
+    .section__list {
       padding-inline: 0;
     }
   }
 
   @media print {
-    ul {
+    .section__list {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-    a span {
+
+    .card__link--github {
       display: none;
     }
 
-    .contenedorGitHub {
-      display: none;
-    }
-
-    .contenedorHeader {
+    .header__flex-title {
       padding-bottom: 0.5rem;
     }
   }

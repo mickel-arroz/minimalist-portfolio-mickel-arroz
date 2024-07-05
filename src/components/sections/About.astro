@@ -7,12 +7,12 @@ const { summary } = basics;
 ---
 
 <Section title="Sobre mi">
-  <p>{summary}</p>
+  <p class="section__summary">{summary}</p>
 </Section>
 
 <style>
   @media (max-width: 580px) {
-    p {
+    .section__summary {
       padding-inline: 0;
     }
   }

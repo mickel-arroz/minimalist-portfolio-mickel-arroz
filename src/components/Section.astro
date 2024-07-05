@@ -2,13 +2,13 @@
 const { title } = Astro.props;
 ---
 
-<section>
-  {title && <h2>{title}</h2>}
+<section class="section">
+  {title && <h2 class="section__title">{title}</h2>}
   <slot />
 </section>
 
 <style>
-  section {
+  .section {
     max-width: 850px;
     margin: 0 auto 58px;
 
@@ -21,7 +21,7 @@ const { title } = Astro.props;
     break-inside: avoid;
   }
 
-  h2 {
+  .section__title {
     margin-bottom: 1rem;
   }
 
@@ -39,10 +39,11 @@ const { title } = Astro.props;
   }
 
   @media print {
-    section {
+    .section {
       margin-bottom: 2.5rem;
+      animation: none;
     }
-    section > h2 {
+    .section > .section__title {
       margin-bottom: 0.5rem;
     }
   }

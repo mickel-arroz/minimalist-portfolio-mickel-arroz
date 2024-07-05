@@ -6,18 +6,19 @@ import { languages } from "@cv";
 {
   languages.length ? (
     <Section title="Idiomas">
-      <ul>
+      <ul class="section__list">
         {languages.map(({ language, fluency, certificates }) => {
           return (
-            <li>
-              <article>
-                <h3>{language}</h3>
-                <h4>{fluency}</h4>
+            <li class="list__element">
+              <article class="element__card">
+                <h3 class="card__title">{language}</h3>
+                <h4 class="card__nivel">{fluency}</h4>
               </article>
-              <footer>
+              <footer class="card__footer">
                 {certificates.map(({ name, url }) => {
                   return url ? (
                     <a
+                      class="card__link"
                       id="courses"
                       href={url}
                       target="_blank"
@@ -26,7 +27,7 @@ import { languages } from "@cv";
                       {name}
                     </a>
                   ) : (
-                    <span>{name}</span>
+                    <span class="footer__list__element">{name}</span>
                   );
                 })}
               </footer>
@@ -41,7 +42,7 @@ import { languages } from "@cv";
 }
 
 <style>
-  ul {
+  .section__list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-auto-rows: 1fr;
@@ -49,7 +50,7 @@ import { languages } from "@cv";
     justify-content: center;
   }
 
-  li {
+  .list__element {
     border: var(--borderCard);
     border-radius: 5px;
     padding: 0.7rem;
@@ -57,32 +58,32 @@ import { languages } from "@cv";
     box-shadow: 0 1px 1px #f2f2f2;
   }
 
-  article {
+  .element__card {
     gap: 0.15rem;
   }
 
-  h3:hover {
+  .card__title:hover {
     color: var(--colorTitleElement);
     text-decoration: none;
   }
 
-  h4 {
+  .card__nivel {
     color: #555;
     font-weight: 900;
     border: none;
     font-size: 1rem;
   }
 
-  footer {
+  .card__footer {
     padding-block: 0.2rem;
     padding-inline: 1rem;
   }
 
-  a {
+  .card__link {
     padding-inline: 0.5rem;
   }
-  a,
-  span {
+  .card__link,
+  .footer__list__element {
     color: var(--colorButton);
     font-size: 0.65rem;
     border: var(--borderSkill);
@@ -92,13 +93,13 @@ import { languages } from "@cv";
     line-height: normal;
   }
 
-  a:hover {
+  .card__link:hover {
     background: var(--bgButtonHover);
     color: var(--colorButtonHover);
   }
 
   @media (max-width: 645px) {
-    ul {
+    .section__list {
       padding-inline: 0;
     }
   }

@@ -54,8 +54,10 @@ const profilesInfo = profiles.map(({ network, url }) => {
 });
 ---
 
-<footer>
-  Presiona <kbd>Ctrl</kbd> + <kbd>K</kbd> para abrir la terminal de comandos.
+<footer class="keyboard">
+  Presiona <kbd class="keyboard__key">Ctrl</kbd> + <kbd class="keyboard__key"
+    >K</kbd
+  > para abrir la terminal de comandos.
 </footer>
 
 <ninja-keys
@@ -101,8 +103,8 @@ const profilesInfo = profiles.map(({ network, url }) => {
 </script>
 
 <style>
-  footer {
-    border-top: 1px solid #eee;
+  .keyboard {
+    border-top: var(--borderCard);
     background-color: #fff;
     padding-block: 0.2rem;
     position: fixed;
@@ -113,7 +115,7 @@ const profilesInfo = profiles.map(({ network, url }) => {
     justify-content: center;
   }
 
-  kbd {
+  .keyboard__key {
     background: #eee;
     padding: 2px 4px;
     border-radius: var(--borderRadius);
@@ -121,13 +123,13 @@ const profilesInfo = profiles.map(({ network, url }) => {
   }
 
   @media (max-width: 780px) {
-    footer {
+    .keyboard {
       display: none;
     }
   }
 
   @media print {
-    footer {
+    .keyboard {
       display: none;
     }
   }

@@ -7,11 +7,12 @@ import { publications } from "@cv";
 {
   publications.length ? (
     <Section title="Publicaciones">
-      <ul>
+      <ul class="section__list">
         {publications.map(
           ({
             name,
             publisher,
+            publisherUrl,
             releaseDate,
             url,
             summary,
@@ -19,33 +20,43 @@ import { publications } from "@cv";
             name: string;
             url: string;
             publisher: string;
+            publisherUrl: string;
             summary: string;
             releaseDate: string;
           }) => {
             const startYear = new Date(releaseDate).getFullYear();
             const startMonth = new Date(releaseDate).getMonth() + 1 + "/";
             return (
-              <li>
-                <article>
-                  <header>
-                    <div>
+              <li class="list__element">
+                <article class="element__card">
+                  <header class="element__card__header">
+                    <div class="header__flex-title">
                       <a
+                        class="card__link--title"
                         href={url}
                         target="_blank"
                         id="titulo"
                         title={`Ver la publicación sobre ${name}`}
                         rel="noopener noreferrer"
                       >
-                        <h3>{name}</h3>
+                        <h3 class="card__title">{name}</h3>
                       </a>
-                      <h4>{publisher}</h4>
+                      <a
+                        class="card__link--entity"
+                        href={publisherUrl}
+                        target="_blank"
+                        title={`Ir a la pagina de ${publisher}`}
+                        rel="noopener noreferrer"
+                      >
+                        <h4 class="card__entity">{publisher}</h4>
+                      </a>
                     </div>
-                    <time>
+                    <time class="card__date">
                       {startMonth}/{startYear}
                     </time>
                   </header>
-                  <footer>
-                    <p>{summary}</p>
+                  <footer class="card__footer">
+                    <p class="card__summary">{summary}</p>
                   </footer>
                 </article>
               </li>
@@ -58,17 +69,13 @@ import { publications } from "@cv";
 }
 
 <style>
-  div {
+  .header__flex-title {
     display: flex;
     gap: 1rem;
     align-items: center;
   }
 
-  h5 {
-    color: #555;
-  }
-
-  footer {
+  .card__footer {
     flex-direction: column;
   }
 
@@ -76,22 +83,22 @@ import { publications } from "@cv";
     text-decoration: underline;
   }
 
-  @media (max-width: 800px) {
-    ul {
+  @media (max-width: 845px) {
+    .list__element {
       padding: 0;
     }
-    div {
+    .header__flex-title {
       flex-direction: column;
       align-items: flex-start;
       gap: 0.5rem;
     }
 
-    header {
+    .element__card__header {
       flex-direction: column-reverse;
       gap: 0.2rem;
     }
 
-    footer {
+    .card__footer {
       padding-inline: 0;
     }
   }

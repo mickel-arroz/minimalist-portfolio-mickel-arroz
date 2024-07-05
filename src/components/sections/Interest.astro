@@ -11,11 +11,11 @@ const Icon = SKILLS_ICONS["Generic"];
 {
   interests.length ? (
     <Section title="Intereses">
-      <ul>
+      <ul class="section__list">
         {interests.map((interest) => {
           return (
-            <li>
-              <span>
+            <li class="list__element">
+              <span class="element__item">
                 {Icon && <Icon />}
                 {interest}
               </span>
@@ -28,12 +28,12 @@ const Icon = SKILLS_ICONS["Generic"];
 }
 
 <style>
-  ul {
+  .section__list {
     flex-direction: row;
     gap: 1rem;
   }
 
-  li {
+  .list__element {
     border: 1px solid #888;
     border-radius: 5px;
     padding: 0.1rem 0.5rem;
@@ -41,7 +41,7 @@ const Icon = SKILLS_ICONS["Generic"];
     display: flex;
   }
 
-  span {
+  .element__item {
     font-weight: 600;
     font-size: 0.8rem;
     color: var(--colorSubTitleTag);

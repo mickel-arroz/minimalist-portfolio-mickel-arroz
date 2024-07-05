@@ -7,7 +7,7 @@ import { education } from "@cv";
 {
   education.length ? (
     <Section title="Educación">
-      <ul>
+      <ul class="section__list">
         {education.map(
           ({
             institution,
@@ -33,35 +33,35 @@ import { education } from "@cv";
             const endMonth =
               endDate != null ? new Date(endDate).getMonth() + 1 + "/" : "";
             return (
-              <li>
-                <article>
-                  <header>
-                    <div id="divInstitution">
+              <li class="list__element">
+                <article class="element__card">
+                  <header class="element__card__header">
+                    <div class="header__flex-title">
                       <a
+                        class="card__link--title"
                         href={url}
                         target="_blank"
-                        id="titulo"
                         title={`Ver la página de ${institution}`}
                         rel="noopener noreferrer"
                       >
-                        <h3>{institution}</h3>
+                        <h3 class="card__title">{institution}</h3>
                       </a>
-                      <h4>{studyType}</h4>
+                      <h4 class="card__entity">{studyType}</h4>
                     </div>
-                    <time>
+                    <time class="card__header__date">
                       {startMonth}
                       {startYear} - {endMonth}
                       {endYear}
                     </time>
                   </header>
-                  <footer>
-                    <h5>{area}</h5>
-                    <div id="divCourses">
+                  <footer class="card__footer">
+                    <h5 class="footer__title">{area}</h5>
+                    <div class="footer__list">
                       {courses.length
                         ? courses.map((course) => {
                             return course.url ? (
                               <a
-                                id="courses"
+                                class="card__footer__link"
                                 href={course.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -69,7 +69,9 @@ import { education } from "@cv";
                                 {course.name}
                               </a>
                             ) : (
-                              <span>{course.name}</span>
+                              <span class="footer__list__element">
+                                {course.name}
+                              </span>
                             );
                           })
                         : ""}
@@ -86,22 +88,19 @@ import { education } from "@cv";
 }
 
 <style>
-  div {
+  .header__flex-title,
+  .footer__list {
     display: flex;
     gap: 1rem;
     align-items: center;
   }
 
-  footer {
+  .card__footer {
     flex-direction: column;
   }
 
-  #courses {
-    color: var(--colorSummary);
-    font-size: var(--sizeSpanTag);
-  }
-  #courses,
-  span {
+  .card__footer__link,
+  .footer__list__element {
     border: var(--borderSkill);
     border-radius: var(--borderRadius);
     padding-inline: 0.5rem;
@@ -112,11 +111,15 @@ import { education } from "@cv";
     background-color: inherit;
   }
 
-  #courses:hover {
+  .card__footer__link {
+    color: var(--colorSummary);
+    font-size: var(--sizeSpanTag);
+  }
+  .card__footer__link:hover {
     background: var(--bgButtonHover);
   }
 
-  #divCourses {
+  .footer__list {
     padding-top: 0.1rem;
     display: flex;
     align-items: center;
@@ -125,30 +128,30 @@ import { education } from "@cv";
     gap: 0.5rem 1rem;
   }
 
-  #titulo:hover {
+  .card__link--title:hover {
     text-decoration: underline;
   }
 
-  h3:hover {
+  .card__title:hover {
     color: #666;
   }
 
-  @media (max-width: 800px) {
-    ul {
+  @media (max-width: 845px) {
+    .section__list {
       padding: 0;
     }
-    #divInstitution {
+    .header__flex-title {
       flex-direction: column;
       align-items: flex-start;
       gap: 0.5rem;
     }
 
-    header {
+    .element__card__header {
       flex-direction: column-reverse;
       gap: 0.2rem;
     }
 
-    footer {
+    .card__footer {
       padding-inline: 0;
     }
   }

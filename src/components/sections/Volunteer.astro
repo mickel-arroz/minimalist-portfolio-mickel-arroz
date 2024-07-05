@@ -9,7 +9,7 @@ import { volunteer } from "@cv";
 {
   volunteer.length ? (
     <Section title="Voluntariado">
-      <ul>
+      <ul class="section__list">
         {volunteer.map(
           ({
             organization,
@@ -35,33 +35,34 @@ import { volunteer } from "@cv";
             const endMonth =
               endDate != null ? new Date(endDate).getMonth() + 1 + "/" : "";
             return (
-              <li>
-                <article>
-                  <header>
-                    <div id="divPosition">
+              <li class="list__element">
+                <article class="element__card">
+                  <header class="element__card__header">
+                    <div class="header__flex-title">
                       {url != null ? (
                         <a
+                          class="card__link--title"
                           href={url}
                           title={`Ver la página de la organización ${organization}`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <h3>{organization}</h3>
+                          <h3 class="card__title">{organization}</h3>
                         </a>
                       ) : (
-                        <h3>{organization}</h3>
+                        <h3 class="card__title">{organization}</h3>
                       )}
-                      <h4>{position}</h4>
+                      <h4 class="card__entity">{position}</h4>
                     </div>
-                    <time>
+                    <time class="card__date">
                       {startMonth}
                       {startYear} - {endMonth}
                       {endYear}
                     </time>
                   </header>
-                  <footer>
-                    <p>{summary}</p>
-                    <div id="divHighliht">
+                  <footer class="card__footer">
+                    <p class="card__summary">{summary}</p>
+                    <div class="footer__list">
                       {highlights.map((highlight) => {
                         const iconName = validateHighlight(highlight);
 
@@ -71,7 +72,7 @@ import { volunteer } from "@cv";
                             ? (IconFinal = SKILLS_ICONS[iconName])
                             : (IconFinal = SKILLS_ICONS["Generic"]);
                         return (
-                          <span>
+                          <span class="footer__list__element">
                             {IconFinal && <Icon />}
                             {highlight}
                           </span>
@@ -90,42 +91,43 @@ import { volunteer } from "@cv";
 }
 
 <style>
-  article {
+  .element__card {
     padding-top: 0.3rem;
   }
 
-  div {
+  .header__flex-title,
+  .footer__list {
     display: flex;
     gap: 1rem;
     align-items: center;
   }
 
-  #divHighliht {
+  .footer__list {
     display: flex;
     padding-inline: 0.5rem;
     flex-wrap: wrap;
     gap: 0.5rem 1rem;
   }
 
-  @media (max-width: 800px) {
-    ul {
+  @media (max-width: 845px) {
+    .section__list {
       padding: 0;
     }
-    #divPosition {
+    .header__flex-title {
       flex-direction: column;
       align-items: flex-start;
       gap: 0.5rem;
     }
 
-    header {
+    .element__card__header {
       flex-direction: column-reverse;
       gap: 0.2rem;
     }
 
-    footer {
+    .card__footer {
       padding-inline: 0;
     }
-    #divHighliht {
+    .footer__list {
       padding-inline: 0rem;
     }
   }
