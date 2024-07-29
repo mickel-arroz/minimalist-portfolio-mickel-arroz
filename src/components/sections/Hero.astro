@@ -10,7 +10,7 @@ import Phone from "@/icons/hero/Phone.astro";
 import {SOCIAL_ICONS} from '@/records.astro'
 import { Image } from "astro:assets";
 
-const { name, label, image, url, email, phone, location, profiles } = basics;
+const { name, label, subLabel, subLabelAuthor, image, url, email, phone, location, profiles } = basics;
 const { region, city } = location;
 
 const linkedInfo = profiles.find(({ network }) => network === "LinkedIn")
@@ -21,16 +21,33 @@ const linkedUrl = linkedInfo?.url
 
 <Section>
   <div class="section__hero" >
+
     <!-- Apartado de Informacion del Hero -->
     <header class="hero__header">
-      <h1 class="hero__name">{name}</h1>
-      <h2 class="hero__label">{label}</h2>
-
-      <!-- Apartado de la Ubicacion -->
-      <span class="hero__location">
+      <div class="header__information">
+        <h1 class="hero__name">{`< ` + `${name}` + ` />`}</h1>
+        <h2 class="hero__label">{label}</h2>
+        <blockquote class="hero__sublabel">
+          <p class="sublabel__text">"{subLabel}".</p>
+          <footer class="sublabel__author">- {subLabelAuthor}</footer>
+        </blockquote>
+       <!-- Apartado de la Ubicacion -->
+       <span class="hero__location">
         <Home />
         {city}, {region}
       </span>
+      </div>
+      <figure class="hero__figure">
+        <Image
+          class="profile-img" 
+          src={image}
+          alt={name}
+          width="150"
+          height="150"
+          loading="eager"
+        />
+      </figure>
+    </header>
 
       <!-- Apartado de los enlaces -->
 
@@ -141,32 +158,29 @@ const linkedUrl = linkedInfo?.url
 
         })}
       </footer>
-    </header>
-    <figure>
-      <Image
-        class="profile-img" 
-        src={image}
-        alt={name}
-        width="150"
-        height="150"
-        loading="eager"
-      />
-    </figure>
-  </div>
+    </div>
+
 </Section>
 
 <style>
-  .section__hero {
+
+  .section__hero{
     display: flex;
-    gap: 1rem;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .hero__header {
     display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .header__information {
+    display: flex;
     flex-direction: column;
-    gap: 0.7rem;
-
+    justify-content: space-between;
+    gap: 0.5rem;
   }
 
   .hero__location {
@@ -180,10 +194,41 @@ const linkedUrl = linkedInfo?.url
   .hero__label {
     color: var(--colorSummary);
     font-size: 1.1rem;
-    text-wrap: balance;
+    text-wrap: pretty;
     font-weight: var(--weightSkill);
   }
+  
+  .hero__sublabel{
+    padding: 0.3rem 0.4rem;
+    background-color: var(--bgSpanTag);
+    border-radius: var(--borderRadius);
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    width: fit-content;
+  }
 
+  .sublabel__text {
+    display: inline;
+    width: fit-content;
+    color: var(--colorSummary);
+    font-size: var(--sizeSummary);
+    text-wrap: pretty;
+  }
+
+  .sublabel__author{
+    display: inline;
+    width: fit-content;
+    border: none;
+    font-size: var(--sizeSubTitleTag);
+    color: var(--colorSpanTag);
+    padding-inline: 1rem;
+  }
+
+  .hero__figure{
+    display: flex;
+    align-self: flex-start;
+  }
 
   .card__footer, .card__footer--print {
     gap: 0.7rem;
@@ -214,31 +259,44 @@ const linkedUrl = linkedInfo?.url
       display: none;
     }
 
-  @media(max-width: 580px) {
-
-    .section__hero {
-      flex-direction: column-reverse;
-      align-items: center;
-    }
+  @media(max-width: 610px) {
 
     .hero__header {
+      flex-direction: column-reverse;
       gap: 1rem;
     }
 
-    .hero__header {
+    .header__information {
       align-items: center;
     }
     
     .hero__label {
       text-align: center;
       text-wrap: pretty;
+    }
 
+    .hero__sublabel{
+      align-items: center;
+
+    }
+
+    .sublabel__text{
+      text-align: center;
+    }
+
+    .sublabel__author{
+      text-align: center;
     }
     
     .hero__location {
       justify-content: center;
       line-height: 0;
     }
+
+    
+  .hero__figure{
+    align-self: center;
+  }
     
     .card__footer, .card__footer--print{
       padding: 0;
@@ -255,7 +313,7 @@ const linkedUrl = linkedInfo?.url
     .card__footer, .card__footer--print {
       padding: 0;
     }
-    .card__footer {
+    .card__footer, .hero__sublabel {
       display: none;
     }
 

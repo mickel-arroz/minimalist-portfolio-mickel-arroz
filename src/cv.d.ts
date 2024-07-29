@@ -6,7 +6,7 @@ export interface CV {
     awards: Array<Awards>
     certificates: Array<Certificates>
     publications: Array<Publications>
-    skills: Array<Skills>
+    skills: Array<string>
     languages: Array<Languages>
     interests: Array<string>
     references: Array<References>
@@ -17,6 +17,8 @@ export interface CV {
   interface Basics {
     name: string
     label: string
+    subLabel: string,
+    subLabelAuthor: string,
     image: string
     email: string
     phone: string
@@ -27,10 +29,7 @@ export interface CV {
   }
   
   interface Location {
-    address: string
-    postalCode: string
     city: string
-    countryCode: string
     region: string
   }
   
@@ -60,11 +59,6 @@ export interface CV {
     endDate: DateStr
     summary: string
     highlights: Highlight
-  }
-  
-  interface Skills {
-    name: string
-    level: string
   }
   
   interface Awards {

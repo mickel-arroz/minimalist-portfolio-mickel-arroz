@@ -11,7 +11,7 @@ import { validateHighlight } from "@/services/validateHighliht";
   skills.length ? (
     <Section title="Habilidades">
       <ul class="section__list">
-        {skills.map(({ name }) => {
+        {skills.map((name) => {
           const iconName = validateHighlight(name);
           let IconFinal;
           const Icon =

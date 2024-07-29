@@ -1,17 +1,16 @@
 {
   "basics": {
     "name": "Mickel Arroz",
-    "label": "Futuro Profesional del Desarrollo de Software. Estudiante de Ingeniería en Informática en la Universidad Católica Andrés Bello.",
-    "image": "/images/FotoPerfil.jpg",
+    "label": "Futuro Profesional del Desarrollo de Software",
+    "subLabel": "No hay nada imposible para quien lo intenta",
+    "subLabelAuthor": "Alejandro Magno",
+    "image": "/images/FotoPerfil.webp",
     "email": "arrozmickel@gmail.com",
     "phone": "584242382439",
     "url": null,
-    "summary": "¡Encantado de conocerte! Soy Mickel Arroz, un amante de la tecnología e innovación, cursando actualmente la recta final en mi carrera de Ingeniería en Informática. Mi recorrido académico ha sido desafiante, con énfasis en el desarrollo de software, análisis de problemas informáticos y gestión empresarial. Me mantengo al día con los avances tecnológicos, cultivando habilidades técnicas y blandas esenciales. Ansío colaborar en soluciones innovadoras y conectar con profesionales inspiradores.",
+    "summary": "¡Encantado de conocerte! Soy Mickel Arroz, un amante de la tecnología e innovación, cursante de la carrera de Ingeniería en Informática. Mi recorrido me ha aportado conocimientos en este apasionante mundo, con énfasis en el desarrollo de software, análisis de problemas y gestión de proyectos. Además, me gusta cultivar mis habilidades y aprender día a día, por lo que ansío colaborar en soluciones que aporten valor y conectar con profesionales inspiradores.",
     "location": {
-      "address": "El Junquito km19, Urb. Junko Contry Club",
-      "postalCode": "1030",
       "city": "Caracas",
-      "countryCode": "VE",
       "region": "Venezuela"
     },
     "profiles": [
@@ -42,8 +41,8 @@
       "url": "https://www.feyalegria.org/venezuela/",
       "startDate": "11-10-2023",
       "endDate": "07-01-2024",
-      "summary": "Como parte de mi compromiso con el Servicio Comunitario, desempeño el rol de Docente, impartiendo clases a estudiantes del Liceo/Bachillerato en zonas de necesidad educativa. Me especializo en enseñar sobre programación web básica, lógica de programación, además de conceptos básicos sobre la tecnología.",
-      "highlights": ["HTML", "CSS", "JavaScript"]
+      "summary": "Como parte de mi compromiso con el desarrollo de la comunidad, desempeñé el rol de Docente, impartiendo clases a estudiantes de Liceo. Me enfoqué en enseñar sobre programación web básica, lógica de programación y conceptos básicos de la tecnología.",
+      "highlights": ["HTML", "CSS", "JavaScript", "Lógica de Programación"]
     }
   ],
 
@@ -63,12 +62,21 @@
 
   "certificates": [
     {
+      "name": "JavaScript Algorithms and Data Structures",
+      "date": "07-17-2024",
+      "issuer": "FreeCodeCamp",
+      "issuerUrl": "https://www.freecodecamp.org/",
+      "url": "https://www.freecodecamp.org/certification/mickel_arroz/javascript-algorithms-and-data-structures-v8",
+      "summary": "Este certificado, de +300h de trabajo, es un testimonio de que poseo bases sólidas en JavaScript. Más allá de los fundamentos, me adentré en la Programación Orientada a Objetos y la Funcional, además de trabajar con almacenamiento local e interactuar con APIs.",
+      "highlights": ["HTML", "CSS", "JavaScript"]
+    },
+    {
       "name": "Master en CSS: Responsive, SASS, Flexbox, Grid y Bootstrap",
       "date": "06-23-2024",
       "issuer": "Udemy",
       "issuerUrl": "https://www.udemy.com/",
       "url": "https://www.udemy.com/certificate/UC-17ede252-7945-4310-b2f3-dcd47d9b7a63",
-      "summary": "Reforcé mis habilidades y conocimientos esenciales para diseñar y desarrollar sitios web modernos y adaptables a dispositivos móviles, empleando HTML, CSS, SASS, Flexbox, Grid y Bootstrap. Aprendí a implementar buenas prácticas de diseño web, brindando una experiencia de usuario (UX) excepcional.",
+      "summary": "Reforcé y dominé habilidades esenciales para diseñar y desarrollar sitios web modernos y adaptables, empleando las tecnologías actuales para su desarrollo. Además de implementar buenas prácticas de diseño web, brindando una experiencia de usuario (UX) excepcional.",
       "highlights": ["HTML", "CSS", "Sass", "Bootstrap"]
     },
     {
@@ -77,7 +85,7 @@
       "issuer": "FreeCodeCamp",
       "issuerUrl": "https://www.freecodecamp.org/",
       "url": "https://www.freecodecamp.org/espanol/certification/mickel_arroz/responsive-web-design",
-      "summary": "Este certificado, de más de 300h de trabajo, me ha equipado con habilidades y conocimientos esenciales para diseñar y desarrollar sitios web modernos, accesibles y adaptables a cualquier dispositivo. Dominando HTML, CSS y las últimas técnicas de diseño, incluyendo las mejores prácticas para la accesibilidad web.",
+      "summary": "Este certificado, de +300h de trabajo, me brindo los conocimientos imprescindibles para diseñar y desarrollar sitios web modernos, accesibles y adaptables. Dominando las últimas técnicas de diseño, además de las mejores prácticas para la accesibilidad y rendimiento.",
       "highlights": ["HTML", "CSS"]
     },
     {
@@ -86,7 +94,7 @@
       "issuer": "Udemy",
       "issuerUrl": "https://www.udemy.com/",
       "url": "https://www.udemy.com/certificate/UC-TCVS7XGW/",
-      "summary": "Este certificado me acredita como diseñador de UX/UI competente en el software de Adobe XD, capacitado para crear prototipos de interfaces dinámicos y profesionales para sitios web, aplicaciones móviles y software.",
+      "summary": "Este certificado me acredita como diseñador de UX/UI competente en el software de Adobe XD, capacitado para crear prototipos de interfaces dinámicas y profesionales para sitios web, aplicaciones móviles y software.",
       "highlights": ["Adobe XD", "Prototipos de interfaces de usuario"]
     }
   ],
@@ -94,86 +102,22 @@
   "publications": [],
 
   "skills": [
-    {
-      "name": "HTML",
-      "level": "Avanzado"
-    },
-    {
-      "name": "CSS",
-      "level": "Avanzado"
-    },
-    {
-      "name": "JavaScript",
-      "level": "Intermedio"
-    },
-    {
-      "name": "TypeScript",
-      "level": "Principiante"
-    },
-    {
-      "name": "Sass",
-      "level": "Intermedio"
-    },
-    {
-      "name": "Bootstrap",
-      "level": "Principiante"
-    },
-    {
-      "name": "Tailwind",
-      "level": "Intermedio"
-    },
-    {
-      "name": "React",
-      "level": "Intermedio"
-    },
-    {
-      "name": "Next.js",
-      "level": "Intermedio"
-    },
-    {
-      "name": "Astro",
-      "level": "Intermedio"
-    },
-    {
-      "name": "SQL",
-      "level": "Avanzado"
-    },
-    {
-      "name": "MySQL",
-      "level": "Avanzado"
-    },
-    {
-      "name": "PostgreSQL",
-      "level": "Avanzado"
-    },
-    {
-      "name": "PHP",
-      "level": "Intermedio"
-    },
-    {
-      "name": "C/C++",
-      "level": "Intermedio"
-    },
-    {
-      "name": "Java",
-      "level": "Intermedio"
-    },
-    {
-      "name": "Python",
-      "level": "Intermedio"
-    },
-    {
-      "name": "Git",
-      "level": "Avanzado"
-    },
-    {
-      "name": "Docker",
-      "level": "Principiante"
-    },
-    {
-      "name": "Adobe XD",
-      "level": "Principiante"
-    }
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "TypeScript",
+    "Sass",
+    "Bootstrap",
+    "Tailwind",
+    "React",
+    "Next.js",
+    "Astro",
+    "SQL",
+    "MySQL",
+    "PostgreSQL",
+    "Java",
+    "Python",
+    "Git"
   ],
 
   "languages": [
@@ -202,26 +146,25 @@
     {
       "name": "Portfolio Minimalista",
       "github": "https://github.com/mickel-arroz/minimalist-portfolio-mickel-arroz",
-      "description": "Proyecto web de un Portafolio minimalista y responsivo a cualquier pantalla, el cual mediante un único archivo .json se puede personalizar completamente los datos dinámicamente del usuario.",
+      "description": "Proyecto web de un portafolio minimalista y responsivo, el cual mediante un archivo JSON se puede personalizar completamente los datos dinámicamente del usuario.",
       "highlights": ["HTML", "CSS", "TypeScript", "Astro"],
       "url": "/"
     },
     {
       "name": "SpaceX Launches",
       "github": "https://github.com/mickel-arroz/SpaceXPageAPI",
-      "description": "Proyecto web de páginas estáticas y responsivas, el cual consume la API gratuita de SpaceX para mostrar detalles de lanzamientos de sus cohetes y archivos relacionados a ellos.",
+      "description": "Proyecto web de páginas estáticas y responsivas, el cual consume una API de SpaceX para mostrar detalles de lanzamientos de sus cohetes y datos relacionados con ellos.",
       "highlights": ["HTML", "CSS", "Tailwind", "JavaScript", "Astro"],
       "url": "https://space-x-launches-page.netlify.app/"
     },
     {
       "name": "AttackerVictim",
       "github": "https://github.com/mickel-arroz/DSW_GrupoG_AttackerVictim-DEPLOY-WEB/tree/develop",
-      "description": "Proyecto universitario, sobre un sistema de control y protección entre usuarios Víctima y Atacante, me encargué del apartado web y conexión con la API.",
+      "description": "Proyecto Universitario, sobre un sistema de control de alejamiento y protección entre usuarios de tipo víctima y agresor, me enfoqué en el apartado web e integración con la API.",
       "highlights": [
         "HTML",
         "CSS",
         "Tailwind",
-        "JavaScript",
         "Next.js",
         "Patrones de Diseño"
       ],
@@ -231,7 +174,7 @@
 
   "openGraph": {
     "titleOG": "Portfolio - Mickel Arroz",
-    "description": "¡Encantado de conocerte! Soy Mickel Arroz, un amante de la tecnología e innovación, cursando actualmente la recta final en mi carrera de Ingeniería en Informática. Mi recorrido académico ha sido desafiante, con énfasis en el desarrollo de software, análisis de problemas informáticos y gestión empresarial. Me mantengo al día con los avances tecnológicos, cultivando habilidades técnicas y blandas esenciales. Ansío colaborar en soluciones innovadoras y conectar con profesionales inspiradores.",
+    "description": "¡Encantado de conocerte! Soy Mickel Arroz, un amante de la tecnología e innovación, estudiante de la carrera de Ingeniería en Informática. Este es mi portafolio profesional en formato minimalista y enfocado en el performance y simplicidad. Espero lo disfrutes. ¡Contáctame!",
     "url": "https://minimalist-portfolio-mickel-arroz.vercel.app/",
     "previewImage": "/images/pagePreview.png"
   }
