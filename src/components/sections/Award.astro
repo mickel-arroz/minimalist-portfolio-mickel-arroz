@@ -2,6 +2,8 @@
 import Section from "@/components/Section.astro";
 
 import { awards } from "@cv";
+
+import ExternalLink from "@/icons/general/external-link.astro";
 ---
 
 {
@@ -38,7 +40,12 @@ import { awards } from "@cv";
                         title={`Ver el Reconocimiento de ${title}`}
                         rel="noopener noreferrer"
                       >
-                        <h3 class="card__title">{title}</h3>
+                        <h3 class="card__title">
+                          {title}
+                          <div class="title__externalLink">
+                            <ExternalLink />
+                          </div>
+                        </h3>
                       </a>
                       <a
                         class="card__link--entity"

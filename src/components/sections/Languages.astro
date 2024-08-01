@@ -7,30 +7,13 @@ import { languages } from "@cv";
   languages.length ? (
     <Section title="Idiomas">
       <ul class="section__list">
-        {languages.map(({ language, fluency, certificates }) => {
+        {languages.map(({ language, fluency }) => {
           return (
             <li class="list__element">
               <article class="element__card">
                 <h3 class="card__title">{language}</h3>
                 <h4 class="card__nivel">{fluency}</h4>
               </article>
-              <footer class="card__footer">
-                {certificates.map(({ name, url }) => {
-                  return url ? (
-                    <a
-                      class="card__link"
-                      id="courses"
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {name}
-                    </a>
-                  ) : (
-                    <span class="footer__list__element">{name}</span>
-                  );
-                })}
-              </footer>
             </li>
           );
         })}
@@ -72,30 +55,6 @@ import { languages } from "@cv";
     font-weight: 900;
     border: none;
     font-size: 1rem;
-  }
-
-  .card__footer {
-    padding-block: 0.2rem;
-    padding-inline: 1rem;
-  }
-
-  .card__link {
-    padding-inline: 0.5rem;
-  }
-  .card__link,
-  .footer__list__element {
-    color: var(--colorButton);
-    font-size: 0.65rem;
-    border: var(--borderSkill);
-    border-radius: var(--borderRadius);
-    padding-block: 0.2rem;
-    transition: all 0.5s ease;
-    line-height: normal;
-  }
-
-  .card__link:hover {
-    background: var(--bgButtonHover);
-    color: var(--colorButtonHover);
   }
 
   @media (max-width: 645px) {

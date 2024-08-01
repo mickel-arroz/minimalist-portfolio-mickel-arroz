@@ -1,6 +1,7 @@
 ---
 import Section from "@/components/Section.astro";
 import GitHub from "@/icons/hero/GitHub.astro";
+import ExternalLink from "@/icons/general/external-link.astro";
 import { SKILLS_ICONS } from "@/records.astro";
 import { validateHighlight } from "@/services/validateHighliht";
 
@@ -25,7 +26,12 @@ import { projects } from "@cv";
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <h3 class="flex-title__title">{name}</h3>
+                        <h3 class="card__title">
+                          {name}
+                          <div class="title__externalLink">
+                            <ExternalLink />
+                          </div>
+                        </h3>
                       </a>
                     ) : (
                       <span
@@ -131,10 +137,6 @@ import { projects } from "@cv";
   .card__title .flex-title__title:hover {
     color: var(--colorTitleElement);
     text-decoration: none;
-  }
-
-  .card__link--title:hover {
-    text-decoration: underline;
   }
 
   .card__link--github:hover,

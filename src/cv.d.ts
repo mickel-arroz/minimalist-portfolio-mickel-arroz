@@ -108,7 +108,6 @@ export interface CV {
   interface Languages {
     language: string
     fluency: string
-    certificates: Array<Url>
   }
   
   interface Projects {

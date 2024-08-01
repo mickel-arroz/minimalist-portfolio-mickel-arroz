@@ -1,5 +1,6 @@
 ---
 import Section from "@/components/Section.astro";
+import ExternalLink from "@/icons/general/external-link.astro";
 import { SKILLS_ICONS } from "@/records.astro";
 import { validateHighlight } from "@/services/validateHighliht";
 
@@ -47,7 +48,12 @@ import { volunteer } from "@cv";
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <h3 class="card__title">{organization}</h3>
+                          <h3 class="card__title">
+                            {organization}
+                            <div class="title__externalLink">
+                              <ExternalLink />
+                            </div>
+                          </h3>
                         </a>
                       ) : (
                         <h3 class="card__title">{organization}</h3>
@@ -124,11 +130,10 @@ import { volunteer } from "@cv";
       gap: 0.2rem;
     }
 
-    .card__footer {
-      padding-inline: 0;
-    }
+    .card__summary,
+    .card__footer,
     .footer__list {
-      padding-inline: 0rem;
+      padding-inline: 0;
     }
   }
 </style>

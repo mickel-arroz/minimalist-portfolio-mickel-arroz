@@ -1,6 +1,8 @@
 ---
 import Section from "@/components/Section.astro";
 
+import ExternalLink from "@/icons/general/external-link.astro";
+
 import { references } from "@cv";
 import { Image } from "astro:assets";
 ---
@@ -33,7 +35,12 @@ import { Image } from "astro:assets";
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <h3 class="card__title">{name}</h3>
+                        <h3 class="card__title">
+                          {name}
+                          <div class="title__externalLink">
+                            <ExternalLink />
+                          </div>
+                        </h3>
                       </a>
                       <h4 class="card__entity">{relationship}</h4>
                     </div>

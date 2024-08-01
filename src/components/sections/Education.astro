@@ -1,6 +1,8 @@
 ---
 import Section from "@/components/Section.astro";
 
+import ExternalLink from "@/icons/general/external-link.astro";
+
 import { education } from "@cv";
 ---
 
@@ -44,7 +46,12 @@ import { education } from "@cv";
                         title={`Ver la página de ${institution}`}
                         rel="noopener noreferrer"
                       >
-                        <h3 class="card__title">{institution}</h3>
+                        <h3 class="card__title">
+                          {institution}
+                          <div class="title__externalLink">
+                            <ExternalLink />
+                          </div>
+                        </h3>
                       </a>
                       <h4 class="card__entity">{studyType}</h4>
                     </div>

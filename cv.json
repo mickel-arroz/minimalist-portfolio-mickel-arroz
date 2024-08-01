@@ -71,7 +71,7 @@
       "highlights": ["HTML", "CSS", "JavaScript"]
     },
     {
-      "name": "Master en CSS: Responsive, SASS, Flexbox, Grid y Bootstrap",
+      "name": "Master CSS: Responsive, SASS, Flexbox, Grid y Bootstrap",
       "date": "06-23-2024",
       "issuer": "Udemy",
       "issuerUrl": "https://www.udemy.com/",
@@ -89,7 +89,7 @@
       "highlights": ["HTML", "CSS"]
     },
     {
-      "name": "Adobe XD: Aprende a crear prototipos profesionales desde 0",
+      "name": "Adobe XD: Crear Prototipos Profesionales desde 0",
       "date": "12-27-2019",
       "issuer": "Udemy",
       "issuerUrl": "https://www.udemy.com/",
@@ -123,18 +123,15 @@
   "languages": [
     {
       "language": "Español",
-      "fluency": "Nivel C2 (Nativo)",
-      "certificates": []
+      "fluency": "Nivel C2 (Nativo)"
     },
     {
       "language": "Inglés",
-      "fluency": "Nivel A2",
-      "certificates": []
+      "fluency": "Nivel A2"
     },
     {
       "language": "Portugués",
-      "fluency": "Nivel B1",
-      "certificates": []
+      "fluency": "Nivel B1"
     }
   ],
 
@@ -144,7 +141,7 @@
 
   "projects": [
     {
-      "name": "Portfolio Minimalista",
+      "name": "Minimalist Portfolio",
       "github": "https://github.com/mickel-arroz/minimalist-portfolio-mickel-arroz",
       "description": "Proyecto web de un portafolio minimalista y responsivo, el cual mediante un archivo JSON se puede personalizar completamente los datos dinámicamente del usuario.",
       "highlights": ["HTML", "CSS", "TypeScript", "Astro"],

@@ -105,7 +105,7 @@ const { titleOG, description, url, previewImage } = openGraph;
       --colorLinkHover: #666;
       --colorButton: #777;
       --colorButtonHover: #555;
-      --colorBorderButtonHover: #777;
+      --colorBorderButtonHover: #666;
       --colorTime: #666;
       --colorSkill: #555;
 
@@ -123,13 +123,13 @@ const { titleOG, description, url, previewImage } = openGraph;
       --weightSkill: 600;
 
       /* Color del fondo de los elementos */
-      --bgBody: #fcfcfc;
-      --bgSpanTag: #f6f6f6;
-      --bgButtonHover: #f4f4f4;
+      --bgBody: #fafafa;
+      --bgSpanTag: #f1f1f1;
+      --bgButtonHover: #f3f3f3;
 
       /* Bordes de los elementos */
       --borderImg: 0.2rem solid #999;
-      --borderCard: 1px solid #f2f2f2;
+      --borderCard: 1px solid #dfdfdf;
       --borderSubTitleTag: 1px solid #777;
       --borderSkill: 1px solid #888;
       --borderButton: 1px solid #eee;
@@ -246,6 +246,7 @@ const { titleOG, description, url, previewImage } = openGraph;
       color: var(--colorTitleElement);
       font-size: var(--sizeTitleElement);
       font-weight: 600;
+      text-wrap: pretty;
     }
 
     h3:hover {
@@ -279,6 +280,19 @@ const { titleOG, description, url, previewImage } = openGraph;
     }
     a:hover:not(:has(h3)) {
       transform: scale(1.1);
+    }
+
+    /* Elemento separador entre svg del enlace y el titulo h3 */
+
+    .card__title {
+      position: relative;
+    }
+
+    .title__externalLink {
+      display: inline-block;
+      position: relative;
+      top: 2px;
+      left: 4px;
     }
 
     /*  ----  ESTILOS PARA LA ETIQUETA TIME ----   */
