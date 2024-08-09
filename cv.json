@@ -63,6 +63,7 @@
   "certificates": [
     {
       "name": "JavaScript Algorithms and Data Structures",
+      "type": "primary",
       "date": "07-17-2024",
       "issuer": "FreeCodeCamp",
       "issuerUrl": "https://www.freecodecamp.org/",
@@ -72,6 +73,7 @@
     },
     {
       "name": "Master CSS: Responsive, SASS, Flexbox, Grid y Bootstrap",
+      "type": "primary",
       "date": "06-23-2024",
       "issuer": "Udemy",
       "issuerUrl": "https://www.udemy.com/",
@@ -81,6 +83,7 @@
     },
     {
       "name": "Responsive Web Design",
+      "type": "primary",
       "date": "04-27-2024",
       "issuer": "FreeCodeCamp",
       "issuerUrl": "https://www.freecodecamp.org/",
@@ -90,6 +93,7 @@
     },
     {
       "name": "Adobe XD: Crear Prototipos Profesionales desde 0",
+      "type": "primary",
       "date": "12-27-2019",
       "issuer": "Udemy",
       "issuerUrl": "https://www.udemy.com/",
@@ -142,25 +146,29 @@
   "projects": [
     {
       "name": "Minimalist Portfolio",
+      "type": "primary",
       "github": "https://github.com/mickel-arroz/minimalist-portfolio-mickel-arroz",
-      "description": "Proyecto web de un portafolio minimalista y responsivo, el cual mediante un archivo JSON se puede personalizar completamente los datos dinámicamente del usuario.",
+      "description": "Proyecto web de un portafolio minimalista, elegante y responsivo, el cual mediante un único archivo JSON se puede personalizar completamente los datos dinámicamente a mostrar del usuario y todos los apartados del portafolio.",
       "highlights": ["HTML", "CSS", "TypeScript", "Astro"],
       "url": "/"
     },
     {
       "name": "SpaceX Launches",
+      "type": "primary",
       "github": "https://github.com/mickel-arroz/SpaceXPageAPI",
-      "description": "Proyecto web de páginas estáticas y responsivas, el cual consume una API de SpaceX para mostrar detalles de lanzamientos de sus cohetes y datos relacionados con ellos.",
+      "description": "Proyecto web de páginas estáticas y responsivas, el cual consume una API, pública y gratuita, que posee información de SpaceX, para mostrar detalles de lanzamientos de sus cohetes y todos los datos relacionados con ellos.",
       "highlights": ["HTML", "CSS", "Tailwind", "JavaScript", "Astro"],
       "url": "https://space-x-launches-page.netlify.app/"
     },
     {
       "name": "AttackerVictim",
+      "type": "primary",
       "github": "https://github.com/mickel-arroz/DSW_GrupoG_AttackerVictim-DEPLOY-WEB/tree/develop",
       "description": "Proyecto Universitario, sobre un sistema de control de alejamiento y protección entre usuarios de tipo víctima y agresor, me enfoqué en el apartado web e integración con la API.",
       "highlights": [
         "HTML",
         "CSS",
+        "JavaScript",
         "Tailwind",
         "Next.js",
         "Patrones de Diseño"

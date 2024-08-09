@@ -75,6 +75,7 @@ export interface CV {
     date: DateStr,
     issuer: string,
     issuerUrl: string,
+    type: string, // language, primary, secondary, knowledge
     url: string,
     summary: string,
     highlights: Highlight
@@ -112,7 +113,7 @@ export interface CV {
   
   interface Projects {
     name: string
-    isActive: boolean
+    type: string // primary, practice
     description: string
     highlights: Highlight
     url: string

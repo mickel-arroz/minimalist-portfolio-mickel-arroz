@@ -92,23 +92,9 @@ const { titleOG, description, url, previewImage } = openGraph;
 
   <style is:global>
     /*    ----    VARIABLES     ----     */
+
+    /* Variables genericas globales */
     :root {
-      /* Color del texto de los elementos */
-      --colorTitle: #111;
-      --colorSubTitle: #222;
-      --colorTitleElement: #333;
-      --colorSubTitleTag: #444;
-      --colorSummary: #555;
-      --colorStudyArea: #555;
-
-      --colorSpanTag: #666;
-      --colorLinkHover: #666;
-      --colorButton: #777;
-      --colorButtonHover: #555;
-      --colorBorderButtonHover: #666;
-      --colorTime: #666;
-      --colorSkill: #555;
-
       /* Tamaño del texto de los elementos */
       --sizeTitle: 2rem;
       --sizeSummary: 0.9rem;
@@ -122,22 +108,79 @@ const { titleOG, description, url, previewImage } = openGraph;
 
       --weightSkill: 600;
 
-      /* Color del fondo de los elementos */
-      --bgBody: #fafafa;
-      --bgSpanTag: #f1f1f1;
-      --bgButtonHover: #f3f3f3;
-
-      /* Bordes de los elementos */
-      --borderImg: 0.2rem solid #999;
-      --borderCard: 1px solid #dfdfdf;
-      --borderSubTitleTag: 1px solid #777;
-      --borderSkill: 1px solid #888;
-      --borderButton: 1px solid #eee;
       --borderRadius: 5px;
 
       --paddingXGeneric: 0.5rem;
+    }
 
-      --shadowCard: 0 1px 1px #f2f2f2;
+    @media (prefers-color-scheme: light) {
+      :root {
+        /* Color del texto de los elementos */
+        --colorTitle: #111;
+        --colorSubTitle: #222;
+        --colorTitleElement: #333;
+        --colorSubTitleTag: #444;
+        --colorSummary: #555;
+        --colorStudyArea: #555;
+
+        --colorSpanTag: #666;
+        --colorLinkHover: #666;
+        --colorButton: #777;
+        --colorButtonHover: #555;
+        --colorBorderButtonHover: #666;
+        --colorTime: #666;
+        --colorSkill: #555;
+
+        /* Color del fondo de los elementos */
+        --bgBody: #fafafa;
+        --bgSpanTag: #f1f1f1;
+        --bgButtonHover: #f3f3f3;
+        --bg-keyboard: #fff;
+        --bg-keyboard__key: #eee;
+
+        /* Bordes de los elementos */
+        --borderImg: 0.2rem solid #999;
+        --borderCard: 1px solid #dfdfdf;
+        --borderSubTitleTag: 1px solid #777;
+        --borderSkill: 1px solid #888;
+        --borderButton: 1px solid #eee;
+
+        --shadowCard: 0 1px 1px #f2f2f2;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --colorTitle: #eaeaea;
+        --colorSubTitle: #dcdcdc;
+        --colorTitleElement: #bfbfbf;
+        --colorSubTitleTag: #a9a9a9;
+        --colorSummary: #989898;
+        --colorStudyArea: #989898;
+
+        --colorSpanTag: #8a8a8a;
+        --colorLinkHover: #999999;
+        --colorButton: #787878;
+        --colorButtonHover: #989898;
+        --colorBorderButtonHover: #a9a9a9;
+        --colorTime: #8a8a8a;
+        --colorSkill: #989898;
+
+        --bgBody: #1b1b1b;
+        --bgSpanTag: #2a2a2a;
+        --bgButtonHover: #333333;
+        --bg-keyboard: #232323;
+        --bg-keyboard__key: #333333;
+
+        --borderImg: 0.2rem solid #555555;
+        --borderCard: 1px solid #444444;
+        --borderSubTitleTag: 1px solid #666666;
+        --borderSkill: 1px solid #555555;
+        --borderButton: 1px solid #444444;
+
+        --shadowCard: 0 1px 1px #1a1a1a;
+        --
+      }
     }
 
     /* --------   Resetear estilos CSS  -------- */
@@ -288,10 +331,12 @@ const { titleOG, description, url, previewImage } = openGraph;
       position: relative;
     }
 
+  
+
     .title__externalLink {
       display: inline-block;
       position: relative;
-      top: 2px;
+      top: 2.5px;
       left: 4px;
     }
 
@@ -311,6 +356,26 @@ const { titleOG, description, url, previewImage } = openGraph;
       padding: 0;
       text-wrap: pretty;
       padding-inline: 0.5rem;
+    }
+
+    /* APARTADO DE ESTILOS DEL KEYBOARD MANAGER */
+    .keyboard {
+      border-top: var(--borderCard);
+      background-color: var(--bg-keyboard);
+      padding-block: 0.2rem;
+      position: fixed;
+      bottom: 0px;
+      width: 100%;
+      color: var(--colorButton);
+      font-size: 0.8rem;
+      justify-content: center;
+    }
+
+    .keyboard__key {
+      background: var(--bg-keyboard__key);
+      padding: 2px 4px;
+      border-radius: var(--borderRadius);
+      font-size: x-small;
     }
 
     /* Apartado para ocultar los atajos y estilos al imprimir */
