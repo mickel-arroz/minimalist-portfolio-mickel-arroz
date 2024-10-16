@@ -37,4 +37,10 @@ import SeeMore from "@/icons/general/see-more.astro";
     border-radius: var(--borderRadius);
     width: 85%;
   }
+
+  @media print {
+    .container__view-more {
+      display: none;
+    }
+  }
 </style>
