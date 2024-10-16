@@ -1,0 +1,479 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { basics, certificates } from "@cv";
+
+import Section from "@/components/Section.astro";
+import ExternalLink from "@/icons/general/external-link.astro";
+import { SKILLS_ICONS } from "@/records.astro";
+import { validateHighlight } from "@/services/validateHighliht";
+import KeyboardManager from "@/components/KeyboardManager.astro";
+import DownloadButton from "@/components/DownloadButton.astro";
+
+const { name } = basics;
+
+const primaryLength = certificates.filter(
+  (certificate) => certificate.type == "primary"
+).length;
+
+const secondaryLength = certificates.filter(
+  (certificate) => certificate.type == "secondary"
+).length;
+
+const languageLength = certificates.filter(
+  (certificate) => certificate.type == "language"
+).length;
+
+const knowledgeLength = certificates.filter(
+  (certificate) => certificate.type == "knowledge"
+).length;
+---
+
+<Layout title=`Certificados - ${name}`>
+  <main class="section__main">
+    {
+      primaryLength ? (
+        <Section title="Certificados Principales">
+          <ul class="section__list">
+            {certificates.map(
+              ({
+                name,
+                url,
+                type,
+                date,
+                issuer,
+                summary,
+                issuerUrl,
+                highlights,
+              }: {
+                name: string;
+                url: string;
+                type: string;
+                date: string;
+                issuer: string;
+                summary: string;
+                issuerUrl: string | null;
+                highlights: string[];
+              }) => {
+                if (type == "primary") {
+                  const startYear = new Date(date).getFullYear();
+                  const startMonth = new Date(date).getMonth() + 1;
+
+                  return (
+                    <li class="list__element">
+                      <article class="element__card">
+                        <header class="element__card__header">
+                          <div class="header__flex-title">
+                            <a
+                              class="card__link--title"
+                              href={url}
+                              target="_blank"
+                              title={`Ver el Certificado de ${name}`}
+                              rel="noopener noreferrer"
+                            >
+                              <h3 class="card__title">
+                                {name}
+                                <div class="title__externalLink">
+                                  <ExternalLink />
+                                </div>
+                              </h3>
+                            </a>
+                            <a
+                              class="card__link--entity"
+                              href={issuerUrl}
+                              target="_blank"
+                              title={`Ir a la pagina de ${issuer}`}
+                              rel="noopener noreferrer"
+                            >
+                              <h4 class="card__entity">{issuer}</h4>
+                            </a>
+                          </div>
+                          <time class="card__date">
+                            {startMonth}/{startYear}
+                          </time>
+                        </header>
+                        <footer class="card__footer">
+                          <p class="card__summary">{summary}</p>
+                          <div class="footer__list">
+                            {highlights.map((highlight) => {
+                              const iconName = validateHighlight(highlight);
+
+                              let IconFinal;
+                              const Icon =
+                                SKILLS_ICONS[iconName] !== undefined
+                                  ? (IconFinal = SKILLS_ICONS[iconName])
+                                  : (IconFinal = SKILLS_ICONS["Generic"]);
+                              return (
+                                <span class="footer__list__element">
+                                  {IconFinal && <Icon />}
+                                  {highlight}
+                                </span>
+                              );
+                            })}
+                          </div>
+                        </footer>
+                      </article>
+                    </li>
+                  );
+                }
+              }
+            )}
+          </ul>
+        </Section>
+      ) : null
+    }
+
+    {
+      languageLength ? (
+        <Section title="Certificados de Idiomas">
+          <ul class="section__list">
+            {certificates.map(
+              ({
+                name,
+                url,
+                type,
+                date,
+                issuer,
+                summary,
+                issuerUrl,
+                highlights,
+              }: {
+                name: string;
+                url: string;
+                type: string;
+                date: string;
+                issuer: string;
+                summary: string;
+                issuerUrl: string | null;
+                highlights: string[];
+              }) => {
+                if (type == "language") {
+                  const startYear = new Date(date).getFullYear();
+                  const startMonth = new Date(date).getMonth() + 1;
+
+                  return (
+                    <li class="list__element">
+                      <article class="element__card">
+                        <header class="element__card__header">
+                          <div class="header__flex-title">
+                            <a
+                              class="card__link--title"
+                              href={url}
+                              target="_blank"
+                              title={`Ver el Certificado de ${name}`}
+                              rel="noopener noreferrer"
+                            >
+                              <h3 class="card__title">
+                                {name}
+                                <div class="title__externalLink">
+                                  <ExternalLink />
+                                </div>
+                              </h3>
+                            </a>
+                            <a
+                              class="card__link--entity"
+                              href={issuerUrl}
+                              target="_blank"
+                              title={`Ir a la pagina de ${issuer}`}
+                              rel="noopener noreferrer"
+                            >
+                              <h4 class="card__entity">{issuer}</h4>
+                            </a>
+                          </div>
+                          <time class="card__date">
+                            {startMonth}/{startYear}
+                          </time>
+                        </header>
+                        <footer class="card__footer">
+                          <p class="card__summary">{summary}</p>
+                          <div class="footer__list">
+                            {highlights.map((highlight) => {
+                              const iconName = validateHighlight(highlight);
+
+                              let IconFinal;
+                              const Icon =
+                                SKILLS_ICONS[iconName] !== undefined
+                                  ? (IconFinal = SKILLS_ICONS[iconName])
+                                  : (IconFinal = SKILLS_ICONS["Generic"]);
+                              return (
+                                <span class="footer__list__element">
+                                  {IconFinal && <Icon />}
+                                  {highlight}
+                                </span>
+                              );
+                            })}
+                          </div>
+                        </footer>
+                      </article>
+                    </li>
+                  );
+                }
+              }
+            )}
+          </ul>
+        </Section>
+      ) : null
+    }
+    {
+      secondaryLength ? (
+        <Section title="Certificados Blandos">
+          <ul class="section__list">
+            {certificates.map(
+              ({
+                name,
+                url,
+                type,
+                date,
+                issuer,
+                summary,
+                issuerUrl,
+                highlights,
+              }: {
+                name: string;
+                url: string;
+                type: string;
+                date: string;
+                issuer: string;
+                summary: string;
+                issuerUrl: string | null;
+                highlights: string[];
+              }) => {
+                if (type == "secondary") {
+                  const startYear = new Date(date).getFullYear();
+                  const startMonth = new Date(date).getMonth() + 1;
+
+                  return (
+                    <li class="list__element">
+                      <article class="element__card">
+                        <header class="element__card__header">
+                          <div class="header__flex-title">
+                            <a
+                              class="card__link--title"
+                              href={url}
+                              target="_blank"
+                              title={`Ver el Certificado de ${name}`}
+                              rel="noopener noreferrer"
+                            >
+                              <h3 class="card__title">
+                                {name}
+                                <div class="title__externalLink">
+                                  <ExternalLink />
+                                </div>
+                              </h3>
+                            </a>
+                            <a
+                              class="card__link--entity"
+                              href={issuerUrl}
+                              target="_blank"
+                              title={`Ir a la pagina de ${issuer}`}
+                              rel="noopener noreferrer"
+                            >
+                              <h4 class="card__entity">{issuer}</h4>
+                            </a>
+                          </div>
+                          <time class="card__date">
+                            {startMonth}/{startYear}
+                          </time>
+                        </header>
+                        <footer class="card__footer">
+                          <p class="card__summary">{summary}</p>
+                          <div class="footer__list">
+                            {highlights.map((highlight) => {
+                              const iconName = validateHighlight(highlight);
+
+                              let IconFinal;
+                              const Icon =
+                                SKILLS_ICONS[iconName] !== undefined
+                                  ? (IconFinal = SKILLS_ICONS[iconName])
+                                  : (IconFinal = SKILLS_ICONS["Generic"]);
+                              return (
+                                <span class="footer__list__element">
+                                  {IconFinal && <Icon />}
+                                  {highlight}
+                                </span>
+                              );
+                            })}
+                          </div>
+                        </footer>
+                      </article>
+                    </li>
+                  );
+                }
+              }
+            )}
+          </ul>
+        </Section>
+      ) : null
+    }
+    {
+      knowledgeLength ? (
+        <Section title="Certificados de Conocimientos">
+          <ul class="section__list">
+            {certificates.map(
+              ({
+                name,
+                url,
+                type,
+                date,
+                issuer,
+                summary,
+                issuerUrl,
+                highlights,
+              }: {
+                name: string;
+                url: string;
+                type: string;
+                date: string;
+                issuer: string;
+                summary: string;
+                issuerUrl: string | null;
+                highlights: string[];
+              }) => {
+                if (type == "knowledge") {
+                  const startYear = new Date(date).getFullYear();
+                  const startMonth = new Date(date).getMonth() + 1;
+
+                  return (
+                    <li class="list__element">
+                      <article class="element__card">
+                        <header class="element__card__header">
+                          <div class="header__flex-title">
+                            <a
+                              class="card__link--title"
+                              href={url}
+                              target="_blank"
+                              title={`Ver el Certificado de ${name}`}
+                              rel="noopener noreferrer"
+                            >
+                              <h3 class="card__title">
+                                {name}
+                                <div class="title__externalLink">
+                                  <ExternalLink />
+                                </div>
+                              </h3>
+                            </a>
+                            <a
+                              class="card__link--entity"
+                              href={issuerUrl}
+                              target="_blank"
+                              title={`Ir a la pagina de ${issuer}`}
+                              rel="noopener noreferrer"
+                            >
+                              <h4 class="card__entity">{issuer}</h4>
+                            </a>
+                          </div>
+                          <time class="card__date">
+                            {startMonth}/{startYear}
+                          </time>
+                        </header>
+                        <footer class="card__footer">
+                          <p class="card__summary">{summary}</p>
+                          <div class="footer__list">
+                            {highlights.map((highlight) => {
+                              const iconName = validateHighlight(highlight);
+
+                              let IconFinal;
+                              const Icon =
+                                SKILLS_ICONS[iconName] !== undefined
+                                  ? (IconFinal = SKILLS_ICONS[iconName])
+                                  : (IconFinal = SKILLS_ICONS["Generic"]);
+                              return (
+                                <span class="footer__list__element">
+                                  {IconFinal && <Icon />}
+                                  {highlight}
+                                </span>
+                              );
+                            })}
+                          </div>
+                        </footer>
+                      </article>
+                    </li>
+                  );
+                }
+              }
+            )}
+          </ul>
+        </Section>
+      ) : null
+    }
+  </main>
+
+  <div class="div__DownloadButton">
+    <DownloadButton />
+  </div>
+  <KeyboardManager />
+</Layout>
+
+<style>
+  main {
+    padding: 4rem 4rem 2rem;
+    margin: auto;
+    width: 100%;
+  }
+
+  .nav__header {
+    animation: none;
+  }
+
+  .section__main {
+    padding-top: 7rem;
+  }
+
+  .section__list {
+    flex-direction: column;
+    margin-bottom: 4rem;
+  }
+
+  .element__card {
+    padding-top: 1.5rem;
+  }
+
+  .header__flex-title {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer__list {
+    display: flex;
+    padding-inline: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+
+  @media (max-width: 719px) {
+    main {
+      padding: 2rem 1.3rem;
+    }
+  }
+
+  @media print {
+    main {
+      padding: 2rem 4rem 0;
+    }
+  }
+
+  @media (max-width: 845px) {
+    .section__list,
+    .card__summary {
+      padding: 0;
+    }
+
+    .header__flex-title {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .element__card__header {
+      flex-direction: column-reverse;
+      gap: 0.2rem;
+    }
+
+    .card__footer {
+      padding-inline: 0;
+    }
+
+    .footer__list {
+      padding-inline: 0rem;
+    }
+  }
+</style>

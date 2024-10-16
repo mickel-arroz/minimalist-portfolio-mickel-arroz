@@ -8,6 +8,9 @@ const { title } = Astro.props;
 import { basics, openGraph } from "@cv";
 const { name } = basics;
 const { titleOG, description, url, previewImage } = openGraph;
+
+import Header from '@/components/header/Header.astro'
+
 ---
 
 <!doctype html>
@@ -87,6 +90,7 @@ const { titleOG, description, url, previewImage } = openGraph;
     <title>{title}</title>
   </head>
   <body>
+    <Header></Header>
     <slot />
   </body>
 
@@ -329,12 +333,14 @@ const { titleOG, description, url, previewImage } = openGraph;
 
     .card__title {
       position: relative;
+      width: fit-content;
     }
 
   
 
     .title__externalLink {
       display: inline-block;
+      width: fit-content;
       position: relative;
       top: 2.5px;
       left: 4px;
@@ -378,7 +384,41 @@ const { titleOG, description, url, previewImage } = openGraph;
       font-size: x-small;
     }
 
-    /* Apartado para ocultar los atajos y estilos al imprimir */
+    /* Estilos para el boton de Descargar */
+    
+  .div__DownloadButton {
+    display: none;
+    position: fixed;
+    right: 1.5rem;
+    bottom: 2.5rem;
+  }
+
+  @media (max-width: 804px) {
+    .div__DownloadButton {
+      display: block;
+    }
+  }
+  @media (max-width: 711px) {
+    .div__DownloadButton {
+      display: none;
+    }
+  }
+
+  /* Estilos para la barra de navegacion */
+  .nav__header {
+      padding: 0 1rem;
+      top: 0;
+      background-color: var(--bg-keyboard);
+      position: fixed;
+      width: 100%;
+      min-height: 70px;
+      z-index: 10;
+
+      align-items: center;
+      gap: 2rem;
+    }
+
+  /* Apartado para ocultar los atajos y estilos al imprimir */
     @media print {
       ninja-keys {
         display: none;

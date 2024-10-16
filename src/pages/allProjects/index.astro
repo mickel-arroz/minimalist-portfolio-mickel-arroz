@@ -1,0 +1,301 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Section from "@/components/Section.astro";
+import GitHub from "@/icons/hero/GitHub.astro";
+import ExternalLink from "@/icons/general/external-link.astro";
+import { SKILLS_ICONS } from "@/records.astro";
+import { validateHighlight } from "@/services/validateHighliht";
+
+import KeyboardManager from "@/components/KeyboardManager.astro";
+
+import { projects, basics } from "@cv";
+import DownloadButton from "@/components/DownloadButton.astro";
+
+const { name } = basics;
+
+const primaryLength = projects.filter(
+  (projects) => projects.type == "primary"
+).length;
+
+const practiceLength = projects.filter(
+  (projects) => projects.type == "practice"
+).length;
+---
+
+<Layout title=`Proyectos - ${name}`>
+  <main class="section__main">
+    {
+      primaryLength ? (
+        <Section title="Proyectos Principales">
+          <ul class="section__list">
+            {projects.map(
+              ({ name, type, description, url, highlights, github }) => {
+                if (type == "primary")
+                  return (
+                    <li class="list__element">
+                      <article class="element__card">
+                        <header class="element__card__header">
+                          <div class="header__flex-title">
+                            {url ? (
+                              <a
+                                class="card__link--title"
+                                href={url}
+                                title={`Ver el proyecto: ${name}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <h3 class="card__title">
+                                  {name}
+                                  <div class="title__externalLink">
+                                    <ExternalLink />
+                                  </div>
+                                </h3>
+                              </a>
+                            ) : (
+                              <span
+                                class="card__title"
+                                title={`No se puede acceder al despliegue del proyecto ${name}`}
+                              >
+                                <h3 class="flex-title__title">{name}</h3>
+                              </span>
+                            )}
+                            {github && (
+                              <a
+                                class="card__link--github"
+                                href={github}
+                                target="_blank"
+                                title={`Ver código fuente del proyecto ${name}`}
+                              >
+                                <GitHub />
+                              </a>
+                            )}
+                          </div>
+                          <p class="card__summary">{description}</p>
+                        </header>
+                        <footer class="card__footer">
+                          <div class="footer__list">
+                            {highlights.map((highlight) => {
+                              const iconName = validateHighlight(highlight);
+                              let IconFinal;
+                              const Icon =
+                                SKILLS_ICONS[iconName] !== undefined
+                                  ? (IconFinal = SKILLS_ICONS[iconName])
+                                  : (IconFinal = SKILLS_ICONS["Generic"]);
+                              return (
+                                <span class="footer__list__element">
+                                  {IconFinal && <Icon />}
+                                  {highlight}
+                                </span>
+                              );
+                            })}
+                          </div>
+                        </footer>
+                      </article>
+                    </li>
+                  );
+              }
+            )}
+          </ul>
+        </Section>
+      ) : null
+    }
+    {
+      practiceLength ? (
+        <Section title="Proyectos Practicos">
+          <ul class="section__list">
+            {projects.map(
+              ({ name, type, description, url, highlights, github }) => {
+                if (type == "practice")
+                  return (
+                    <li class="list__element">
+                      <article class="element__card">
+                        <header class="element__card__header">
+                          <div class="header__flex-title">
+                            {url ? (
+                              <a
+                                class="card__link--title"
+                                href={url}
+                                title={`Ver el proyecto: ${name}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <h3 class="card__title">
+                                  {name}
+                                  <div class="title__externalLink">
+                                    <ExternalLink />
+                                  </div>
+                                </h3>
+                              </a>
+                            ) : (
+                              <span
+                                class="card__title"
+                                title={`No se puede acceder al despliegue del proyecto ${name}`}
+                              >
+                                <h3 class="flex-title__title">{name}</h3>
+                              </span>
+                            )}
+                            {github && (
+                              <a
+                                class="card__link--github"
+                                href={github}
+                                target="_blank"
+                                title={`Ver código fuente del proyecto ${name}`}
+                              >
+                                <GitHub />
+                              </a>
+                            )}
+                          </div>
+                          <p class="card__summary">{description}</p>
+                        </header>
+                        <footer class="card__footer">
+                          <div class="footer__list">
+                            {highlights.map((highlight) => {
+                              const iconName = validateHighlight(highlight);
+                              let IconFinal;
+                              const Icon =
+                                SKILLS_ICONS[iconName] !== undefined
+                                  ? (IconFinal = SKILLS_ICONS[iconName])
+                                  : (IconFinal = SKILLS_ICONS["Generic"]);
+                              return (
+                                <span class="footer__list__element">
+                                  {IconFinal && <Icon />}
+                                  {highlight}
+                                </span>
+                              );
+                            })}
+                          </div>
+                        </footer>
+                      </article>
+                    </li>
+                  );
+              }
+            )}
+          </ul>
+        </Section>
+      ) : null
+    }
+  </main>
+
+  <div class="div__DownloadButton">
+    <DownloadButton />
+  </div>
+  <KeyboardManager />
+</Layout>
+
+<style>
+  main {
+    padding: 4rem 4rem 2rem;
+    margin: auto;
+    width: 100%;
+  }
+
+  .nav__header {
+    animation: none;
+  }
+
+  .section__main {
+    padding-top: 7rem;
+  }
+
+  .section__list {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .element__card {
+    gap: 1rem;
+    justify-content: space-between;
+    border: var(--borderCard);
+    border-radius: var(--borderRadius);
+    padding: 1rem;
+    height: 100%;
+    box-shadow: var(--shadowCard);
+  }
+
+  .element__card__header {
+    display: block;
+  }
+  .header__flex-title {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    min-height: 36px;
+  }
+
+  .card__link--github {
+    border: var(--borderButton);
+    border-radius: var(--borderRadius);
+    padding: 0.3rem;
+    display: flex;
+  }
+
+  .card__link--github:hover {
+    background: var(--bgButtonHover);
+    border-color: var(--colorBorderButtonHover);
+    color: var(--colorButtonHover);
+  }
+
+  .card__link--github,
+  .card__link--title {
+    display: inline-flex;
+    color: var(--colorButton);
+  }
+
+  .card__title {
+    display: inline-flex;
+  }
+  .card__title .flex-title__title:hover {
+    color: var(--colorTitleElement);
+    text-decoration: none;
+  }
+
+  .card__link--github:hover,
+  .card__link--title:hover {
+    color: var(--colorLinkHover);
+  }
+
+  .footer__list {
+    display: flex;
+    padding-inline: var(--paddingXGeneric);
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+
+  .card__summary {
+    font-size: 0.75rem;
+    line-height: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 660px) {
+    .section__list {
+      padding-inline: 0;
+    }
+  }
+
+  @media (max-width: 719px) {
+    main {
+      padding: 2rem 1.3rem;
+    }
+  }
+
+  @media print {
+    .section__list {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .card__link--github {
+      display: none;
+    }
+
+    .header__flex-title {
+      padding-bottom: 0.5rem;
+    }
+  }
+</style>

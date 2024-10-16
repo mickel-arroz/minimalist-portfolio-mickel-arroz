@@ -3,8 +3,15 @@ import Section from "@/components/Section.astro";
 import ExternalLink from "@/icons/general/external-link.astro";
 import { SKILLS_ICONS } from "@/records.astro";
 import { validateHighlight } from "@/services/validateHighliht";
+import ViewMoreButton from "@/components/ViewMoreButton.astro";
 
 import { certificates } from "@cv";
+
+const primaryLength = certificates.filter(
+  (certificate) => certificate.type == "primary"
+).length;
+
+let countCertificates = 0;
 ---
 
 {
@@ -15,6 +22,7 @@ import { certificates } from "@cv";
           ({
             name,
             url,
+            type,
             date,
             issuer,
             summary,
@@ -23,71 +31,88 @@ import { certificates } from "@cv";
           }: {
             name: string;
             url: string;
+            type: string;
             date: string;
             issuer: string;
             summary: string;
             issuerUrl: string | null;
             highlights: string[];
           }) => {
-            const startYear = new Date(date).getFullYear();
-            const startMonth = new Date(date).getMonth() + 1;
-            return (
-              <li class="list__element">
-                <article class="element__card">
-                  <header class="element__card__header">
-                    <div class="header__flex-title">
-                      <a
-                        class="card__link--title"
-                        href={url}
-                        target="_blank"
-                        title={`Ver el Certificado de ${name}`}
-                        rel="noopener noreferrer"
-                      >
-                        <h3 class="card__title">
-                          {name}
-                          <div class="title__externalLink">
-                            <ExternalLink />
-                          </div>
-                        </h3>
-                      </a>
-                      <a
-                        class="card__link--entity"
-                        href={issuerUrl}
-                        target="_blank"
-                        title={`Ir a la pagina de ${issuer}`}
-                        rel="noopener noreferrer"
-                      >
-                        <h4 class="card__entity">{issuer}</h4>
-                      </a>
-                    </div>
-                    <time class="card__date">
-                      {startMonth}/{startYear}
-                    </time>
-                  </header>
-                  <footer class="card__footer">
-                    <p class="card__summary">{summary}</p>
-                    <div class="footer__list">
-                      {highlights.map((highlight) => {
-                        const iconName = validateHighlight(highlight);
+            if (primaryLength >= 3) {
+              if (type == "primary") countCertificates++;
+            } else {
+              countCertificates++;
+            }
 
-                        let IconFinal;
-                        const Icon =
-                          SKILLS_ICONS[iconName] !== undefined
-                            ? (IconFinal = SKILLS_ICONS[iconName])
-                            : (IconFinal = SKILLS_ICONS["Generic"]);
-                        return (
-                          <span class="footer__list__element">
-                            {IconFinal && <Icon />}
-                            {highlight}
-                          </span>
-                        );
-                      })}
-                    </div>
-                  </footer>
-                </article>
-              </li>
-            );
+            if (3 >= countCertificates) {
+              const startYear = new Date(date).getFullYear();
+              const startMonth = new Date(date).getMonth() + 1;
+
+              return (primaryLength >= 3 && type == "primary") ||
+                primaryLength < 3 ? (
+                <li class="list__element">
+                  <article class="element__card">
+                    <header class="element__card__header">
+                      <div class="header__flex-title">
+                        <a
+                          class="card__link--title"
+                          href={url}
+                          target="_blank"
+                          title={`Ver el Certificado de ${name}`}
+                          rel="noopener noreferrer"
+                        >
+                          <h3 class="card__title">
+                            {name}
+                            <div class="title__externalLink">
+                              <ExternalLink />
+                            </div>
+                          </h3>
+                        </a>
+                        <a
+                          class="card__link--entity"
+                          href={issuerUrl}
+                          target="_blank"
+                          title={`Ir a la pagina de ${issuer}`}
+                          rel="noopener noreferrer"
+                        >
+                          <h4 class="card__entity">{issuer}</h4>
+                        </a>
+                      </div>
+                      <time class="card__date">
+                        {startMonth}/{startYear}
+                      </time>
+                    </header>
+                    <footer class="card__footer">
+                      <p class="card__summary">{summary}</p>
+                      <div class="footer__list">
+                        {highlights.map((highlight) => {
+                          const iconName = validateHighlight(highlight);
+
+                          let IconFinal;
+                          const Icon =
+                            SKILLS_ICONS[iconName] !== undefined
+                              ? (IconFinal = SKILLS_ICONS[iconName])
+                              : (IconFinal = SKILLS_ICONS["Generic"]);
+                          return (
+                            <span class="footer__list__element">
+                              {IconFinal && <Icon />}
+                              {highlight}
+                            </span>
+                          );
+                        })}
+                      </div>
+                    </footer>
+                  </article>
+                </li>
+              ) : null;
+            }
           }
+        )}
+        {certificates.length > 3 && (
+          <ViewMoreButton
+            text="Certificados"
+            url="allCertificates"
+          />
         )}
       </ul>
     </Section>

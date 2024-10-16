@@ -1,0 +1,101 @@
+---
+import { basics } from "@cv";
+import DownloadButton from "@/components/DownloadButton.astro";
+const { name } = basics;
+
+// Obtener la URL actual
+const currentUrl = Astro.request.url;
+
+// Define las páginas donde quieres la animación
+const pagesWithAnimation = ["/"];
+const shouldAnimate = pagesWithAnimation.includes(new URL(currentUrl).pathname);
+---
+
+<header class={`nav__header ${shouldAnimate ? "animate" : ""}`}>
+  <div>
+    <a
+      class="header__title"
+      href="/"
+    >
+      <h2>{`< ` + `${name}` + ` />`}</h2>
+    </a>
+    <nav>
+      <div>
+        <a href="/allExperiences">
+          <h4 class="card__entity card__entity--header">Experiencia</h4>
+        </a>
+        <a href="/allProjects">
+          <h4 class="card__entity card__entity--header">Proyectos</h4>
+        </a>
+        <a href="/allCertificates">
+          <h4 class="card__entity card__entity--header">Certificados</h4>
+        </a>
+      </div>
+    </nav>
+  </div>
+  <footer>
+    <DownloadButton />
+  </footer>
+
+  <style>
+    .animate {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: exit 120% cover 120%;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .card__entity--header {
+      padding: 0.4rem;
+    }
+
+    .header__title {
+      margin-right: 1.5rem;
+    }
+
+    div {
+      display: flex;
+      gap: 2rem;
+    }
+
+    @media (max-width: 804px) {
+      footer {
+        display: none;
+      }
+    }
+
+    @media (max-width: 711px) {
+      header {
+        gap: 0rem;
+      }
+      .header__title {
+        margin: 0;
+      }
+      footer {
+        display: block;
+      }
+      nav {
+        display: none;
+      }
+    }
+
+    /* Apartado de animaciones del scroll */
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: scale(0.98);
+      }
+      to {
+        opacity: 0.98;
+        transform: scale(1);
+      }
+    }
+  </style>
+</header>

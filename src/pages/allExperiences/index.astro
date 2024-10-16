@@ -1,0 +1,193 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { basics, work } from "@cv";
+
+import Section from "@/components/Section.astro";
+import ExternalLink from "@/icons/general/external-link.astro";
+import { SKILLS_ICONS } from "@/records.astro";
+import { validateHighlight } from "@/services/validateHighliht";
+import KeyboardManager from "@/components/KeyboardManager.astro";
+import DownloadButton from "@/components/DownloadButton.astro";
+
+const { name } = basics;
+---
+
+<Layout title=`Experiencia Laboral - ${name}`>
+  <main class="section__main">
+    {
+      work.length ? (
+        <Section title="Experiencia Laboral">
+          <ul class="section__list">
+            {work.map(
+              ({
+                name,
+                position,
+                url,
+                startDate,
+                endDate,
+                summary,
+                highlights,
+              }: {
+                name: string;
+                position: string;
+                url: string | null;
+                startDate: string;
+                endDate: string | null;
+                summary: string;
+                highlights: string[];
+              }) => {
+                const startMonth = new Date(startDate).getMonth() + 1 + "/";
+                const startYear = new Date(startDate).getFullYear();
+                const endYear =
+                  endDate != null
+                    ? new Date(endDate).getFullYear()
+                    : "Actualmente";
+                const endMonth =
+                  endDate != null ? new Date(endDate).getMonth() + 1 + "/" : "";
+
+                return (
+                  <li class="list__element">
+                    <article class="element__card">
+                      <header class="element__card__header">
+                        <div class="header__flex-title">
+                          {url != null ? (
+                            <a
+                              class="card__link--title"
+                              href={url}
+                              title={`Ver la Empresa: ${name}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <h3 class="card__title">
+                                {name}
+                                <div class="title__externalLink">
+                                  <ExternalLink />
+                                </div>
+                              </h3>
+                            </a>
+                          ) : (
+                            <h3 class="card__title">{name}</h3>
+                          )}
+                          <h4 class="card__entity">{position}</h4>
+                        </div>
+                        <time class="card__date">
+                          {startMonth}
+                          {startYear} - {endMonth}
+                          {endYear}
+                        </time>
+                      </header>
+                      <footer class="card__footer">
+                        <p class="card__summary">{summary}</p>
+                        <div class="footer__list">
+                          {highlights.map((highlight) => {
+                            const iconName = validateHighlight(highlight);
+
+                            let IconFinal;
+                            const Icon =
+                              SKILLS_ICONS[iconName] !== undefined
+                                ? (IconFinal = SKILLS_ICONS[iconName])
+                                : (IconFinal = SKILLS_ICONS["Generic"]);
+                            return (
+                              <span class="footer__list__element">
+                                {IconFinal && <Icon />}
+                                {highlight}
+                              </span>
+                            );
+                          })}
+                        </div>
+                      </footer>
+                    </article>
+                  </li>
+                );
+              }
+            )}
+          </ul>
+        </Section>
+      ) : null
+    }
+  </main>
+
+  <div class="div__DownloadButton">
+    <DownloadButton />
+  </div>
+  <KeyboardManager />
+</Layout>
+
+<style>
+  main {
+    padding: 4rem 4rem 2rem;
+    margin: auto;
+    width: 100%;
+  }
+
+  .section__main {
+    padding-top: 7rem;
+  }
+
+  .nav__header {
+    animation: none;
+  }
+
+  .section__list {
+    flex-direction: column;
+    margin-bottom: 4rem;
+  }
+
+  .element__card {
+    padding-top: 2rem;
+  }
+
+  .header__flex-title {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer__list {
+    display: flex;
+    padding-inline: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+
+  .card__title {
+    display: inline-flex;
+  }
+
+  @media (max-width: 719px) {
+    main {
+      padding: 2rem 1.3rem;
+    }
+  }
+
+  @media print {
+    main {
+      padding: 2rem 4rem 0;
+    }
+  }
+
+  @media (max-width: 845px) {
+    .section__list,
+    .card__summary {
+      padding: 0;
+    }
+
+    .header__flex-title {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .element__card__header {
+      flex-direction: column-reverse;
+      gap: 0.2rem;
+    }
+
+    .card__footer {
+      padding-inline: 0;
+    }
+
+    .footer__list {
+      padding-inline: 0rem;
+    }
+  }
+</style>

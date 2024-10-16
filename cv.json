@@ -32,7 +32,17 @@
     ]
   },
 
-  "work": [],
+  "work": [
+    {
+      "name": "PwC Venezuela",
+      "position": "Software Development - Associate",
+      "url": "https://www.pwc.com/ve/es.html",
+      "startDate": "2024-08-12",
+      "endDate": null,
+      "summary": "Me especializo en el desarrollo de aplicaciones web tanto para uso interno de la empresa como para satisfacer las necesidades de los clientes. Además, proporciono servicios de asesoría en el área de RAS (Aseguramiento de riesgos y adaptación tecnológica), ofreciendo soluciones estratégicas a nivel nacional.",
+      "highlights": ["Angular", "Express.js", "Bootstrap", "Assurance"]
+    }
+  ],
 
   "volunteer": [
     {
@@ -113,13 +123,14 @@
     "Sass",
     "Bootstrap",
     "Tailwind",
+    "Node.js",
     "React",
     "Next.js",
+    "Angular",
     "Astro",
     "SQL",
     "MySQL",
     "PostgreSQL",
-    "Java",
     "Python",
     "Git"
   ],
@@ -135,7 +146,7 @@
     },
     {
       "language": "Portugués",
-      "fluency": "Nivel B1"
+      "fluency": "Nivel B1+"
     }
   ],
 

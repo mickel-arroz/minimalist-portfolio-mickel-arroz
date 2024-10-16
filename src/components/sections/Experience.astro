@@ -3,8 +3,11 @@ import Section from "@/components/Section.astro";
 import ExternalLink from "@/icons/general/external-link.astro";
 import { SKILLS_ICONS } from "@/records.astro";
 import { validateHighlight } from "@/services/validateHighliht";
+import ViewMoreButton from "@/components/ViewMoreButton.astro";
 
 import { work } from "@cv";
+
+let countWorks = 0;
 ---
 
 {
@@ -35,61 +38,69 @@ import { work } from "@cv";
               endDate != null ? new Date(endDate).getFullYear() : "Actualmente";
             const endMonth =
               endDate != null ? new Date(endDate).getMonth() + 1 + "/" : "";
-            return (
-              <li class="list__element">
-                <article class="element__card">
-                  <header class="element__card__header">
-                    <div class="header__flex-title">
-                      {url != null ? (
-                        <a
-                          class="card__link--title"
-                          href={url}
-                          title={`Ver la Empresa: ${name}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <h3 class="card__title">
-                            {name}
-                            <div class="title__externalLink">
-                              <ExternalLink />
-                            </div>
-                          </h3>
-                        </a>
-                      ) : (
-                        <h3 class="card__title">{name}</h3>
-                      )}
-                      <h4 class="card__entity">{position}</h4>
-                    </div>
-                    <time class="card__date">
-                      {startMonth}
-                      {startYear} - {endMonth}
-                      {endYear}
-                    </time>
-                  </header>
-                  <footer class="card__footer">
-                    <p class="card__summary">{summary}</p>
-                    <div class="footer__list">
-                      {highlights.map((highlight) => {
-                        const iconName = validateHighlight(highlight);
+            countWorks++;
+            if (countWorks < 4)
+              return (
+                <li class="list__element">
+                  <article class="element__card">
+                    <header class="element__card__header">
+                      <div class="header__flex-title">
+                        {url != null ? (
+                          <a
+                            class="card__link--title"
+                            href={url}
+                            title={`Ver la Empresa: ${name}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <h3 class="card__title">
+                              {name}
+                              <div class="title__externalLink">
+                                <ExternalLink />
+                              </div>
+                            </h3>
+                          </a>
+                        ) : (
+                          <h3 class="card__title">{name}</h3>
+                        )}
+                        <h4 class="card__entity">{position}</h4>
+                      </div>
+                      <time class="card__date">
+                        {startMonth}
+                        {startYear} - {endMonth}
+                        {endYear}
+                      </time>
+                    </header>
+                    <footer class="card__footer">
+                      <p class="card__summary">{summary}</p>
+                      <div class="footer__list">
+                        {highlights.map((highlight) => {
+                          const iconName = validateHighlight(highlight);
 
-                        const Icon = SKILLS_ICONS[iconName];
-
-                        const IconFinal = !SKILLS_ICONS[Icon]
-                          ? SKILLS_ICONS["Generic"]
-                          : SKILLS_ICONS[Icon];
-                        return (
-                          <span class="footer__list__element">
-                            {IconFinal && <Icon />}
-                            {highlight}
-                          </span>
-                        );
-                      })}
-                    </div>
-                  </footer>
-                </article>
-              </li>
-            );
+                          let IconFinal;
+                          const Icon =
+                            SKILLS_ICONS[iconName] !== undefined
+                              ? (IconFinal = SKILLS_ICONS[iconName])
+                              : (IconFinal = SKILLS_ICONS["Generic"]);
+                          return (
+                            <span class="footer__list__element">
+                              {IconFinal && <Icon />}
+                              {highlight}
+                            </span>
+                          );
+                        })}
+                      </div>
+                    </footer>
+                  </article>
+                </li>
+              );
           }
+        )}
+        {work.length > 3 && (
+          <ViewMoreButton
+            text="Trabajos"
+            url="allExperiences"
+          />
         )}
       </ul>
     </Section>

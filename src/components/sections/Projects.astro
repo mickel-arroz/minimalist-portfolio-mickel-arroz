@@ -4,79 +4,103 @@ import GitHub from "@/icons/hero/GitHub.astro";
 import ExternalLink from "@/icons/general/external-link.astro";
 import { SKILLS_ICONS } from "@/records.astro";
 import { validateHighlight } from "@/services/validateHighliht";
+import ViewMoreButton from "@/components/ViewMoreButton.astro";
 
 import { projects } from "@cv";
+
+const primaryLength = projects.filter(
+  (projects) => projects.type == "primary"
+).length;
+
+let countProjects = 0;
 ---
 
 {
   projects.length ? (
     <Section title="Proyectos">
       <ul class="section__list">
-        {projects.map(({ name, description, url, highlights, github }) => {
-          return (
-            <li class="list__element">
-              <article class="element__card">
-                <header class="element__card__header">
-                  <div class="header__flex-title">
-                    {url ? (
-                      <a
-                        class="card__link--title"
-                        href={url}
-                        title={`Ver el proyecto: ${name}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <h3 class="card__title">
-                          {name}
-                          <div class="title__externalLink">
-                            <ExternalLink />
-                          </div>
-                        </h3>
-                      </a>
-                    ) : (
-                      <span
-                        class="card__title"
-                        title={`No se puede acceder al despliegue del proyecto ${name}`}
-                      >
-                        <h3 class="flex-title__title">{name}</h3>
-                      </span>
-                    )}
-                    {github && (
-                      <a
-                        class="card__link--github"
-                        href={github}
-                        target="_blank"
-                        title={`Ver código fuente del proyecto ${name}`}
-                      >
-                        <GitHub />
-                      </a>
-                    )}
-                  </div>
-                  <p class="card__summary">{description}</p>
-                </header>
-                <footer class="card__footer">
-                  <div class="footer__list">
-                    {highlights.map((highlight) => {
-                      const iconName = validateHighlight(highlight);
-                      let IconFinal;
-                      const Icon =
-                        SKILLS_ICONS[iconName] !== undefined
-                          ? (IconFinal = SKILLS_ICONS[iconName])
-                          : (IconFinal = SKILLS_ICONS["Generic"]);
-                      return (
-                        <span class="footer__list__element">
-                          {IconFinal && <Icon />}
-                          {highlight}
-                        </span>
-                      );
-                    })}
-                  </div>
-                </footer>
-              </article>
-            </li>
-          );
-        })}
+        {projects.map(
+          ({ name, type, description, url, highlights, github }) => {
+            if (primaryLength >= 4) {
+              if (type == "primary") countProjects++;
+            } else {
+              countProjects++;
+            }
+
+            if (4 >= countProjects) {
+              return (primaryLength >= 4 && type == "primary") ||
+                primaryLength < 4 ? (
+                <li class="list__element">
+                  <article class="element__card">
+                    <header class="element__card__header">
+                      <div class="header__flex-title">
+                        {url ? (
+                          <a
+                            class="card__link--title"
+                            href={url}
+                            title={`Ver el proyecto: ${name}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <h3 class="card__title">
+                              {name}
+                              <div class="title__externalLink">
+                                <ExternalLink />
+                              </div>
+                            </h3>
+                          </a>
+                        ) : (
+                          <span
+                            class="card__title"
+                            title={`No se puede acceder al despliegue del proyecto ${name}`}
+                          >
+                            <h3 class="flex-title__title">{name}</h3>
+                          </span>
+                        )}
+                        {github && (
+                          <a
+                            class="card__link--github"
+                            href={github}
+                            target="_blank"
+                            title={`Ver código fuente del proyecto ${name}`}
+                          >
+                            <GitHub />
+                          </a>
+                        )}
+                      </div>
+                      <p class="card__summary">{description}</p>
+                    </header>
+                    <footer class="card__footer">
+                      <div class="footer__list">
+                        {highlights.map((highlight) => {
+                          const iconName = validateHighlight(highlight);
+                          let IconFinal;
+                          const Icon =
+                            SKILLS_ICONS[iconName] !== undefined
+                              ? (IconFinal = SKILLS_ICONS[iconName])
+                              : (IconFinal = SKILLS_ICONS["Generic"]);
+                          return (
+                            <span class="footer__list__element">
+                              {IconFinal && <Icon />}
+                              {highlight}
+                            </span>
+                          );
+                        })}
+                      </div>
+                    </footer>
+                  </article>
+                </li>
+              ) : null;
+            }
+          }
+        )}
       </ul>
+      {projects.length > 4 && (
+        <ViewMoreButton
+          text="Proyectos"
+          url="allProjects"
+        />
+      )}
     </Section>
   ) : null
 }
@@ -132,7 +156,7 @@ import { projects } from "@cv";
   }
 
   .card__title {
-    padding: 0;
+    display: inline-flex;
   }
   .card__title .flex-title__title:hover {
     color: var(--colorTitleElement);
