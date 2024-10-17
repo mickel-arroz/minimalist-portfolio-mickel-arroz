@@ -9,8 +9,7 @@ import { basics, openGraph } from "@cv";
 const { name } = basics;
 const { titleOG, description, url, previewImage } = openGraph;
 
-import Header from '@/components/header/Header.astro'
-
+import Header from "@/components/header/Header.astro";
 ---
 
 <!doctype html>
@@ -90,7 +89,7 @@ import Header from '@/components/header/Header.astro'
     <title>{title}</title>
   </head>
   <body>
-    <Header></Header>
+    <Header />
     <slot />
   </body>
 
@@ -155,35 +154,34 @@ import Header from '@/components/header/Header.astro'
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --colorTitle: #eaeaea;
-        --colorSubTitle: #dcdcdc;
-        --colorTitleElement: #bfbfbf;
-        --colorSubTitleTag: #a9a9a9;
-        --colorSummary: #989898;
-        --colorStudyArea: #989898;
+        --colorTitle: #fafafa;
+        --colorSubTitle: #eaeaea;
+        --colorTitleElement: #dcdcdc;
+        --colorSubTitleTag: #bfbfbf;
+        --colorSummary: #bbb;
+        --colorStudyArea: #a9a9a9;
 
-        --colorSpanTag: #8a8a8a;
-        --colorLinkHover: #999999;
-        --colorButton: #787878;
-        --colorButtonHover: #989898;
-        --colorBorderButtonHover: #a9a9a9;
-        --colorTime: #8a8a8a;
-        --colorSkill: #989898;
+        --colorSpanTag: #8f8f8f;
+        --colorLinkHover: #cccccc;
+        --colorButton: #bbbbbb;
+        --colorButtonHover: #e0e0e0;
+        --colorBorderButtonHover: #d0d0d0;
+        --colorTime: #8f8f8f;
+        --colorSkill: #a9a9a9;
 
-        --bgBody: #1b1b1b;
-        --bgSpanTag: #2a2a2a;
-        --bgButtonHover: #333333;
-        --bg-keyboard: #232323;
-        --bg-keyboard__key: #333333;
+        --bgBody: #181818;
+        --bgSpanTag: #202020;
+        --bgButtonHover: #303030;
+        --bg-keyboard: #1c1c1c;
+        --bg-keyboard__key: #2a2a2a;
 
-        --borderImg: 0.2rem solid #555555;
-        --borderCard: 1px solid #444444;
-        --borderSubTitleTag: 1px solid #666666;
-        --borderSkill: 1px solid #555555;
-        --borderButton: 1px solid #444444;
+        --borderImg: 0.2rem solid #555;
+        --borderCard: 1px solid #444;
+        --borderSubTitleTag: 1px solid #666;
+        --borderSkill: 1px solid #555;
+        --borderButton: 1px solid #333;
 
-        --shadowCard: 0 1px 1px #1a1a1a;
-        --
+        --shadowCard: 0 1px 1px #000;
       }
     }
 
@@ -336,8 +334,6 @@ import Header from '@/components/header/Header.astro'
       width: fit-content;
     }
 
-  
-
     .title__externalLink {
       display: inline-block;
       width: fit-content;
@@ -385,27 +381,27 @@ import Header from '@/components/header/Header.astro'
     }
 
     /* Estilos para el boton de Descargar */
-    
-  .div__DownloadButton {
-    display: none;
-    position: fixed;
-    right: 1.5rem;
-    bottom: 2.5rem;
-  }
 
-  @media (max-width: 804px) {
-    .div__DownloadButton {
-      display: block;
-    }
-  }
-  @media (max-width: 711px) {
     .div__DownloadButton {
       display: none;
+      position: fixed;
+      right: 1.5rem;
+      bottom: 2.5rem;
     }
-  }
 
-  /* Estilos para la barra de navegacion */
-  .nav__header {
+    @media (max-width: 804px) {
+      .div__DownloadButton {
+        display: block;
+      }
+    }
+    @media (max-width: 711px) {
+      .div__DownloadButton {
+        display: none;
+      }
+    }
+
+    /* Estilos para la barra de navegacion */
+    .nav__header {
       padding: 0 1rem;
       top: 0;
       background-color: var(--bg-keyboard);
@@ -418,12 +414,12 @@ import Header from '@/components/header/Header.astro'
       gap: 2rem;
     }
 
-  /* Apartado para ocultar los atajos y estilos al imprimir */
+    /* Apartado para ocultar los atajos y estilos al imprimir */
     @media print {
       ninja-keys {
         display: none;
       }
-      .nav__header{
+      .nav__header {
         display: none;
       }
       * {
