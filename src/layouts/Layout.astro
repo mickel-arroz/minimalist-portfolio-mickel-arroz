@@ -10,6 +10,7 @@ const { name } = basics;
 const { titleOG, description, url, previewImage } = openGraph;
 
 import Header from "@/components/header/Header.astro";
+import DownloadButton from "@/components/DownloadButton.astro";
 ---
 
 <!doctype html>
@@ -91,6 +92,9 @@ import Header from "@/components/header/Header.astro";
   <body>
     <Header />
     <slot />
+    <div id="download__main">
+      <DownloadButton />
+    </div>
   </body>
 
   <style is:global>
@@ -458,6 +462,19 @@ import Header from "@/components/header/Header.astro";
       gap: 2rem;
     }
 
+    /* Apartado para el boton fixed para Descargar CV */
+    #download__main {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 1.5rem;
+    }
+
+    @media (min-width: 366px) {
+      #download__main {
+        display: none;
+      }
+    }
+
     /* Apartado para ocultar los atajos y estilos al imprimir */
     @media print {
       ninja-keys {
@@ -468,6 +485,13 @@ import Header from "@/components/header/Header.astro";
       }
       * {
         color: #000 !important;
+      }
+      #download__main {
+        display: none;
+      }
+
+      .icon-tabler-external-link {
+        display: none;
       }
     }
   </style>

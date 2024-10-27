@@ -11,7 +11,10 @@ const pagesWithAnimation = ["/"];
 const shouldAnimate = pagesWithAnimation.includes(new URL(currentUrl).pathname);
 ---
 
-<header class={`nav__header ${shouldAnimate ? "animate" : ""}`}>
+<header
+  id="header"
+  class={`nav__header ${shouldAnimate ? "animate" : ""}`}
+>
   <div>
     <a
       class="header__title"
@@ -21,81 +24,149 @@ const shouldAnimate = pagesWithAnimation.includes(new URL(currentUrl).pathname);
     </a>
     <nav>
       <div>
-        <a href="/allExperiences">
+        <a
+          href="/allExperiences"
+          id="link__experience"
+        >
           <h4 class="card__entity card__entity--header">Experiencia</h4>
         </a>
-        <a href="/allProjects">
+        <a
+          href="/allProjects"
+          id="link__project"
+        >
           <h4 class="card__entity card__entity--header">Proyectos</h4>
         </a>
-        <a href="/allCertificates">
+        <a
+          href="/allCertificates"
+          id="link__certificate"
+        >
           <h4 class="card__entity card__entity--header">Certificados</h4>
         </a>
       </div>
     </nav>
   </div>
-  <footer>
+  <div id="download__button">
     <DownloadButton />
-  </footer>
-
-  <style>
-    .animate {
-      animation: reveal linear both;
-      animation-timeline: view();
-      animation-range: exit 120% cover 120%;
-    }
-
-    nav {
-      display: flex;
-      flex-direction: row;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .card__entity--header {
-      padding: 0.4rem;
-    }
-
-    .header__title {
-      margin-right: 1.5rem;
-    }
-
-    div {
-      display: flex;
-      gap: 2rem;
-    }
-
-    @media (max-width: 804px) {
-      footer {
-        display: none;
-      }
-    }
-
-    @media (max-width: 711px) {
-      header {
-        gap: 0rem;
-      }
-      .header__title {
-        margin: 0;
-      }
-      footer {
-        display: block;
-      }
-      nav {
-        display: none;
-      }
-    }
-
-    /* Apartado de animaciones del scroll */
-
-    @keyframes reveal {
-      from {
-        opacity: 0;
-        transform: scale(0.98);
-      }
-      to {
-        opacity: 0.98;
-        transform: scale(1);
-      }
-    }
-  </style>
+  </div>
 </header>
+
+<style>
+  .animate {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: exit 120% cover 120%;
+  }
+
+  /* Estilos alternativos cuando no hay soporte para animation-timeline */
+  .no-animation-support.show {
+    transform: translateY(0); /* Header visible */
+    transition: transform 0.3s ease;
+  }
+  .no-animation-support {
+    transform: translateY(-100%); /* Header oculto */
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .card__entity--header {
+    padding: 0.4rem;
+  }
+
+  .header__title {
+    margin-right: 1.5rem;
+  }
+
+  div {
+    display: flex;
+    gap: 2rem;
+  }
+  @media (max-width: 782px) {
+    div {
+      gap: 1.5rem;
+    }
+  }
+  @media (max-width: 757px) {
+    div {
+      gap: 1rem;
+    }
+  }
+  @media (max-width: 733px) {
+    header {
+      gap: 0rem;
+    }
+    .header__title {
+      margin: 0;
+    }
+    div {
+      gap: 2rem;
+    }
+    #link__certificate {
+      display: none;
+    }
+  }
+  @media (max-width: 365px) {
+    #download__button {
+      display: none;
+    }
+  }
+
+  @media (max-width: 610px) {
+    #link__project {
+      display: none;
+    }
+  }
+  @media (max-width: 500px) {
+    #link__experience {
+      display: none;
+    }
+  }
+
+  @media (max-width: 365px) {
+    div {
+      gap: 0;
+    }
+    .nav__header {
+      gap: 0;
+      justify-content: center;
+    }
+  }
+
+  /* Apartado de animaciones del scroll */
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: scale(0.98);
+    }
+    to {
+      opacity: 0.98;
+      transform: scale(1);
+    }
+  }
+</style>
+
+<script>
+  // Verificación de soporte del navegador para: 'animation-timeline: view()'
+  if (!CSS.supports("animation-timeline", "view()")) {
+    const header = document.getElementById("header");
+
+    if (header) {
+      // Quitar animacion de la clase del header
+      header.classList.remove("animate");
+      header.classList.add("no-animation-support");
+      const scrollThreshold = 300; // Número de píxeles para activar el header
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > scrollThreshold) {
+          header.classList.add("show");
+        } else {
+          header.classList.remove("show");
+        }
+      });
+    }
+  }
+</script>
