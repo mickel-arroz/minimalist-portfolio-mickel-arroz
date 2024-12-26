@@ -1,6 +1,7 @@
 ---
 import { basics } from "@cv";
 import DownloadButton from "@/components/DownloadButton.astro";
+import ThemeButton from "../ThemeButton.astro";
 const { name } = basics;
 
 // Obtener la URL actual
@@ -45,8 +46,13 @@ const shouldAnimate = pagesWithAnimation.includes(new URL(currentUrl).pathname);
       </div>
     </nav>
   </div>
-  <div id="download__button">
-    <DownloadButton />
+  <div>
+    <div id="theme__button">
+      <ThemeButton />
+    </div>
+    <div id="download__button">
+      <DownloadButton />
+    </div>
   </div>
 </header>
 
@@ -114,6 +120,11 @@ const shouldAnimate = pagesWithAnimation.includes(new URL(currentUrl).pathname);
       display: none;
     }
   }
+  @media (max-width: 845px) {
+    #theme__button {
+      display: none;
+    }
+  }
 
   @media (max-width: 610px) {
     #link__project {
@@ -140,6 +151,7 @@ const shouldAnimate = pagesWithAnimation.includes(new URL(currentUrl).pathname);
 
   @keyframes reveal {
     from {
+      z-index: -1;
       opacity: 0;
       transform: scale(0.98);
     }

@@ -113,7 +113,7 @@ export interface CV {
   
   interface Projects {
     name: string
-    type: string // primary, practice
+    type: string // primary, secondary, language, knowledge
     description: string
     highlights: Highlight
     url: string

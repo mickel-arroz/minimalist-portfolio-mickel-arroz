@@ -72,6 +72,16 @@
 
   "certificates": [
     {
+      "name": "Trucos para Cambiar o Crear Nuevos Hábitos",
+      "type": "secondary",
+      "date": "12-23-2024",
+      "issuer": "LinkedIn",
+      "issuerUrl": "https://www.linkedin.com/learning/",
+      "url": "https://www.linkedin.com/learning/certificates/2c9795cce9885ca3d92aa71f09597e1cd798fcdee5c1b5c9b243ab7134f97644",
+      "summary": "Este curso me brindó las herramientas esenciales para diseñar y mantener nuevas rutinas de manera efectiva, así como para eliminar aquellas que obstaculizaban mi progreso. Además, comprendí cómo mi mente subconsciente influye en mis hábitos y aprendí a aprovecharla a mi favor.",
+      "highlights": ["Desarrollo Personal"]
+    },
+    {
       "name": "JavaScript Algorithms and Data Structures",
       "type": "primary",
       "date": "07-17-2024",

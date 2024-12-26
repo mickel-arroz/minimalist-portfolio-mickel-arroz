@@ -1,0 +1,72 @@
+<button
+  id="toggle-theme"
+  class="theme-button"
+  title="Cambiar Tema de Visualización"
+  aria-label="Boton para Cambiar Tema de Visualización"
+>
+  <!-- AQUI VA EL ICONO DEL TEMA -->
+</button>
+
+<style>
+  .theme-button {
+    padding: 0;
+    margin: 0;
+    border: var(--borderButton);
+    border-radius: var(--borderRadius);
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--colorButton);
+    background-color: var(--bg-keyboard);
+    transition: all 0.5s ease;
+    cursor: pointer;
+  }
+
+  .theme-button:hover {
+    background: var(--bgButtonHover);
+    border-color: var(--colorBorderButtonHover);
+    color: var(--colorButtonHover);
+  }
+
+  @media print {
+    .download-button {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const themes = {
+    dark: '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-moon"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" /></svg>',
+    light:
+      '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-sun"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" /></svg>',
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("toggle-theme");
+    if (toggle) {
+      if (toggle) {
+        if (localStorage.getItem("theme") === "dark") {
+          toggle.innerHTML = themes.light;
+        } else if (localStorage.getItem("theme") === "light") {
+          toggle.innerHTML = themes.dark;
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+          toggle.innerHTML = themes.light;
+        else toggle.innerHTML = themes.dark;
+
+        toggle.addEventListener("click", function () {
+          document.documentElement.classList.toggle("dark");
+          document.documentElement.classList.toggle("light");
+          document.documentElement.classList.contains("dark")
+            ? localStorage.setItem("theme", "dark")
+            : localStorage.setItem("theme", "light");
+          if (localStorage.getItem("theme") === "dark")
+            toggle.innerHTML = themes.light;
+          else toggle.innerHTML = themes.dark;
+        });
+      }
+    }
+  });
+</script>
