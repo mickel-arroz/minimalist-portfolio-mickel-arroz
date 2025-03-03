@@ -70,6 +70,26 @@ const profilesInfo = profiles.map(({ network, url }) => {
 <script>
   import "ninja-keys";
 
+  let enabled = false;
+
+  // Función para deshabilitar el scroll
+  function disableScroll() {
+    document.body.style.overflow = "hidden";
+  }
+
+  // Función para habilitar el scroll
+  function enableScroll() {
+    document.body.style.overflow = "auto";
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.ctrlKey && event.key === "k") {
+      enabled = enabled ? false : true; // Desactiva el scroll
+      if (enabled) disableScroll();
+      else enableScroll();
+    } else if (event.key === "Escape") enableScroll();
+  });
+
   const printPage = (src: string): void => {
     // Crear un iframe invisible
     const iframe = document.createElement("iframe");
@@ -85,9 +105,12 @@ const profilesInfo = profiles.map(({ network, url }) => {
 
   const ninja = document.querySelector("ninja-keys");
   if (ninja != null) {
+    ninja.addEventListener("click", (event) => {
+      enabled = false;
+      enableScroll();
+    });
     const info = ninja.getAttribute("data-info") ?? "[]";
     const parsedInfo = JSON.parse(info);
-
     const data = parsedInfo.map((item: any) => {
       return {
         ...item,

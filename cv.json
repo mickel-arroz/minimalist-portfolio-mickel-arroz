@@ -8,7 +8,7 @@
     "email": "arrozmickel@gmail.com",
     "phone": "584242382439",
     "url": null,
-    "summary": "¡Encantado de conocerte! Soy Mickel Arroz, un amante de la tecnología e innovación, cursante de la carrera de Ingeniería en Informática. Mi recorrido me ha aportado conocimientos en este apasionante mundo, con énfasis en el desarrollo de software, análisis de problemas y gestión de proyectos. Además, me gusta cultivar mis habilidades y aprender día a día, por lo que ansío colaborar en soluciones que aporten valor y conectar con profesionales inspiradores.",
+    "summary": "¡Un placer conocerte! Soy Mickel Arroz, un apasionado de la tecnología y de la vida, cursante de Ing Informática. Mi experiencia me ha brindado conocimientos en desarrollo de software, análisis de problemas y gestión de proyectos. Entiendo que el aprendizaje es un proceso continuo, y cada falla es una oportunidad para aprender y mejorar. Mi filosofía es no rendirme, cada desafío me impulsa a superarme y me hace sentir vivo. Busco colaborar en soluciones que aporten valor y conectar con profesionales que inspiren a seguir mejorando día a día.",
     "location": {
       "city": "Caracas",
       "region": "Venezuela"
@@ -37,10 +37,16 @@
       "name": "PwC Venezuela",
       "position": "Software Development - Associate",
       "url": "https://www.pwc.com/ve/es.html",
-      "startDate": "2024-08-12",
+      "startDate": "08-12-2024",
       "endDate": null,
-      "summary": "Me especializo en el desarrollo de aplicaciones web tanto para uso interno de la empresa como para satisfacer las necesidades de los clientes. Además, proporciono servicios de asesoría en el área de RAS (Aseguramiento de riesgos y adaptación tecnológica), ofreciendo soluciones estratégicas a nivel nacional.",
-      "highlights": ["Angular", "Express.js", "Bootstrap", "Assurance"]
+      "summary": "Me dedico a desarrollar, mantener y refactorizar aplicaciones web, tanto para uso dentro de la empresa como para cubrir las necesidades de los clientes. Además, trabajo en asesorías para el área de RAS (Risk Assurance Services), ayudando a las empresas a auditando sus procesos tecnológicos, garantizando su funcionamiento óptimo y seguridad.",
+      "highlights": [
+        "Angular",
+        "Express.js",
+        "Bootstrap",
+        "Alteryx Designer",
+        "Assurance"
+      ]
     }
   ],
 
@@ -71,6 +77,50 @@
   "awards": [],
 
   "certificates": [
+    {
+      "name": "Fundamentos de la Gestión de Proyectos",
+      "type": "secondary",
+      "date": "24-02-2025",
+      "issuer": "LinkedIn",
+      "issuerUrl": "https://www.linkedin.com/learning/",
+      "url": "https://www.linkedin.com/learning/certificates/795c7a7cd7edeb05c380ff8f37a51db8b3059ca9377bb76acca8b7b0e421c84c",
+      "summary": "Este curso me proporcionó una base sólida en metodologías clave de gestión de proyectos, aprendiendo a estructurar planes estratégicos, ejecutar etapas críticas y liderar equipos multidisciplinarios. Dominé herramientas esenciales como diagramas de Gantt y técnicas de gestión de riesgos, mejorando mi capacidad para alinear objetivos con stakeholders y entregar proyectos exitosos dentro de plazos y presupuestos.",
+      "highlights": [
+        "Gestión de Proyectos",
+        "Planificación Estratégica",
+        "Liderazgo de Equipos"
+      ]
+    },
+    {
+      "name": "Front-End Development Libraries",
+      "type": "primary",
+      "date": "09-02-2024",
+      "issuer": "FreeCodeCamp",
+      "issuerUrl": "https://www.freecodecamp.org/",
+      "url": "https://www.freecodecamp.org/certification/mickel_arroz/front-end-development-libraries",
+      "summary": "Programa de formación intensiva con 300+ horas de desarrollo práctico donde implementé 5 proyectos profesionales. Dominé arquitecturas componentizadas con React/Redux, optimicé mantenimiento de código mediante SASS avanzado, y desarrollé interfaces cross-device con Bootstrap, demostrando capacidad para resolver problemas complejos equivalentes a escenarios laborales reales.",
+      "highlights": ["React", "Redux", "Bootstrap", "jQuery", "Sass"]
+    },
+    {
+      "name": "Cómo y Por Qué Desarrollar una Mentalidad de Aprendizaje Continuo",
+      "type": "secondary",
+      "date": "01-08-2025",
+      "issuer": "LinkedIn",
+      "issuerUrl": "https://www.linkedin.com/learning/",
+      "url": "https://www.linkedin.com/learning/certificates/0502958d780f51ec045a3916c148ecff7233cffbf32cb30b883a0752aacc618b",
+      "summary": "Este curso transformó mi comprensión del aprendizaje continuo, destacando la importancia de un enfoque participativo y reflexivo. Aprendí a cultivar hábitos sostenibles mediante la práctica personal, ejercicios de recuperación activa de información y técnicas para reforzar la retención de conocimientos, alejándome de los métodos tradicionales de evaluación.",
+      "highlights": ["Aprendizaje Permanente"]
+    },
+    {
+      "name": "Cómo Establecer y Cumplir tus Objetivos Profesionales",
+      "type": "secondary",
+      "date": "12-29-2024",
+      "issuer": "LinkedIn",
+      "issuerUrl": "https://www.linkedin.com/learning/",
+      "url": "https://www.linkedin.com/learning/certificates/523f5e56ef17f912b9893ca5ed1a5cf56775e3e4ed1c63c941dc6022ee79e3ac",
+      "summary": "Con estrategias prácticas y herramientas efectivas, aprendí a definir y alcanzar objetivos profesionales, incluso los más ambiciosos. Este curso me ayudó a identificar mis prioridades, usar técnicas como la rendición de cuentas y el seguimiento público, además de transformar mis metas en hábitos sostenibles para el éxito a largo plazo.",
+      "highlights": ["Gestión de Carrera Profesional"]
+    },
     {
       "name": "Trucos para Cambiar o Crear Nuevos Hábitos",
       "type": "secondary",
@@ -142,7 +192,8 @@
     "MySQL",
     "PostgreSQL",
     "Python",
-    "Git"
+    "Git",
+    "Alteryx Designer"
   ],
 
   "languages": [
@@ -201,7 +252,7 @@
   "openGraph": {
     "titleOG": "Portfolio - Mickel Arroz",
     "description": "¡Encantado de conocerte! Soy Mickel Arroz, un amante de la tecnología e innovación, estudiante de la carrera de Ingeniería en Informática. Este es mi portafolio profesional en formato minimalista y enfocado en el performance y simplicidad. Espero lo disfrutes. ¡Contáctame!",
-    "url": "https://minimalist-portfolio-mickel-arroz.vercel.app/",
+    "url": "https://portfolio-mickel-arroz.vercel.app/",
     "previewImage": "/images/pagePreview.png"
   }
 }

@@ -11,8 +11,10 @@ export function validateHighlight(highlight: string): string {
       return "AdobeXD";  
     case "Node.js":
       return "Nodejs";  
-    case "Express.js":
-      return "Expressjs";  
+      case "Express.js":
+        return "Expressjs";  
+      case "Alteryx Designer":
+        return "Alteryx";  
 
     default:
       return highlight;
