@@ -1,9 +1,27 @@
 ---
+import { TITLES_ICONS } from "@/records.astro";
+import { validateTitle } from "@/services/validateTitles"; // Asegúrate de importar la función adecuada
+
 const { title } = Astro.props;
+
+// Validamos el título antes de obtener el icono
+const iconName = validateTitle(title);
+let IconFinal;
+const Icon =
+  TITLES_ICONS[iconName] !== undefined
+    ? (IconFinal = TITLES_ICONS[iconName])
+    : (IconFinal = TITLES_ICONS["GenericTitle"]);
 ---
 
 <section class="section">
-  {title && <h2 class="section__title">{title}</h2>}
+  {
+    title && (
+      <div id="container__title">
+        {IconFinal && <Icon />}
+        <h2 class="section__title">{title}</h2>
+      </div>
+    )
+  }
   <slot />
 </section>
 
@@ -21,8 +39,13 @@ const { title } = Astro.props;
     break-inside: avoid;
   }
 
-  .section__title {
+  #container__title {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0.3rem;
     margin-bottom: 1rem;
+    color: var(--colorTitle);
   }
 
   /* Apartado de animaciones del scroll */

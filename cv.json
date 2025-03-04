@@ -8,7 +8,7 @@
     "email": "arrozmickel@gmail.com",
     "phone": "584242382439",
     "url": null,
-    "summary": "¡Un placer conocerte! Soy Mickel Arroz, un apasionado de la tecnología y de la vida, cursante de Ing Informática. Mi experiencia me ha brindado conocimientos en desarrollo de software, análisis de problemas y gestión de proyectos. Entiendo que el aprendizaje es un proceso continuo, y cada falla es una oportunidad para aprender y mejorar. Mi filosofía es no rendirme, cada desafío me impulsa a superarme y me hace sentir vivo. Busco colaborar en soluciones que aporten valor y conectar con profesionales que inspiren a seguir mejorando día a día.",
+    "summary": "¡Un placer conocerte! Soy Mickel Arroz, un apasionado de la tecnología, el desarrollo web y disfutar de la vida. Cursante de Ing. Informática, cuento con experiencia en desarrollo de software, análisis de problemas y gestión de proyectos. Para mí, el aprendizaje es un viaje continuo, donde cada error es una oportunidad para crecer. Mi filosofía es no rendirme; los desafíos me motivan a superarme y me hacen sentir vivo. Busco colaborar en soluciones que aporten valor y conectar con profesionales que inspiren a mejorar cada día.",
     "location": {
       "city": "Caracas",
       "region": "Venezuela"
@@ -80,7 +80,7 @@
     {
       "name": "Fundamentos de la Gestión de Proyectos",
       "type": "secondary",
-      "date": "24-02-2025",
+      "date": "02-24-2025",
       "issuer": "LinkedIn",
       "issuerUrl": "https://www.linkedin.com/learning/",
       "url": "https://www.linkedin.com/learning/certificates/795c7a7cd7edeb05c380ff8f37a51db8b3059ca9377bb76acca8b7b0e421c84c",
@@ -94,7 +94,7 @@
     {
       "name": "Front-End Development Libraries",
       "type": "primary",
-      "date": "09-02-2024",
+      "date": "02-09-2025",
       "issuer": "FreeCodeCamp",
       "issuerUrl": "https://www.freecodecamp.org/",
       "url": "https://www.freecodecamp.org/certification/mickel_arroz/front-end-development-libraries",
@@ -251,7 +251,7 @@
 
   "openGraph": {
     "titleOG": "Portfolio - Mickel Arroz",
-    "description": "¡Encantado de conocerte! Soy Mickel Arroz, un amante de la tecnología e innovación, estudiante de la carrera de Ingeniería en Informática. Este es mi portafolio profesional en formato minimalista y enfocado en el performance y simplicidad. Espero lo disfrutes. ¡Contáctame!",
+    "description": "¡Un Placer! Soy Mickel Arroz, un amante de la tecnología e innovación, estudiante de Ing Informática. Este es mi portafolio profesional. Espero lo disfrutes. ¡Contáctame sin pena!",
     "url": "https://portfolio-mickel-arroz.vercel.app/",
     "previewImage": "/images/pagePreview.png"
   }
