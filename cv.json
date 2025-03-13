@@ -8,7 +8,7 @@
     "email": "arrozmickel@gmail.com",
     "phone": "584242382439",
     "url": null,
-    "summary": "¡Un placer conocerte! Soy Mickel Arroz, un apasionado de la tecnología, el desarrollo web y disfutar de la vida. Cursante de Ing. Informática, cuento con experiencia en desarrollo de software, análisis de problemas y gestión de proyectos. Para mí, el aprendizaje es un viaje continuo, donde cada error es una oportunidad para crecer. Mi filosofía es no rendirme; los desafíos me motivan a superarme y me hacen sentir vivo. Busco colaborar en soluciones que aporten valor y conectar con profesionales que inspiren a mejorar cada día.",
+    "summary": "¡Un placer conocerte! Soy Mickel Arroz, un amante del desarrollo web, la tecnología y disfrutar de la vida. Como estudiante de Ing Informática, tengo experiencia en creación de software y aplicaciones web, análisis de problemas y gestión de proyectos digitales. Mi filosofía es nunca rendirme; los desafíos en el desarrollo me impulsan a mejorar y perfeccionar mis habilidades. Busco crear soluciones digitales que generen impacto y conectar con profesionales que inspiren a crecer.",
     "location": {
       "city": "Caracas",
       "region": "Venezuela"
@@ -39,7 +39,7 @@
       "url": "https://www.pwc.com/ve/es.html",
       "startDate": "08-12-2024",
       "endDate": null,
-      "summary": "Me dedico a desarrollar, mantener y refactorizar aplicaciones web, tanto para uso dentro de la empresa como para cubrir las necesidades de los clientes. Además, trabajo en asesorías para el área de RAS (Risk Assurance Services), ayudando a las empresas a auditando sus procesos tecnológicos, garantizando su funcionamiento óptimo y seguridad.",
+      "summary": "Me especializo en el desarrollo, mantenimiento y optimización de aplicaciones web, tanto para uso interno de la empresa como para clientes, asegurando soluciones especificas para cumplir con las necesidades. Además, colaboro en auditorías de procesos tecnológicos en el área de RAS (Risk Assurance Services).",
       "highlights": [
         "Angular",
         "Express.js",
@@ -251,7 +251,7 @@
 
   "openGraph": {
     "titleOG": "Portfolio - Mickel Arroz",
-    "description": "¡Un Placer! Soy Mickel Arroz, un amante de la tecnología e innovación, estudiante de Ing Informática. Este es mi portafolio profesional. Espero lo disfrutes. ¡Contáctame sin pena!",
+    "description": "¡Un Placer! Soy Mickel Arroz, un amante de la tecnología, estudiante de Ing Informática. Este es mi portafolio profesional. Espero lo disfrutes. ¡Contáctame sin pena!",
     "url": "https://portfolio-mickel-arroz.vercel.app/",
     "previewImage": "/images/pagePreview.png"
   }
