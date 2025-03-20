@@ -64,11 +64,20 @@
 
   "education": [
     {
+      "institution": "Universidad de Helsinki (Finlandia)",
+      "url": "https://fullstackopen.com/en/",
+      "area": "FullStackOpen (Formación Online)",
+      "studyType": "Bootcamp",
+      "startDate": null,
+      "endDate": null,
+      "courses": []
+    },
+    {
       "institution": "Universidad Católica Andrés Bello",
       "url": "https://www.ucab.edu.ve/",
       "area": "Ingeniería en Informática",
       "studyType": "Universidad",
-      "startDate": "03-1-2017",
+      "startDate": null,
       "endDate": null,
       "courses": []
     }
@@ -77,6 +86,26 @@
   "awards": [],
 
   "certificates": [
+    {
+      "name": "Curso de Productividad",
+      "type": "secondary",
+      "date": "03-16-2025",
+      "issuer": "Platzi",
+      "issuerUrl": "https://platzi.com/",
+      "url": "https://platzi.com/p/mickel_arroz/curso/1998-productividad/diploma/detalle/",
+      "summary": "Este curso me proporcionó estrategias efectivas para gestionar de manera integral mi tiempo, espacio y contexto, permitiéndome diseñar y materializar mi propio proyecto de vida fundamentado en hábitos positivos. Aprendí a estructurar mis prioridades, establecer metas claras y desarrollar rutinas que potencian mi crecimiento personal, lo que se tradujo en una mejora significativa de mi calidad de vida.",
+      "highlights": ["Gestión del Tiempo", "Desarrollo Personal"]
+    },
+    {
+      "name": "Curso de Finanzas Personales",
+      "type": "secondary",
+      "date": "03-16-2025",
+      "issuer": "Platzi",
+      "issuerUrl": "https://platzi.com/",
+      "url": "https://platzi.com/p/mickel_arroz/curso/2639-presupuesto-personal/diploma/detalle/",
+      "summary": "Este curso me brindó una metodología robusta para diseñar presupuestos efectivos, permitiéndome gestionar de manera precisa mis ingresos y gastos. Aprendí a establecer metas financieras realistas y a implementar estrategias que fortalecen mi estabilidad económica, impulsando mi capacidad para alcanzar objetivos personales con confianza y seguridad.",
+      "highlights": ["Gestión de Inversiones", "Economía Personal"]
+    },
     {
       "name": "Fundamentos de la Gestión de Proyectos",
       "type": "secondary",

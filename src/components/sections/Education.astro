@@ -24,16 +24,14 @@ import { education } from "@cv";
             url: string;
             area: string;
             studyType: string;
-            startDate: string;
+            startDate: string | null;
             endDate: string | null;
             courses: { name: string; url?: string | null }[];
           }) => {
-            const startMonth = new Date(startDate).getMonth() + 1 + "/";
-            const startYear = new Date(startDate).getFullYear();
+            const startYear =
+              startDate != null ? new Date(startDate).getFullYear() : "";
             const endYear =
               endDate != null ? new Date(endDate).getFullYear() : "Actualmente";
-            const endMonth =
-              endDate != null ? new Date(endDate).getMonth() + 1 + "/" : "";
             return (
               <li class="list__element">
                 <article class="element__card">
@@ -56,8 +54,7 @@ import { education } from "@cv";
                       <h4 class="card__entity">{studyType}</h4>
                     </div>
                     <time class="card__header__date">
-                      {startMonth}
-                      {startYear} - {endMonth}
+                      {startYear && startYear + " - "}
                       {endYear}
                     </time>
                   </header>

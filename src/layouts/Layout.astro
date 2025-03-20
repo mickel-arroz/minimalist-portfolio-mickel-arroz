@@ -34,9 +34,10 @@ import DownloadButton from "@/components/DownloadButton.astro";
       content="width=device-width, initial-scale=1.0"
     />
     <link
+      id="favicon"
       rel="icon"
       type="image/svg+xml"
-      href="/favicon.svg"
+      href="/favicon-dark.svg"
     />
     <meta
       name="generator"
@@ -104,6 +105,29 @@ import DownloadButton from "@/components/DownloadButton.astro";
           document.documentElement.classList.add(
             `${localStorage.getItem("theme")}`
           );
+
+      // Apartado para modificar los estilos del Favicon
+
+      const updateFavicon = () => {
+        const favicon = document.getElementById("favicon") as HTMLLinkElement;
+        const isDarkMode = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+
+        if (isDarkMode) {
+          favicon.href = "/favicon-dark.svg"; // Favicon para tema oscuro
+        } else {
+          favicon.href = "/favicon-light.svg"; // Favicon para tema claro
+        }
+      };
+
+      // Actualiza el favicon al cargar la página
+      updateFavicon();
+
+      // Escucha cambios en la preferencia de tema
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", updateFavicon);
     </script>
   </head>
 
@@ -193,6 +217,16 @@ import DownloadButton from "@/components/DownloadButton.astro";
           --ninja-placeholder-color: #8e8e8e;
         }
       }
+
+      /* Navegadores basados en WebKit (Chrome, Edge, Safari) */
+      ::-webkit-scrollbar-thumb {
+        background: #888; /* Color del "pulgarcito" */
+      }
+
+      /* Firefox */
+      html {
+        scrollbar-color: #888 #f1f1f1; /* Color del "pulgarcito" y del fondo */
+      }
     }
     @media (prefers-color-scheme: dark) {
       :root {
@@ -245,6 +279,15 @@ import DownloadButton from "@/components/DownloadButton.astro";
           --ninja-footer-background: rgba(20, 20, 25, 0.4);
           --ninja-placeholder-color: #6e6e6e;
         }
+      }
+      /* Navegadores basados en WebKit (Chrome, Edge, Safari) */
+      ::-webkit-scrollbar-thumb {
+        background: #666; /* Color del "pulgarcito" */
+      }
+
+      /* Firefox */
+      html {
+        scrollbar-color: #666 #2c2c2c; /* Color del "pulgarcito" y del fondo */
       }
     }
 
