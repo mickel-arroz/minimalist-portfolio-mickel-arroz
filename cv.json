@@ -249,7 +249,7 @@
       "name": "Arcade Arkanoid",
       "type": "secondary",
       "github": "https://github.com/mickel-arroz/arkanoid-game",
-      "description": "(EN DESARROLLO) Proyecto web del clásico juego Arkanoid, desarrollado con JavaScript y renderizado en canvas. Cuenta con un diseño retro inspirado en las máquinas arcade, con una experiencia de juego interactiva y fluida que evoca la nostalgia de los años 90's.",
+      "description": "(EN DESARROLLO) Proyecto web del clásico juego Arkanoid. Desarrollado con React y renderizado en canvas. Cuenta con un diseño retro inspirado en máquinas Arcade, con una experiencia de juego que evoca la nostalgia de los años 90's.",
       "highlights": ["HTML", "CSS", "JavaScript", "React"],
       "url": null
     },
@@ -277,7 +277,6 @@
       "highlights": [
         "HTML",
         "CSS",
-        "JavaScript",
         "Tailwind",
         "Next.js",
         "Patrones de Diseño"
