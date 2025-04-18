@@ -714,7 +714,9 @@ import DownloadButton from "@/components/DownloadButton.astro";
       .nav__header {
         display: none;
       }
-      * {
+      *,
+      ::before,
+      ::after {
         color: #000 !important;
       }
       #download__main {
@@ -725,7 +727,7 @@ import DownloadButton from "@/components/DownloadButton.astro";
         display: none;
       }
 
-      #contact {
+      .child {
         display: none;
       }
     }

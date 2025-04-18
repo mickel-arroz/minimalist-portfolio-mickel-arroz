@@ -15,9 +15,11 @@ import GitHub from "@/icons/hero/GitHub.astro";
 
 import RightArrow from "@/icons/general/arrow-down_right.astro";
 import LeftArrow from "@/icons/general/arrow-down_left.astro";
+
+const { name, email, phone, profiles } = basics;
 ---
 
-<Section id="contact">
+<Section id="contactMe">
   <div class="card">
     <div class="left-side">
       <div id="container__title">
@@ -25,11 +27,25 @@ import LeftArrow from "@/icons/general/arrow-down_left.astro";
         <h2 class="section__title">Contactos</h2>
       </div>
       <div class="contact-info">
-        <a href="mailto:correo@example.com"><Email /> {basics.email}</a>
-        <a href="tel:+123456789"><Phone /> +{basics.phone}</a>
         <a
-          href="https://www.linkedin.com/in/tuusuario"
+          href={`mailto:${email}`}
+          title={`Enviar email a ${name}`}
           target="_blank"
+          rel="nonpener noreferrer"
+          ><Email /> {basics.email}</a
+        >
+        <a
+          href={`https://wa.me/${phone}`}
+          title={`Escribir a ${name} al Whatsapp ${phone}`}
+          target="_blank"
+          rel="nonpener noreferrer"
+          ><Phone /> +{basics.phone}</a
+        >
+        <a
+          href="https://www.linkedin.com/in/mickel-arroz/"
+          title={`Ir al LinkedIn de ${name}`}
+          target="_blank"
+          rel="nonpener noreferrer"
           ><LinkedIn />
           {
             basics.profiles.find((profile) => profile.network === "LinkedIn")
@@ -37,8 +53,10 @@ import LeftArrow from "@/icons/general/arrow-down_left.astro";
           }</a
         >
         <a
-          href="https://github.com/tuusuario"
+          href="https://github.com/mickel-arroz"
           target="_blank"
+          title={`Ir al GitHub de ${name}`}
+          rel="nonpener noreferrer"
           ><GitHub />
           {
             basics.profiles.find((profile) => profile.network === "GitHub")
@@ -327,5 +345,11 @@ import LeftArrow from "@/icons/general/arrow-down_left.astro";
 
   #form-status {
     text-align: right;
+  }
+
+  @media print {
+    .card {
+      display: none;
+    }
   }
 </style>
