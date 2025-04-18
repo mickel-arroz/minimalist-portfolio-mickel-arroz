@@ -250,7 +250,7 @@ import DownloadButton from "@/components/DownloadButton.astro";
         --bgButtonHover: #303030;
         --bg-keyboard: #1c1c1c;
         --bg-keyboard__key: #2a2a2a;
-        --bg-snipet: #4f4f4f;
+        --bg-snipet: #2f2f2f;
 
         --borderImg: 0.2rem solid #555;
         --borderCard: 1px solid #444;
@@ -317,7 +317,7 @@ import DownloadButton from "@/components/DownloadButton.astro";
       --bgButtonHover: #303030;
       --bg-keyboard: #1c1c1c;
       --bg-keyboard__key: #2a2a2a;
-      --bg-snipet: #4f4f4f2e;
+      --bg-snipet: #2f2f2f;
 
       --borderImg: 0.2rem solid #555;
       --borderCard: 1px solid #444;
@@ -442,6 +442,16 @@ import DownloadButton from "@/components/DownloadButton.astro";
       );
     }
 
+    /* Estilo para acomodar el estilo que coloca el autorellenado */
+    input:-webkit-autofill,
+    textarea:-webkit-autofill {
+      box-shadow: 0 0 0px 1000px var(--bgSpanTag) inset !important;
+      -webkit-box-shadow: 0 0 0px 1000px var(--bgSpanTag) inset !important;
+      -webkit-text-fill-color: var(--colorSummary) !important;
+      caret-color: var(--colorSummary);
+      transition: background-color 9999s ease-in-out 0s;
+    }
+
     /* --------   Resetear estilos CSS  -------- */
 
     *,
@@ -450,7 +460,10 @@ import DownloadButton from "@/components/DownloadButton.astro";
       box-sizing: border-box;
     }
 
-    html {
+    html,
+    button,
+    input,
+    textarea {
       font-family: monospace, "Courier New", Courier;
       letter-spacing: 0.05rem;
     }
@@ -613,7 +626,9 @@ import DownloadButton from "@/components/DownloadButton.astro";
 
     /*  ----  ESTILOS DEL TEXTO NORMAL  ----   */
     p,
-    span {
+    span,
+    label,
+    textarea {
       color: var(--colorSummary);
       font-size: var(--sizeSummary);
       line-height: var(--sizeLineHeightTexto);
@@ -707,6 +722,10 @@ import DownloadButton from "@/components/DownloadButton.astro";
       }
 
       .icon-tabler-external-link {
+        display: none;
+      }
+
+      #contact {
         display: none;
       }
     }

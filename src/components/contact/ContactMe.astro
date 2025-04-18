@@ -1,0 +1,331 @@
+---
+import Section from "../Section.astro";
+import { TITLES_ICONS } from "@/records.astro";
+import { validateTitle } from "@/services/validateTitles";
+
+import { basics } from "@cv";
+
+const iconName = validateTitle("Contact");
+const Icon = TITLES_ICONS[iconName];
+
+import Email from "@/icons/hero/Email.astro";
+import Phone from "@/icons/hero/Phone.astro";
+import LinkedIn from "@/icons/hero/LinkedIn.astro";
+import GitHub from "@/icons/hero/GitHub.astro";
+
+import RightArrow from "@/icons/general/arrow-down_right.astro";
+import LeftArrow from "@/icons/general/arrow-down_left.astro";
+---
+
+<Section id="contact">
+  <div class="card">
+    <div class="left-side">
+      <div id="container__title">
+        <Icon />
+        <h2 class="section__title">Contactos</h2>
+      </div>
+      <div class="contact-info">
+        <a href="mailto:correo@example.com"><Email /> {basics.email}</a>
+        <a href="tel:+123456789"><Phone /> +{basics.phone}</a>
+        <a
+          href="https://www.linkedin.com/in/tuusuario"
+          target="_blank"
+          ><LinkedIn />
+          {
+            basics.profiles.find((profile) => profile.network === "LinkedIn")
+              ?.username
+          }</a
+        >
+        <a
+          href="https://github.com/tuusuario"
+          target="_blank"
+          ><GitHub />
+          {
+            basics.profiles.find((profile) => profile.network === "GitHub")
+              ?.username
+          }</a
+        >
+      </div>
+    </div>
+    <div class="right-side">
+      <h2 class="email__title">
+        <LeftArrow />
+        Escríbeme
+        <RightArrow />
+      </h2>
+      <form
+        id="contact-form"
+        class="form-group"
+      >
+        <div class="form-group__inputs">
+          <div>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Escribe tu email"
+              required
+            />
+          </div>
+          <div>
+            <label for="subject">Título</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Escribe el asunto"
+              required
+            />
+          </div>
+        </div>
+        <div>
+          <label for="message">Mensaje</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Escribe tu mensaje del correo aquí..."
+            required
+          ></textarea>
+        </div>
+        <button
+          class="buttonEmail"
+          type="submit"
+        >
+          Enviar
+        </button>
+        <p id="form-status"></p>
+      </form>
+    </div>
+  </div>
+</Section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById(
+      "contact-form"
+    ) as HTMLFormElement | null;
+    const statusDiv = document.getElementById(
+      "form-status"
+    ) as HTMLDivElement | null;
+
+    if (!form || !statusDiv) return;
+
+    form.addEventListener("submit", async (event: SubmitEvent) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("/api/send", {
+          method: "POST",
+          body: formData,
+        });
+
+        const result = await response.json();
+
+        const errorInput = document.getElementById(result.field);
+
+        if (response.ok) {
+          statusDiv.textContent =
+            result.message ?? "¡Correo enviado exitosamente!";
+          statusDiv.style.color = "green";
+          form.reset();
+          if (errorInput) {
+            errorInput.style.border = "none";
+            errorInput.style.boxShadow = "none";
+          }
+        } else {
+          statusDiv.textContent = result.message ?? "Error al enviar el correo";
+          if (result.field) {
+            if (errorInput) {
+              errorInput.focus();
+              errorInput.style.border = "2px solid red";
+              errorInput.style.outline = "none";
+              errorInput.style.boxShadow = "0 0 0 2px rgba(255, 0, 0, 0.3)";
+            }
+          }
+          statusDiv.style.color = "red";
+        }
+      } catch (error) {
+        statusDiv.textContent = "Ocurrió un error al enviar el formulario";
+        statusDiv.style.color = "red";
+      }
+    });
+  });
+</script>
+
+<style>
+  #container__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--colorTitle);
+  }
+
+  .card {
+    display: flex;
+    background-color: var(--bgBody);
+    border: var(--borderCard);
+    border-radius: var(--borderRadius);
+    overflow: hidden;
+    margin-top: 6rem;
+  }
+
+  @media (max-width: 750px) {
+    .card {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .left-side {
+      padding: 1rem;
+      padding-bottom: 3rem;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .contact-info {
+      padding: 0;
+      display: grid !important;
+      grid-template-columns: 2fr 1fr;
+      gap: 5rem;
+    }
+  }
+
+  @media (max-width: 515px) {
+    .contact-info {
+      grid-template-columns: 1fr;
+    }
+    .contact-info {
+      padding-left: 0;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .form-group__inputs {
+      flex-direction: column;
+      gap: 1rem !important;
+    }
+
+    .form-group {
+      gap: 1rem !important;
+    }
+
+    #form-status {
+      text-align: center !important;
+    }
+  }
+
+  .left-side {
+    background-color: var(--bgSpanTag);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-right: 2rem;
+  }
+  .left-side h2 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-left: 0.5rem;
+    align-items: flex-start;
+  }
+  .contact-info a {
+    color: #ecf0f1;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--colorSubTitleTag);
+  }
+  .contact-info a:hover {
+    transform: scale(1.02);
+  }
+
+  .right-side {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+  }
+
+  .email__title {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.1rem;
+    color: var(--colorTitle);
+  }
+
+  .form-group {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-bottom: 15px;
+    width: 90%;
+  }
+
+  .form-group__inputs {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: nowrap;
+    flex: 1;
+  }
+
+  .form-group label {
+    color: var(--colorSummary);
+  }
+  .form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: var(--borderButton);
+    border-radius: var(--borderRadius);
+    background-color: var(--bgSpanTag);
+    color: var(--colorSummary);
+  }
+
+  textarea {
+    width: 100%;
+    resize: none;
+    padding: var(--paddingXGeneric);
+    border: var(--borderCard);
+    border-radius: var(--borderRadius);
+    min-height: 7rem;
+    overflow: hidden;
+    background-color: var(--bgSpanTag);
+  }
+  .buttonEmail {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    align-self: flex-end;
+    padding: 0.5rem 1rem;
+    color: var(--colorSkill);
+    border: var(--borderCard);
+    border-radius: var(--borderRadius);
+    background-color: var(--bgSpanTag);
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .buttonEmail:hover {
+    background-color: var(--bgButtonHover);
+    color: var(--colorButtonHover);
+    transform: scale(1.05);
+  }
+
+  #form-status {
+    text-align: right;
+  }
+</style>
