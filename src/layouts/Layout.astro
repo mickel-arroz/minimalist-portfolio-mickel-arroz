@@ -3,6 +3,8 @@ interface Props {
   title: string;
 }
 
+import Analytics from "@vercel/analytics/astro";
+
 const { title } = Astro.props;
 
 import { basics, openGraph } from "@cv";
@@ -140,6 +142,7 @@ import DownloadButton from "@/components/DownloadButton.astro";
         <DownloadButton />
       </div>
     </div>
+    <Analytics />
   </body>
 
   <style is:global>
@@ -422,11 +425,8 @@ import DownloadButton from "@/components/DownloadButton.astro";
       right: 0;
       top: 0;
 
-      background-image: linear-gradient(
-          to right,
-          var(--bg-snipet) 1px,
-          transparent 1px
-        ),
+      background-image:
+        linear-gradient(to right, var(--bg-snipet) 1px, transparent 1px),
         linear-gradient(to bottom, var(--bg-snipet) 1px, transparent 1px);
 
       background-size: 14px 24px;
