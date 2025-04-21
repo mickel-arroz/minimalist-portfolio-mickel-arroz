@@ -639,6 +639,7 @@ import DownloadButton from "@/components/DownloadButton.astro";
     }
 
     /* APARTADO DE ESTILOS DEL KEYBOARD MANAGER */
+
     .keyboard {
       border-top: var(--borderCard);
       background-color: var(--bg-keyboard);
@@ -656,6 +657,12 @@ import DownloadButton from "@/components/DownloadButton.astro";
       padding: 2px 4px;
       border-radius: var(--borderRadius);
       font-size: x-small;
+    }
+
+    @media screen and (max-width: 700px) {
+      ninja-keys {
+        --ninja-width: 95%;
+      }
     }
 
     /* Estilos para el boton de Descargar */

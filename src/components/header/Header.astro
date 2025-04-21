@@ -2,6 +2,12 @@
 import { basics } from "@cv";
 import DownloadButton from "@/components/DownloadButton.astro";
 import ThemeButton from "../ThemeButton.astro";
+import BurgerMenu from "@/icons/general/burger-menu.astro";
+import CloseIcon from "@/icons/general/close-icon.astro";
+import Cv from "@/icons/general/cv.astro";
+import ToggleTheme from "@/icons/general/toggle-theme.astro";
+import Terminal from "@/icons/general/terminal.astro";
+
 const { name } = basics;
 
 // Obtener la URL actual
@@ -24,7 +30,10 @@ const shouldAnimate = pagesWithAnimation.includes(new URL(currentUrl).pathname);
       <h2>{`< ` + `${name}` + ` />`}</h2>
     </a>
     <nav>
-      <div>
+      <div
+        id="nav__desktop"
+        hidden
+      >
         <a
           href="/allExperiences"
           id="link__experience"
@@ -46,7 +55,80 @@ const shouldAnimate = pagesWithAnimation.includes(new URL(currentUrl).pathname);
       </div>
     </nav>
   </div>
-  <div>
+  <!-- Botón Burger -->
+  <button
+    id="burger__button"
+    aria-label="Menú"
+  >
+    <div
+      class="burger__icon"
+      id="burger__icon"
+    >
+      <BurgerMenu />
+    </div>
+  </button>
+
+  <!-- Menú desplegable -->
+  <div
+    id="burger__menu"
+    class="hidden"
+  >
+    <!-- Botón de cerrar -->
+    <button
+      id="burger__close"
+      aria-label="Cerrar menú"
+    >
+      <CloseIcon />
+    </button>
+
+    <!-- Links -->
+    <a
+      href="/allExperiences"
+      class="burger__item"
+      >Experiencia</a
+    >
+    <a
+      href="/allProjects"
+      class="burger__item"
+      >Proyectos</a
+    >
+    <a
+      href="/allCertificates"
+      class="burger__item"
+      >Certificados</a
+    >
+    <hr class="burger__divider" />
+
+    <div>
+      <a
+        href="/CV-Mickel_Arroz.pdf"
+        download="CV - Mickel Arroz.pdf"
+        title="Descargar Curriculum Vitae"
+        aria-label="Boton para Descargar Curriculum Vitae"
+        class="burger__item burger__extras"
+      >
+        <Cv />
+        Curriculum Vitae</a
+      >
+    </div>
+    <div
+      class="burger__item burger__extras"
+      id="burger__theme-toggle"
+    >
+      <ToggleTheme />
+      Cambiar Tema
+    </div>
+    <div
+      class="burger__item burger__extras"
+      id="burger__terminal"
+    >
+      <Terminal />
+      Terminal de Comandos
+    </div>
+  </div>
+
+  <!-- BOTONES DE NAV ESCRITORIO -->
+  <div class="nav__buttons">
     <div id="theme__button">
       <ThemeButton />
     </div>
@@ -95,6 +177,11 @@ const shouldAnimate = pagesWithAnimation.includes(new URL(currentUrl).pathname);
     display: flex;
     gap: 2rem;
   }
+
+  .burger__icon {
+    color: var(--colorSubTitle);
+  }
+
   @media (max-width: 782px) {
     div {
       gap: 1.5rem;
@@ -116,27 +203,6 @@ const shouldAnimate = pagesWithAnimation.includes(new URL(currentUrl).pathname);
       gap: 2rem;
     }
     #link__certificate {
-      display: none;
-    }
-  }
-  @media (max-width: 365px) {
-    #download__button {
-      display: none;
-    }
-  }
-  @media (max-width: 853px) {
-    #theme__button {
-      display: none;
-    }
-  }
-
-  @media (max-width: 610px) {
-    #link__project {
-      display: none;
-    }
-  }
-  @media (max-width: 500px) {
-    #link__experience {
       display: none;
     }
   }
@@ -164,25 +230,176 @@ const shouldAnimate = pagesWithAnimation.includes(new URL(currentUrl).pathname);
       transform: scale(1);
     }
   }
+
+  /* Estilo general del botón burger y menú */
+  #burger__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(20, 20, 20, 0.95); /* Fondo oscuro con opacidad */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+  }
+
+  #burger__menu .burger__item {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  #burger__menu .burger__extras {
+    font-weight: normal;
+    font-size: 1.2rem;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  #burger__button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    z-index: 1001;
+    position: relative;
+  }
+
+  #burger__close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    z-index: 1001;
+  }
+
+  .burger__divider {
+    width: 75%;
+    border: none;
+    border-top: 1px solid #ffffff55;
+    margin: 0rem 0;
+  }
+
+  .burger__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .burger__item:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 860px) {
+    #nav__desktop {
+      display: none;
+    }
+
+    .nav__buttons {
+      display: none;
+    }
+
+    #burger__button {
+      display: block;
+    }
+  }
 </style>
 
 <script>
-  // Verificación de soporte del navegador para: 'animation-timeline: view()'
-  if (!CSS.supports("animation-timeline", "view()")) {
-    const header = document.getElementById("header");
+  document.addEventListener("DOMContentLoaded", () => {
+    // Verificación de soporte del navegador para 'animation-timeline: view()'
+    if (!CSS.supports("animation-timeline", "view()")) {
+      const header = document.getElementById("header");
+      if (header) {
+        header.classList.remove("animate");
+        header.classList.add("no-animation-support");
+        const scrollThreshold = 300;
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > scrollThreshold) {
+            header.classList.add("show");
+          } else {
+            header.classList.remove("show");
+          }
+        });
+      }
+    }
 
-    if (header) {
-      // Quitar animacion de la clase del header
-      header.classList.remove("animate");
-      header.classList.add("no-animation-support");
-      const scrollThreshold = 300; // Número de píxeles para activar el header
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > scrollThreshold) {
-          header.classList.add("show");
-        } else {
-          header.classList.remove("show");
+    // Elementos del menú burger
+    const burgerBtn = document.getElementById("burger__button");
+    const burgerMenu = document.getElementById("burger__menu");
+    const burgerIcon = document.getElementById("burger__icon");
+    const burgerClose = document.getElementById("burger__close");
+
+    // Funciones para abrir y cerrar el menú
+    const openMenu = () => {
+      if (burgerMenu && burgerIcon) {
+        burgerMenu.classList.remove("hidden");
+        burgerIcon.classList.add("hidden");
+        document.body.style.overflow = "hidden";
+      }
+    };
+
+    const closeMenu = () => {
+      if (burgerMenu && burgerIcon) {
+        burgerMenu.classList.add("hidden");
+        burgerIcon.classList.remove("hidden");
+        document.body.style.overflow = "auto";
+      }
+    };
+
+    // Eventos para abrir y cerrar el menú
+    if (burgerBtn) burgerBtn.addEventListener("click", openMenu);
+    if (burgerClose) burgerClose.addEventListener("click", closeMenu);
+    if (burgerMenu) {
+      burgerMenu.addEventListener("click", (e) => {
+        if (e.target === burgerMenu) {
+          closeMenu();
         }
       });
+
+      // Cerrar el menú al hacer clic en enlaces o botones dentro del menú
+      burgerMenu.querySelectorAll("a, button").forEach((el) => {
+        el.addEventListener("click", () => {
+          closeMenu();
+        });
+      });
     }
-  }
+
+    // Cambio de tema desde el menú burger
+    const burgerThemeToggle = document.getElementById("burger__theme-toggle");
+    const realThemeButton = document.querySelector("#theme__button button");
+
+    if (burgerThemeToggle && realThemeButton instanceof HTMLElement) {
+      burgerThemeToggle.addEventListener("click", () => {
+        realThemeButton.click();
+        closeMenu();
+      });
+    }
+
+    // Simular Ctrl+K al hacer clic en "Abrir Terminal de comandos"
+    const burgerTerminal = document.getElementById("burger__terminal");
+    if (burgerTerminal) {
+      burgerTerminal.addEventListener("click", () => {
+        const ninja = document.querySelector("ninja-keys");
+        ninja?.open();
+        closeMenu();
+      });
+    }
+  });
 </script>
