@@ -267,7 +267,7 @@
       "github": "https://github.com/mickel-arroz/SpaceXPageAPI",
       "description": "Proyecto web de páginas estáticas y responsivas, el cual consume una API, pública y gratuita, que posee información de SpaceX, para mostrar detalles de lanzamientos de sus cohetes y todos los datos relacionados con ellos.",
       "highlights": ["HTML", "CSS", "Tailwind", "JavaScript", "Astro"],
-      "url": "https://space-x-launches-page.netlify.app/"
+      "url": "https://space-x-mickel-arroz.vercel.app/"
     },
     {
       "name": "AttackerVictim",
