@@ -246,20 +246,28 @@
 
   "projects": [
     {
-      "name": "Arcade Arkanoid",
+      "name": "Ecommers BackEnd",
       "type": "practice",
+      "github": "https://github.com/mickel-arroz/avila-back-mickel_arroz ",
+      "description": "(PRUEBA TÉCNICA) API REST escalable para una plataforma de comercio electrónico ficticia, implementada con Node.js, Express y MongoDB. Incluye autenticación JWT, gestión de productos, procesamiento de pedidos y documentación con Swagger UI y pruebas unitarias con Jest.",
+      "highlights": ["Express.js", "TypeScript", "MongoDB", "Jest"],
+      "url": null
+    },
+    {
+      "name": "Globetrotter FrontEnd",
+      "type": "practice",
+      "github": "https://github.com/mickel-arroz/avila-front-mickel_arroz ",
+      "description": "(PRUEBA TÉCNICA) Aplicación de reservas de viajes conectada a una API REST. Ofrece un formulario multistep con validaciones, cálculo dinámico de precios, soporte para múltiples viajeros y animaciones sutiles con framer-motion.",
+      "highlights": ["Next.js", "TypeScript", "Tailwind", "Vercel"],
+      "url": "https://avila-front-mickel-arroz.vercel.app/ "
+    },
+    {
+      "name": "Arcade Arkanoid",
+      "type": "primary",
       "github": "https://github.com/mickel-arroz/arkanoid-mickel_arroz",
       "description": "(EN DESARROLLO) Proyecto web del clásico juego Arkanoid. Desarrollado con JavaScript y renderizado en Canvas. Cuenta con un diseño retro inspirado en máquinas Arcade, con una experiencia de juego que evoca la nostalgia de los años 90's.",
       "highlights": ["HTML", "CSS", "JavaScript", "Canvas"],
       "url": "https://mickel-arroz.github.io/arkanoid-mickel_arroz"
-    },
-    {
-      "name": "Minimalist Portfolio",
-      "type": "primary",
-      "github": "https://github.com/mickel-arroz/minimalist-portfolio-mickel-arroz",
-      "description": "Proyecto web de un portafolio minimalista, elegante y responsivo, el cual mediante un único archivo JSON se puede personalizar completamente los datos dinámicamente a mostrar del usuario y todos los apartados del portafolio.",
-      "highlights": ["HTML", "CSS", "TypeScript", "Astro"],
-      "url": "/"
     },
     {
       "name": "SpaceX Launches",
@@ -270,8 +278,17 @@
       "url": "https://space-x-mickel-arroz.vercel.app/"
     },
     {
-      "name": "AttackerVictim",
+      "name": "ZenPortfolio",
       "type": "primary",
+      "github": "https://github.com/mickel-arroz/minimalist-portfolio-mickel-arroz",
+      "description": "Proyecto web de un portafolio minimalista, elegante y responsivo, el cual mediante un único archivo JSON se puede personalizar completamente los datos dinámicamente a mostrar del usuario y todos los apartados del portafolio.",
+      "highlights": ["HTML", "CSS", "JavaScript", "Astro"],
+      "url": "/"
+    },
+
+    {
+      "name": "AttackerVictim",
+      "type": "practice",
       "github": "https://github.com/mickel-arroz/DSW_GrupoG_AttackerVictim-DEPLOY-WEB/tree/develop",
       "description": "Proyecto Universitario, sobre un sistema de control de alejamiento y protección entre usuarios de tipo víctima y agresor, me enfoqué en el apartado web e integración con la API.",
       "highlights": [

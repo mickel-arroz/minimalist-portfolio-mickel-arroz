@@ -113,7 +113,7 @@ interface Languages {
 
 interface Projects {
   name: string;
-  type: string; // primary, practices
+  type: string; // primary, practice
   description: string;
   highlights: Highlight;
   url: string;

@@ -1,4 +1,3 @@
-
 export function validateHighlight(highlight: string): string {
   switch (highlight) {
     case "Next.js":
@@ -6,15 +5,17 @@ export function validateHighlight(highlight: string): string {
     case "Astro":
       return "Astrojs";
     case "C/C++":
-      return "CPlusPlus"; 
+      return "CPlusPlus";
     case "Adobe XD":
-      return "AdobeXD";  
+      return "AdobeXD";
     case "Node.js":
-      return "Nodejs";  
-      case "Express.js":
-        return "Expressjs";  
-      case "Alteryx Designer":
-        return "Alteryx";  
+      return "Nodejs";
+    case "Express.js":
+      return "Expressjs";
+    case "Alteryx Designer":
+      return "Alteryx";
+    case "Jest":
+      return "Test";
 
     default:
       return highlight;
