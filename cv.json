@@ -8,7 +8,7 @@
     "email": "arrozmickel@gmail.com",
     "phone": "584242382439",
     "url": null,
-    "summary": "¡Un placer conocerte! Soy Mickel Arroz, un amante del desarrollo web, la tecnología y disfrutar de la vida. Como estudiante de Ing Informática, tengo experiencia en creación de software y aplicaciones web, análisis de problemas y gestión de proyectos digitales. Mi filosofía es nunca rendirme; los desafíos en el desarrollo me impulsan a mejorar y perfeccionar mis habilidades. Busco crear soluciones digitales que generen impacto y conectar con profesionales que inspiren a crecer.",
+    "summary": "¡Un placer conocerte! Soy Mickel Arroz, un amante del desarrollo web, la tecnología y disfrutar de la vida. Como estudiante de Ing Informática, tengo experiencia en creación de software y aplicaciones web, análisis de problemas y gestión de proyectos. Mi filosofía es nunca rendirme; los desafíos en el desarrollo me impulsan a mejorar y perfeccionar mis habilidades. Busco crear soluciones que generen impacto y conectar con profesionales que inspiren a crecer.",
     "location": {
       "city": "Caracas",
       "region": "Venezuela"
@@ -39,7 +39,7 @@
       "url": "https://www.pwc.com/ve/es.html",
       "startDate": "08-12-2024",
       "endDate": null,
-      "summary": "Me especializo en el desarrollo, mantenimiento y optimización de aplicaciones web, tanto para uso interno de la empresa como para clientes, asegurando soluciones especificas para cumplir con las necesidades. Además, colaboro en auditorías de procesos tecnológicos en el área de RAS (Risk Assurance Services).",
+      "summary": "Me especializo en desarrollo, mantenimiento y optimización de aplicaciones web, tanto para uso interno de la empresa como para clientes, asegurando soluciones especificas para cumplir con las necesidades. Además, colaboro en auditorías de procesos tecnológicos en el área de RAS (Risk Assurance Services).",
       "highlights": [
         "Angular",
         "Express.js",
@@ -57,7 +57,7 @@
       "url": "https://www.feyalegria.org/venezuela/",
       "startDate": "11-10-2023",
       "endDate": "07-01-2024",
-      "summary": "Como parte de mi compromiso con el desarrollo de la comunidad, desempeñé el rol de Docente, impartiendo clases a estudiantes de Liceo. Me enfoqué en enseñar sobre programación web básica, lógica de programación y conceptos básicos de la tecnología.",
+      "summary": "Como parte de mi compromiso con el desarrollo de la comunidad, desempeñé el rol de Docente, impartiendo clases a estudiantes de Liceo. Me enfoqué en enseñar sobre programación web básica, lógica de programación y conceptos básicos de tecnología.",
       "highlights": ["HTML", "CSS", "JavaScript", "Lógica de Programación"]
     }
   ],
@@ -91,9 +91,9 @@
       "type": "secondary",
       "date": "03-16-2025",
       "issuer": "Platzi",
-      "issuerUrl": "https://platzi.com/",
-      "url": "https://platzi.com/p/mickel_arroz/curso/1998-productividad/diploma/detalle/",
-      "summary": "Este curso me proporcionó estrategias efectivas para gestionar de manera integral mi tiempo, espacio y contexto, permitiéndome diseñar y materializar mi propio proyecto de vida fundamentado en hábitos positivos. Aprendí a estructurar mis prioridades, establecer metas claras y desarrollar rutinas que potencian mi crecimiento personal, lo que se tradujo en una mejora significativa de mi calidad de vida.",
+      "issuerUrl": "https://platzi.com/ ",
+      "url": "https://platzi.com/p/mickel_arroz/curso/1998-productividad/diploma/detalle/ ",
+      "summary": "Dominé técnicas para gestionar tiempo, espacio y contexto, diseñando un proyecto de vida basado en hábitos positivos. Estructuré prioridades, metas claras y rutinas que impulsan mi crecimiento personal.",
       "highlights": ["Gestión del Tiempo", "Desarrollo Personal"]
     },
     {
@@ -101,9 +101,9 @@
       "type": "secondary",
       "date": "03-16-2025",
       "issuer": "Platzi",
-      "issuerUrl": "https://platzi.com/",
-      "url": "https://platzi.com/p/mickel_arroz/curso/2639-presupuesto-personal/diploma/detalle/",
-      "summary": "Este curso me brindó una metodología robusta para diseñar presupuestos efectivos, permitiéndome gestionar de manera precisa mis ingresos y gastos. Aprendí a establecer metas financieras realistas y a implementar estrategias que fortalecen mi estabilidad económica, impulsando mi capacidad para alcanzar objetivos personales con confianza y seguridad.",
+      "issuerUrl": "https://platzi.com/ ",
+      "url": "https://platzi.com/p/mickel_arroz/curso/2639-presupuesto-personal/diploma/detalle/ ",
+      "summary": "Adquirí herramientas para crear presupuestos efectivos y gestionar mis finanzas. Aprendí a fijar metas realistas e implementar estrategias para una estabilidad económica sólida y alcanzar objetivos personales.",
       "highlights": ["Gestión de Inversiones", "Economía Personal"]
     },
     {
@@ -111,9 +111,9 @@
       "type": "secondary",
       "date": "02-24-2025",
       "issuer": "LinkedIn",
-      "issuerUrl": "https://www.linkedin.com/learning/",
-      "url": "https://www.linkedin.com/learning/certificates/795c7a7cd7edeb05c380ff8f37a51db8b3059ca9377bb76acca8b7b0e421c84c",
-      "summary": "Este curso me proporcionó una base sólida en metodologías clave de gestión de proyectos, aprendiendo a estructurar planes estratégicos, ejecutar etapas críticas y liderar equipos multidisciplinarios. Dominé herramientas esenciales como diagramas de Gantt y técnicas de gestión de riesgos, mejorando mi capacidad para alinear objetivos con stakeholders y entregar proyectos exitosos dentro de plazos y presupuestos.",
+      "issuerUrl": "https://www.linkedin.com/learning/ ",
+      "url": "https://www.linkedin.com/learning/certificates/795c7a7cd7edeb05c380ff8f37a51db8b3059ca9377bb76acca8b7b0e421c84c ",
+      "summary": "Desarrollé habilidades en metodologías clave de gestión de proyectos, incluyendo planificación estratégica, diagramas de Gantt y liderazgo de equipos multidisciplinarios para entregar proyectos dentro de plazos y presupuestos.",
       "highlights": [
         "Gestión de Proyectos",
         "Planificación Estratégica",
@@ -125,9 +125,9 @@
       "type": "primary",
       "date": "02-09-2025",
       "issuer": "FreeCodeCamp",
-      "issuerUrl": "https://www.freecodecamp.org/",
-      "url": "https://www.freecodecamp.org/certification/mickel_arroz/front-end-development-libraries",
-      "summary": "Programa de formación intensiva con 300+ horas de desarrollo práctico donde implementé 5 proyectos profesionales. Dominé arquitecturas componentizadas con React/Redux, optimicé mantenimiento de código mediante SASS avanzado, y desarrollé interfaces cross-device con Bootstrap, demostrando capacidad para resolver problemas complejos equivalentes a escenarios laborales reales.",
+      "issuerUrl": "https://www.freecodecamp.org/ ",
+      "url": "https://www.freecodecamp.org/certification/mickel_arroz/front-end-development-libraries ",
+      "summary": "Formación intensiva de +300h con 5 proyectos prácticos. Dominé React/Redux, SASS avanzado y Bootstrap para interfaces cross-device, demostrando habilidad para resolver problemas complejos en entornos reales mediante soluciones optimizadas.",
       "highlights": ["React", "Redux", "Bootstrap", "jQuery", "Sass"]
     },
     {
@@ -135,9 +135,9 @@
       "type": "secondary",
       "date": "01-08-2025",
       "issuer": "LinkedIn",
-      "issuerUrl": "https://www.linkedin.com/learning/",
-      "url": "https://www.linkedin.com/learning/certificates/0502958d780f51ec045a3916c148ecff7233cffbf32cb30b883a0752aacc618b",
-      "summary": "Este curso transformó mi comprensión del aprendizaje continuo, destacando la importancia de un enfoque participativo y reflexivo. Aprendí a cultivar hábitos sostenibles mediante la práctica personal, ejercicios de recuperación activa de información y técnicas para reforzar la retención de conocimientos, alejándome de los métodos tradicionales de evaluación.",
+      "issuerUrl": "https://www.linkedin.com/learning/ ",
+      "url": "https://www.linkedin.com/learning/certificates/0502958d780f51ec045a3916c148ecff7233cffbf32cb30b883a0752aacc618b ",
+      "summary": "Transformé mi enfoque de aprendizaje al adoptar métodos participativos y reflexivos. Cultivé hábitos sostenibles mediante práctica activa y técnicas para retener conocimientos, alejándome de evaluaciones tradicionales.",
       "highlights": ["Aprendizaje Permanente"]
     },
     {
@@ -145,9 +145,9 @@
       "type": "secondary",
       "date": "12-29-2024",
       "issuer": "LinkedIn",
-      "issuerUrl": "https://www.linkedin.com/learning/",
-      "url": "https://www.linkedin.com/learning/certificates/523f5e56ef17f912b9893ca5ed1a5cf56775e3e4ed1c63c941dc6022ee79e3ac",
-      "summary": "Con estrategias prácticas y herramientas efectivas, aprendí a definir y alcanzar objetivos profesionales, incluso los más ambiciosos. Este curso me ayudó a identificar mis prioridades, usar técnicas como la rendición de cuentas y el seguimiento público, además de transformar mis metas en hábitos sostenibles para el éxito a largo plazo.",
+      "issuerUrl": "https://www.linkedin.com/learning/ ",
+      "url": "https://www.linkedin.com/learning/certificates/523f5e56ef17f912b9893ca5ed1a5cf56775e3e4ed1c63c941dc6022ee79e3ac ",
+      "summary": "Aprendí estrategias prácticas para definir y alcanzar objetivos profesionales ambiciosos, usando técnicas como rendición de cuentas y seguimiento público, transformando metas en hábitos sostenibles para el éxito.",
       "highlights": ["Gestión de Carrera Profesional"]
     },
     {
@@ -155,9 +155,9 @@
       "type": "secondary",
       "date": "12-23-2024",
       "issuer": "LinkedIn",
-      "issuerUrl": "https://www.linkedin.com/learning/",
-      "url": "https://www.linkedin.com/learning/certificates/2c9795cce9885ca3d92aa71f09597e1cd798fcdee5c1b5c9b243ab7134f97644",
-      "summary": "Este curso me brindó las herramientas esenciales para diseñar y mantener nuevas rutinas de manera efectiva, así como para eliminar aquellas que obstaculizaban mi progreso. Además, comprendí cómo mi mente subconsciente influye en mis hábitos y aprendí a aprovecharla a mi favor.",
+      "issuerUrl": "https://www.linkedin.com/learning/ ",
+      "url": "https://www.linkedin.com/learning/certificates/2c9795cce9885ca3d92aa71f09597e1cd798fcdee5c1b5c9b243ab7134f97644 ",
+      "summary": "Adquirí herramientas para diseñar rutinas efectivas y eliminar hábitos negativos. Comprendí cómo el subconsciente influye en mis hábitos y aprendí a aprovecharlo para lograr cambios sostenibles.",
       "highlights": ["Desarrollo Personal"]
     },
     {
@@ -165,9 +165,9 @@
       "type": "primary",
       "date": "07-17-2024",
       "issuer": "FreeCodeCamp",
-      "issuerUrl": "https://www.freecodecamp.org/",
-      "url": "https://www.freecodecamp.org/certification/mickel_arroz/javascript-algorithms-and-data-structures-v8",
-      "summary": "Este certificado, de +300h de trabajo, es un testimonio de que poseo bases sólidas en JavaScript. Más allá de los fundamentos, me adentré en la Programación Orientada a Objetos y la Funcional, además de trabajar con almacenamiento local e interactuar con APIs.",
+      "issuerUrl": "https://www.freecodecamp.org/ ",
+      "url": "https://www.freecodecamp.org/certification/mickel_arroz/javascript-algorithms-and-data-structures-v8 ",
+      "summary": "Certificado de +300h que demuestra dominio en JavaScript, incluyendo Programación Orientada a Objetos, Funcional, almacenamiento local e integración con APIs, además de resolver algoritmos complejos y estructuras de datos eficientes.",
       "highlights": ["HTML", "CSS", "JavaScript"]
     },
     {
@@ -175,9 +175,9 @@
       "type": "primary",
       "date": "06-23-2024",
       "issuer": "Udemy",
-      "issuerUrl": "https://www.udemy.com/",
-      "url": "https://www.udemy.com/certificate/UC-17ede252-7945-4310-b2f3-dcd47d9b7a63",
-      "summary": "Reforcé y dominé habilidades esenciales para diseñar y desarrollar sitios web modernos y adaptables, empleando las tecnologías actuales para su desarrollo. Además de implementar buenas prácticas de diseño web, brindando una experiencia de usuario (UX) excepcional.",
+      "issuerUrl": "https://www.udemy.com/ ",
+      "url": "https://www.udemy.com/certificate/UC-17ede252-7945-4310-b2f3-dcd47d9b7a63 ",
+      "summary": "Dominé técnicas para diseñar sitios web modernos y adaptables usando CSS, SASS, Flexbox, Grid y Bootstrap, aplicando buenas prácticas para una experiencia de usuario excepcional con diseños altamente interactivos.",
       "highlights": ["HTML", "CSS", "Sass", "Bootstrap"]
     },
     {
@@ -185,9 +185,9 @@
       "type": "primary",
       "date": "04-27-2024",
       "issuer": "FreeCodeCamp",
-      "issuerUrl": "https://www.freecodecamp.org/",
-      "url": "https://www.freecodecamp.org/espanol/certification/mickel_arroz/responsive-web-design",
-      "summary": "Este certificado, de +300h de trabajo, me brindo los conocimientos imprescindibles para diseñar y desarrollar sitios web modernos, accesibles y adaptables. Dominando las últimas técnicas de diseño, además de las mejores prácticas para la accesibilidad y rendimiento.",
+      "issuerUrl": "https://www.freecodecamp.org/ ",
+      "url": "https://www.freecodecamp.org/espanol/certification/mickel_arroz/responsive-web-design ",
+      "summary": "Certificado de +300h que acredita mis habilidades en diseño web moderno, accesible y adaptable, dominando técnicas actuales y mejores prácticas de rendimiento junto con estándares de accesibilidad web (WCAG).",
       "highlights": ["HTML", "CSS"]
     },
     {
@@ -195,9 +195,9 @@
       "type": "primary",
       "date": "12-27-2019",
       "issuer": "Udemy",
-      "issuerUrl": "https://www.udemy.com/",
-      "url": "https://www.udemy.com/certificate/UC-TCVS7XGW/",
-      "summary": "Este certificado me acredita como diseñador de UX/UI competente en el software de Adobe XD, capacitado para crear prototipos de interfaces dinámicas y profesionales para sitios web, aplicaciones móviles y software.",
+      "issuerUrl": "https://www.udemy.com/ ",
+      "url": "https://www.udemy.com/certificate/UC-TCVS7XGW/ ",
+      "summary": "Acreditado en diseño UX/UI con Adobe XD, capaz de crear prototipos dinámicos y profesionales para interfaces de sitios web, apps móviles y software, integrando flujos de usuario intuitivos y colaboración en equipo.",
       "highlights": ["Adobe XD", "Prototipos de interfaces de usuario"]
     }
   ],
@@ -249,15 +249,15 @@
       "name": "Ecommers BackEnd",
       "type": "practice",
       "github": "https://github.com/mickel-arroz/avila-back-mickel_arroz ",
-      "description": "(PRUEBA TÉCNICA) API REST escalable para una plataforma de comercio electrónico ficticia, implementada con Node.js, Express y MongoDB. Incluye autenticación JWT, gestión de productos, procesamiento de pedidos y documentación con Swagger UI y pruebas unitarias con Jest.",
+      "description": "(PRUEBA TÉCNICA) API REST escalable para una plataforma de comercio electrónico ficticia. Incluye autenticación JWT, gestión de productos, procesamiento de pedidos, documentación con Swagger UI y pruebas unitarias con Jest.",
       "highlights": ["Express.js", "TypeScript", "MongoDB", "Jest"],
       "url": null
     },
     {
-      "name": "Globetrotter FrontEnd",
+      "name": "Globetrotter",
       "type": "practice",
       "github": "https://github.com/mickel-arroz/avila-front-mickel_arroz ",
-      "description": "(PRUEBA TÉCNICA) Aplicación de reservas de viajes conectada a una API REST. Ofrece un formulario multistep con validaciones, cálculo dinámico de precios, soporte para múltiples viajeros y animaciones sutiles con framer-motion.",
+      "description": "(PRUEBA TÉCNICA) Aplicación FrontEnd de reservas de viajes conectada a una API REST. Ofrece un formulario multistep con validaciones, cálculo dinámico de precios, soporte para múltiples viajeros y animaciones sutiles.",
       "highlights": ["Next.js", "TypeScript", "Tailwind", "Vercel"],
       "url": "https://avila-front-mickel-arroz.vercel.app/ "
     },
@@ -265,7 +265,7 @@
       "name": "Arcade Arkanoid",
       "type": "primary",
       "github": "https://github.com/mickel-arroz/arkanoid-mickel_arroz",
-      "description": "(EN DESARROLLO) Proyecto web del clásico juego Arkanoid. Desarrollado con JavaScript y renderizado en Canvas. Cuenta con un diseño retro inspirado en máquinas Arcade, con una experiencia de juego que evoca la nostalgia de los años 90's.",
+      "description": "(EN DESARROLLO) Proyecto web del clásico juego retro Arkanoid. Cuenta con un diseño retro inspirado en las máquinas Arcade, con una experiencia de juego que evoca la nostalgia de los años 90's.",
       "highlights": ["HTML", "CSS", "JavaScript", "Canvas"],
       "url": "https://mickel-arroz.github.io/arkanoid-mickel_arroz"
     },
@@ -273,15 +273,15 @@
       "name": "SpaceX Launches",
       "type": "primary",
       "github": "https://github.com/mickel-arroz/SpaceXPageAPI",
-      "description": "Proyecto web de páginas estáticas y responsivas, el cual consume una API, pública y gratuita, que posee información de SpaceX, para mostrar detalles de lanzamientos de sus cohetes y todos los datos relacionados con ellos.",
-      "highlights": ["HTML", "CSS", "Tailwind", "JavaScript", "Astro"],
+      "description": "Proyecto web de páginas estáticas y responsivas, el cual consume una API que posee información de SpaceX, para mostrar detalles de lanzamientos de sus cohetes y todos los datos relacionados con ellos.",
+      "highlights": ["HTML", "Tailwind", "JavaScript", "Astro"],
       "url": "https://space-x-mickel-arroz.vercel.app/"
     },
     {
       "name": "ZenPortfolio",
       "type": "primary",
       "github": "https://github.com/mickel-arroz/minimalist-portfolio-mickel-arroz",
-      "description": "Proyecto web de un portafolio minimalista, elegante y responsivo, el cual mediante un único archivo JSON se puede personalizar completamente los datos dinámicamente a mostrar del usuario y todos los apartados del portafolio.",
+      "description": "Proyecto web de un portafolio minimalista y responsivo, el cual mediante un archivo JSON se puede personalizar completamente los datos dinámicamente a mostrar del usuario y todos los apartados del portafolio.",
       "highlights": ["HTML", "CSS", "JavaScript", "Astro"],
       "url": "/"
     },
@@ -290,7 +290,7 @@
       "name": "AttackerVictim",
       "type": "practice",
       "github": "https://github.com/mickel-arroz/DSW_GrupoG_AttackerVictim-DEPLOY-WEB/tree/develop",
-      "description": "Proyecto Universitario, sobre un sistema de control de alejamiento y protección entre usuarios de tipo víctima y agresor, me enfoqué en el apartado web e integración con la API.",
+      "description": "Proyecto universitario de un sistema de control de alejamiento y protección entre usuarios de tipo víctima y agresor. Mi contribución se enfocó en el diseño e implementación del módulo web del administrador, así como en la integración con la API correspondiente.",
       "highlights": [
         "HTML",
         "CSS",
