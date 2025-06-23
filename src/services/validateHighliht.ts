@@ -16,6 +16,8 @@ export function validateHighlight(highlight: string): string {
       return "Alteryx";
     case "Jest":
       return "Test";
+    case "Patrones de Diseño":
+      return "designPattern";
 
     default:
       return highlight;

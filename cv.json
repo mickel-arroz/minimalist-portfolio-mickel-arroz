@@ -1,14 +1,14 @@
 {
   "basics": {
     "name": "Mickel Arroz",
-    "label": "Futuro Profesional del Desarrollo de Software",
+    "label": "Profesional Junior del Desarrollo de Software",
     "subLabel": "No hay nada imposible para quien lo intenta",
     "subLabelAuthor": "Alejandro Magno",
     "image": "/images/FotoPerfil.webp",
     "email": "arrozmickel@gmail.com",
     "phone": "584242382439",
     "url": null,
-    "summary": "¡Un placer conocerte! Soy Mickel Arroz, un amante del desarrollo web, la tecnología y disfrutar de la vida. Como estudiante de Ing Informática, tengo experiencia en creación de software y aplicaciones web, análisis de problemas y gestión de proyectos. Mi filosofía es nunca rendirme; los desafíos en el desarrollo me impulsan a mejorar y perfeccionar mis habilidades. Busco crear soluciones que generen impacto y conectar con profesionales que inspiren a crecer.",
+    "summary": "¡Un placer conocerte! Soy Mickel Arroz, un amante del desarrollo web, la tecnología y disfrutar de la vida. Como estudiante de Ing. Informática, tengo experiencia en creación de software y aplicaciones web, análisis de problemas y gestión de proyectos. Mi filosofía es nunca rendirme; los desafíos en el desarrollo me impulsan a mejorar y perfeccionar mis habilidades. Busco crear soluciones que generen impacto y conectar con profesionales que inspiren a crecer.",
     "location": {
       "city": "Caracas",
       "region": "Venezuela"
@@ -34,12 +34,21 @@
 
   "work": [
     {
+      "name": "Avila Tek",
+      "position": "Frontend Engineer Jr II",
+      "url": "https://www.avilatek.com/",
+      "startDate": "06-16-2025",
+      "endDate": null,
+      "summary": "Me encargo del desarrollo de aplicaciones webs FrontEnd, enfocándome en crear soluciones responsivas, accesibles y con un diseño centrado en la experiencia del usuario (UX/UI), para cumplir de manera eficiente con las necesidades específicas de cada cliente.",
+      "highlights": ["Next.js", "Express.js", "Tailwind", "Patrones de Diseño"]
+    },
+    {
       "name": "PwC Venezuela",
       "position": "Software Development - Associate",
       "url": "https://www.pwc.com/ve/es.html",
       "startDate": "08-12-2024",
-      "endDate": null,
-      "summary": "Me especializo en desarrollo, mantenimiento y optimización de aplicaciones web, tanto para uso interno de la empresa como para clientes, asegurando soluciones especificas para cumplir con las necesidades. Además, colaboro en auditorías de procesos tecnológicos en el área de RAS (Risk Assurance Services).",
+      "endDate": "06-13-2025",
+      "summary": "Me especialicé en desarrollo, mantenimiento y optimización de aplicaciones web, tanto para uso interno de la empresa como para clientes, asegurando soluciones específicas para cumplir con las necesidades. Además, colaboré en auditorías de procesos tecnológicos en el área de RAS (Risk Assurance Services).",
       "highlights": [
         "Angular",
         "Express.js",
@@ -265,7 +274,7 @@
       "name": "Arcade Arkanoid",
       "type": "primary",
       "github": "https://github.com/mickel-arroz/arkanoid-mickel_arroz",
-      "description": "(EN DESARROLLO) Proyecto web del clásico juego retro Arkanoid. Cuenta con un diseño retro inspirado en las máquinas Arcade, con una experiencia de juego que evoca la nostalgia de los años 90's.",
+      "description": "(Desktop) Proyecto web del clásico juego retro Arkanoid. Cuenta con un diseño retro inspirado en las máquinas Arcade, con una experiencia de juego que evoca la nostalgia de los años 90's.",
       "highlights": ["HTML", "CSS", "JavaScript", "Canvas"],
       "url": "https://mickel-arroz.github.io/arkanoid-mickel_arroz"
     },
@@ -278,7 +287,7 @@
       "url": "https://space-x-mickel-arroz.vercel.app/"
     },
     {
-      "name": "ZenPortfolio",
+      "name": "Portfolio Web",
       "type": "primary",
       "github": "https://github.com/mickel-arroz/minimalist-portfolio-mickel-arroz",
       "description": "Proyecto web de un portafolio minimalista y responsivo, el cual mediante un archivo JSON se puede personalizar completamente los datos dinámicamente a mostrar del usuario y todos los apartados del portafolio.",
