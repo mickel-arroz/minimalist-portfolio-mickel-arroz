@@ -1,10 +1,10 @@
 {
   "basics": {
     "name": "Mickel Arroz",
-    "label": "Profesional Junior del Desarrollo de Software",
+    "label": "Joven Profesional del Desarrollo de Software",
     "subLabel": "No hay nada imposible para quien lo intenta",
     "subLabelAuthor": "Alejandro Magno",
-    "image": "/images/FotoPerfil.webp",
+    "image": "/images/profile-2025.jpg",
     "email": "arrozmickel@gmail.com",
     "phone": "584242382439",
     "url": null,
@@ -285,6 +285,14 @@
       "description": "Proyecto web de páginas estáticas y responsivas, el cual consume una API que posee información de SpaceX, para mostrar detalles de lanzamientos de sus cohetes y todos los datos relacionados con ellos.",
       "highlights": ["HTML", "Tailwind", "JavaScript", "Astro"],
       "url": "https://space-x-mickel-arroz.vercel.app/"
+    },
+    {
+      "name": "Shrek Flowers",
+      "type": "practice",
+      "github": "https://github.com/mickel-arroz/yellow-flowers",
+      "description": "Proyecto simple de una página web estática bella, creada como detalle de la costumbre de regalar flores amarillas el 21 de Septiembre en Venezuela, acompañado de la frase célebre de la película Shrek.",
+      "highlights": ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+      "url": "https://mickel-arroz.github.io/yellow-flowers"
     },
     {
       "name": "Portfolio Web",
