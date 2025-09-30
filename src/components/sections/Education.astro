@@ -1,9 +1,22 @@
 ---
-import Section from "@/components/Section.astro";
+import Section from '@/components/Section.astro';
 
-import ExternalLink from "@/icons/general/external-link.astro";
+import ExternalLink from '@/icons/general/external-link.astro';
 
-import { education } from "@cv";
+import { education } from '@cv';
+
+// Helper para formatear fechas con formato MM-DD-YYYY a 'MM/YYYY'.
+const formatMonthYear = (value: string | null): string | null => {
+  if (!value) return null;
+  const parts = value.split('-');
+  if (parts.length !== 3) return value; // fallback si no cumple formato esperado
+  const [mm, _dd, yyyy] = parts;
+  // Validar mes (01-12)
+  const monthNum = Number(mm);
+  if (isNaN(monthNum) || monthNum < 1 || monthNum > 12) return value;
+  const normalized = monthNum.toString().padStart(2, '0');
+  return `${normalized}/${yyyy}`;
+};
 ---
 
 {
@@ -28,10 +41,8 @@ import { education } from "@cv";
             endDate: string | null;
             courses: { name: string; url?: string | null }[];
           }) => {
-            const startYear =
-              startDate != null ? new Date(startDate).getFullYear() : "";
-            const endYear =
-              endDate != null ? new Date(endDate).getFullYear() : "Actualmente";
+            const startLabel = formatMonthYear(startDate);
+            const endLabel = endDate ? formatMonthYear(endDate) : 'Actualmente';
             return (
               <li class="list__element">
                 <article class="element__card">
@@ -54,8 +65,8 @@ import { education } from "@cv";
                       <h4 class="card__entity">{studyType}</h4>
                     </div>
                     <time class="card__header__date">
-                      {startYear && startYear + " - "}
-                      {endYear}
+                      {startLabel ? startLabel + ' - ' : ''}
+                      {endLabel}
                     </time>
                   </header>
                   <footer class="card__footer">
@@ -78,7 +89,7 @@ import { education } from "@cv";
                               </span>
                             );
                           })
-                        : ""}
+                        : ''}
                     </div>
                   </footer>
                 </article>
@@ -112,15 +123,16 @@ import { education } from "@cv";
     transition: all 0.5s ease;
     line-height: normal;
     height: auto;
-    background-color: inherit;
+    background-color: var(--bgBody);
   }
 
   .card__footer__link {
     color: var(--colorSummary);
-    font-size: var(--sizeSpanTag);
+    font-size: var(--sizeSpanTagXL);
   }
   .card__footer__link:hover {
     background: var(--bgButtonHover);
+    transform: scale(1.05);
   }
 
   .footer__list {

@@ -14,6 +14,8 @@ export interface CV {
   openGraph: OpenGraph;
 }
 
+import type { CertificateType, ProjectType } from './enums/cvTypes';
+
 interface Basics {
   name: string;
   label: string;
@@ -22,7 +24,7 @@ interface Basics {
   image: string;
   email: string;
   phone: string;
-  url: string;
+  url: string | null;
   summary: string;
   location: Location;
   profiles: Array<Profiles>;
@@ -75,7 +77,7 @@ interface Certificates {
   date: DateStr;
   issuer: string;
   issuerUrl: string;
-  type: string; // language, primary, secondary, knowledge
+  type: CertificateType; // Enum
   url: string;
   summary: string;
   highlights: Highlight;
@@ -95,9 +97,8 @@ interface Education {
   url: string;
   area: string;
   studyType: string;
-  startDate: DateStr;
-  endDate: DateStr;
-  score: string;
+  startDate: DateStr | null;
+  endDate: DateStr | null;
   courses: Array<Url>;
 }
 
@@ -113,10 +114,10 @@ interface Languages {
 
 interface Projects {
   name: string;
-  type: string; // primary, practice
+  type: ProjectType; // Enum
   description: string;
   highlights: Highlight;
-  url: string;
+  url: string | null;
   github?: string;
 }
 
@@ -135,4 +136,4 @@ interface OpenGraph {
   previewImage: string;
 }
 
-type Highlight = Array<String>;
+type Highlight = string[];

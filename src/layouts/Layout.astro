@@ -3,123 +3,81 @@ interface Props {
   title: string;
 }
 
-import Analytics from "@vercel/analytics/astro";
+import Analytics from '@vercel/analytics/astro';
 
 const { title } = Astro.props;
 
-import { basics, openGraph } from "@cv";
+import { basics, openGraph } from '@cv';
 const { name } = basics;
 const { titleOG, description, url, previewImage } = openGraph;
 
-import Header from "@/components/header/Header.astro";
-import DownloadButton from "@/components/DownloadButton.astro";
+import Header from '@/components/header/Header.astro';
+import DownloadButton from '@/components/DownloadButton.astro';
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="author"
-      content=`${name}`
-    />
+    <meta name="author" content=`${name}` />
     <meta
       name="keywords"
       content="portfolio, portafolio, porfolio, cv, curriculum vitae, portafolio minimalista, Mickel Arroz"
     />
-    <meta
-      name="description"
-      content=`Portafolio Minimalista de ${name}`
-    />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="description" content=`Portafolio Minimalista de ${name}` />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       id="favicon"
       rel="icon"
       type="image/svg+xml"
       href="/favicon-dark.svg"
     />
-    <meta
-      name="generator"
-      content={Astro.generator}
-    />
+    <meta name="generator" content={Astro.generator} />
 
     <!-- Open Graph / Facebook -->
-    <meta
-      property="og:type"
-      content="website"
-    />
-    <meta
-      property="og:url"
-      content={url}
-    />
-    <meta
-      property="og:title"
-      content={titleOG}
-    />
-    <meta
-      property="og:description"
-      content={description}
-    />
-    <meta
-      property="og:image"
-      content={previewImage}
-    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={titleOG} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={previewImage} />
 
     <!-- Twitter -->
-    <meta
-      property="twitter:card"
-      content="summary_large_image"
-    />
-    <meta
-      property="twitter:url"
-      content={url}
-    />
-    <meta
-      property="twitter:title"
-      content={titleOG}
-    />
-    <meta
-      property="twitter:description"
-      content={description}
-    />
-    <meta
-      property="twitter:image"
-      content={previewImage}
-    />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={url} />
+    <meta property="twitter:title" content={titleOG} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={previewImage} />
 
     <title>{title}</title>
 
     <script>
-      if (!localStorage.getItem("theme"))
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? localStorage.setItem("theme", "dark")
-          : localStorage.setItem("theme", "light");
+      if (!localStorage.getItem('theme'))
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? localStorage.setItem('theme', 'dark')
+          : localStorage.setItem('theme', 'light');
       if (
         !(
-          document.documentElement.classList.contains("dark") ||
-          document.documentElement.classList.contains("light")
+          document.documentElement.classList.contains('dark') ||
+          document.documentElement.classList.contains('light')
         )
       )
-        if (localStorage.getItem("theme"))
+        if (localStorage.getItem('theme'))
           document.documentElement.classList.add(
-            `${localStorage.getItem("theme")}`
+            `${localStorage.getItem('theme')}`
           );
 
       // Apartado para modificar los estilos del Favicon
 
       const updateFavicon = () => {
-        const favicon = document.getElementById("favicon") as HTMLLinkElement;
+        const favicon = document.getElementById('favicon') as HTMLLinkElement;
         const isDarkMode = window.matchMedia(
-          "(prefers-color-scheme: dark)"
+          '(prefers-color-scheme: dark)'
         ).matches;
 
         if (isDarkMode) {
-          favicon.href = "/favicon-dark.svg"; // Favicon para tema oscuro
+          favicon.href = '/favicon-dark.svg'; // Favicon para tema oscuro
         } else {
-          favicon.href = "/favicon-light.svg"; // Favicon para tema claro
+          favicon.href = '/favicon-light.svg'; // Favicon para tema claro
         }
       };
 
@@ -128,8 +86,8 @@ import DownloadButton from "@/components/DownloadButton.astro";
 
       // Escucha cambios en la preferencia de tema
       window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", updateFavicon);
+        .matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change', updateFavicon);
     </script>
   </head>
 
@@ -157,6 +115,7 @@ import DownloadButton from "@/components/DownloadButton.astro";
       --sizeTitleElement: 1.2rem;
       --sizeSubTitleTag: 0.8rem;
       --sizeSpanTag: 0.6rem;
+      --sizeSpanTagXL: 0.65rem;
       --sizeTime: 0.85rem;
 
       --sizeLineHeightTexto: 1.5rem;
@@ -464,7 +423,7 @@ import DownloadButton from "@/components/DownloadButton.astro";
     button,
     input,
     textarea {
-      font-family: monospace, "Courier New", Courier;
+      font-family: monospace, 'Courier New', Courier;
       letter-spacing: 0.05rem;
     }
 
