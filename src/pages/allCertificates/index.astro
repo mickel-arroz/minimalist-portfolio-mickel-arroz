@@ -1,30 +1,40 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import { basics, certificates } from "@cv";
+import Layout from '@/layouts/Layout.astro';
+import { basics, certificates as rawCertificates } from '@cv';
+import { CertificateType } from '@/enums/cvTypes';
 
-import Section from "@/components/Section.astro";
-import ExternalLink from "@/icons/general/external-link.astro";
-import { SKILLS_ICONS } from "@/records.astro";
-import { validateHighlight } from "@/services/validateHighliht";
-import KeyboardManager from "@/components/KeyboardManager.astro";
-import DownloadButton from "@/components/DownloadButton.astro";
+import Section from '@/components/Section.astro';
+import ExternalLink from '@/icons/general/external-link.astro';
+import { SKILLS_ICONS } from '@/records.astro';
+import { validateHighlight } from '@/services/validateHighliht';
+import KeyboardManager from '@/components/KeyboardManager.astro';
+import DownloadButton from '@/components/DownloadButton.astro';
 
 const { name } = basics;
 
+// Forzar el tipo completo del enum aunque el conjunto de datos actual no contenga todas las variantes.
+const certificates = rawCertificates as typeof rawCertificates & {
+  0?: { type: CertificateType }; // asegura inferencia del enum completo
+};
+
 const primaryLength = certificates.filter(
-  (certificate) => certificate.type == "primary"
+  (certificate) =>
+    (certificate.type as CertificateType) === CertificateType.Primary
 ).length;
 
 const secondaryLength = certificates.filter(
-  (certificate) => certificate.type == "secondary"
+  (certificate) =>
+    (certificate.type as CertificateType) === CertificateType.Secondary
 ).length;
 
 const languageLength = certificates.filter(
-  (certificate) => certificate.type == "language"
+  (certificate) =>
+    (certificate.type as CertificateType) === CertificateType.Language
 ).length;
 
 const knowledgeLength = certificates.filter(
-  (certificate) => certificate.type == "knowledge"
+  (certificate) =>
+    (certificate.type as CertificateType) === CertificateType.Knowledge
 ).length;
 ---
 
@@ -47,14 +57,14 @@ const knowledgeLength = certificates.filter(
               }: {
                 name: string;
                 url: string;
-                type: string;
+                type: CertificateType;
                 date: string;
                 issuer: string;
                 summary: string;
                 issuerUrl: string | null;
                 highlights: string[];
               }) => {
-                if (type == "primary") {
+                if (type === CertificateType.Primary) {
                   const startYear = new Date(date).getFullYear();
                   const startMonth = new Date(date).getMonth() + 1;
 
@@ -101,7 +111,7 @@ const knowledgeLength = certificates.filter(
                               const Icon =
                                 SKILLS_ICONS[iconName] !== undefined
                                   ? (IconFinal = SKILLS_ICONS[iconName])
-                                  : (IconFinal = SKILLS_ICONS["Generic"]);
+                                  : (IconFinal = SKILLS_ICONS['Generic']);
                               return (
                                 <span class="footer__list__element">
                                   {IconFinal && <Icon />}
@@ -139,14 +149,14 @@ const knowledgeLength = certificates.filter(
               }: {
                 name: string;
                 url: string;
-                type: string;
+                type: CertificateType;
                 date: string;
                 issuer: string;
                 summary: string;
                 issuerUrl: string | null;
                 highlights: string[];
               }) => {
-                if (type == "language") {
+                if (type === CertificateType.Language) {
                   const startYear = new Date(date).getFullYear();
                   const startMonth = new Date(date).getMonth() + 1;
 
@@ -193,7 +203,7 @@ const knowledgeLength = certificates.filter(
                               const Icon =
                                 SKILLS_ICONS[iconName] !== undefined
                                   ? (IconFinal = SKILLS_ICONS[iconName])
-                                  : (IconFinal = SKILLS_ICONS["Generic"]);
+                                  : (IconFinal = SKILLS_ICONS['Generic']);
                               return (
                                 <span class="footer__list__element">
                                   {IconFinal && <Icon />}
@@ -230,14 +240,14 @@ const knowledgeLength = certificates.filter(
               }: {
                 name: string;
                 url: string;
-                type: string;
+                type: CertificateType;
                 date: string;
                 issuer: string;
                 summary: string;
                 issuerUrl: string | null;
                 highlights: string[];
               }) => {
-                if (type == "secondary") {
+                if (type === CertificateType.Secondary) {
                   const startYear = new Date(date).getFullYear();
                   const startMonth = new Date(date).getMonth() + 1;
 
@@ -284,7 +294,7 @@ const knowledgeLength = certificates.filter(
                               const Icon =
                                 SKILLS_ICONS[iconName] !== undefined
                                   ? (IconFinal = SKILLS_ICONS[iconName])
-                                  : (IconFinal = SKILLS_ICONS["Generic"]);
+                                  : (IconFinal = SKILLS_ICONS['Generic']);
                               return (
                                 <span class="footer__list__element">
                                   {IconFinal && <Icon />}
@@ -321,14 +331,14 @@ const knowledgeLength = certificates.filter(
               }: {
                 name: string;
                 url: string;
-                type: string;
+                type: CertificateType;
                 date: string;
                 issuer: string;
                 summary: string;
                 issuerUrl: string | null;
                 highlights: string[];
               }) => {
-                if (type == "knowledge") {
+                if (type === CertificateType.Knowledge) {
                   const startYear = new Date(date).getFullYear();
                   const startMonth = new Date(date).getMonth() + 1;
 
@@ -375,7 +385,7 @@ const knowledgeLength = certificates.filter(
                               const Icon =
                                 SKILLS_ICONS[iconName] !== undefined
                                   ? (IconFinal = SKILLS_ICONS[iconName])
-                                  : (IconFinal = SKILLS_ICONS["Generic"]);
+                                  : (IconFinal = SKILLS_ICONS['Generic']);
                               return (
                                 <span class="footer__list__element">
                                   {IconFinal && <Icon />}
