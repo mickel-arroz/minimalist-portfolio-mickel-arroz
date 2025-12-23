@@ -12,7 +12,7 @@ export const cv = {
     phone: '584242382439',
     url: null,
     summary:
-      '¡Un placer conocerte! Soy Mickel Arroz, un amante del desarrollo web, la tecnología y disfrutar de la vida. Como estudiante de Ing. Informática, tengo experiencia en creación de software y aplicaciones web, análisis de problemas y gestión de proyectos. Mi filosofía es nunca rendirme; los desafíos en el desarrollo me impulsan a mejorar y perfeccionar mis habilidades. Busco crear soluciones que generen impacto y conectar con profesionales que inspiren a crecer.',
+      '¡Un placer conocerte! Soy Mickel, un amante de la programación, la tecnología y del crecimiento personal. Estudiante de Ing. Informática, con experiencia laboral en creación de software y aplicaciones web, análisis de problemas y gestión de proyectos. Siguiendo la filosofía de nunca rendirme y afrontar los desafíos de forma estoica, impulsándome a crecer y mejorar mis habilidades. Busco crear soluciones que generen impacto y conectar con profesionales.',
     location: {
       city: 'Caracas',
       region: 'Venezuela',
@@ -38,12 +38,12 @@ export const cv = {
   work: [
     {
       name: 'Avila Tek',
-      position: 'Frontend Engineer Jr II',
+      position: 'Frontend Engineer Junior',
       url: 'https://www.avilatek.com/',
       startDate: '06-16-2025',
       endDate: null,
       summary:
-        'Me encargo del desarrollo de aplicaciones webs FrontEnd, enfocándome en crear soluciones responsivas, accesibles y con un diseño centrado en la experiencia del usuario (UX/UI), para cumplir de manera eficiente con las necesidades específicas de cada cliente.',
+        'Desarrollando enfocado en crear soluciones personalizadas siguiendo patrones de diseño, buenas prácticas de accesibilidad y UX. Trabajando con clientes internacionales, donde destaca mi participación en la obtención del Premio de Oro en la categoría "Experiencia del Cliente" en los premios Fintech Americas 2026 junto a Mercantil Seguros. Además, de ser parte del desarrollo de las Landing Pages para Venezuela y Panamá, así como de la creación de diversas aplicaciones "backoffice" para la gestión de sus múltiples procesos internos.',
       highlights: ['Next.js', 'TypeScript', 'Tailwind', 'Patrones de Diseño'],
     },
     {
@@ -53,7 +53,7 @@ export const cv = {
       startDate: '08-12-2024',
       endDate: '06-13-2025',
       summary:
-        'Me especialicé en desarrollo, mantenimiento y optimización de aplicaciones web, tanto para uso interno de la empresa como para clientes, asegurando soluciones específicas para cumplir con las necesidades. Además, colaboré en auditorías de procesos tecnológicos en el área de RAS (Risk Assurance Services).',
+        'Me especialicé en el desarrollo, mantenimiento y optimización de aplicaciones web, tanto para uso interno de la empresa como para clientes, asegurando soluciones específicas para cumplir con las necesidades. Además, colaboré en auditorías de procesos tecnológicos en el área de RAS (Risk Assurance Services) para clientes principalmente enfocados en el area bancaria y financiera.',
       highlights: [
         'Angular',
         'Express.js',
@@ -71,7 +71,7 @@ export const cv = {
       startDate: '11-10-2023',
       endDate: '07-01-2024',
       summary:
-        'Como parte de mi compromiso con el desarrollo de la comunidad, desempeñé el rol de Docente, impartiendo clases a estudiantes de Liceo. Me enfoqué en enseñar sobre programación web básica, lógica de programación y conceptos básicos de tecnología.',
+        'Como parte de mi compromiso con el desarrollo de la comunidad, desempeñé el rol de Docente, impartiendo clases a estudiantes de Educación Secundaria. Con enfoque en enseñar sobre programación web básica, lógica de programación y conceptos básicos de tecnología.',
       highlights: ['HTML', 'CSS', 'JavaScript', 'Lógica de Programación'],
     },
   ],
@@ -79,8 +79,8 @@ export const cv = {
     {
       institution: 'Universidad de Helsinki (Finlandia)',
       url: 'https://fullstackopen.com/en/',
-      area: 'FullStackOpen (Formación Online)',
-      studyType: 'Bootcamp',
+      area: 'FullStackOpen (Certificación Universitaria)',
+      studyType: 'Diplomado',
       startDate: null,
       endDate: '09-30-2025',
       courses: [
