@@ -1,10 +1,10 @@
 ---
-import Section from "@/components/Section.astro";
-import ExternalLink from "@/icons/general/external-link.astro";
-import { SKILLS_ICONS } from "@/records.astro";
-import { validateHighlight } from "@/services/validateHighliht";
+import Section from '@/components/Section.astro';
+import ExternalLink from '@/icons/general/external-link.astro';
+import { SKILLS_ICONS } from '@/records.astro';
+import { validateHighlight } from '@/services/validateHighliht';
 
-import { volunteer } from "@cv";
+import { volunteer } from '@cv';
 ---
 
 {
@@ -29,12 +29,12 @@ import { volunteer } from "@cv";
             summary: string;
             highlights: string[];
           }) => {
-            const startMonth = new Date(startDate).getMonth() + 1 + "/";
+            const startMonth = new Date(startDate).getMonth() + 1 + '/';
             const startYear = new Date(startDate).getFullYear();
             const endYear =
-              endDate != null ? new Date(endDate).getFullYear() : "Actualmente";
+              endDate != null ? new Date(endDate).getFullYear() : 'Actualmente';
             const endMonth =
-              endDate != null ? new Date(endDate).getMonth() + 1 + "/" : "";
+              endDate != null ? new Date(endDate).getMonth() + 1 + '/' : '';
             return (
               <li class="list__element">
                 <article class="element__card">
@@ -67,7 +67,7 @@ import { volunteer } from "@cv";
                     </time>
                   </header>
                   <footer class="card__footer">
-                    <p class="card__summary">{summary}</p>
+                    <p class="card__summary" set:html={summary} />
                     <div class="footer__list">
                       {highlights.map((highlight) => {
                         const iconName = validateHighlight(highlight);
@@ -76,7 +76,7 @@ import { volunteer } from "@cv";
                         const Icon =
                           SKILLS_ICONS[iconName] !== undefined
                             ? (IconFinal = SKILLS_ICONS[iconName])
-                            : (IconFinal = SKILLS_ICONS["Generic"]);
+                            : (IconFinal = SKILLS_ICONS['Generic']);
                         return (
                           <span class="footer__list__element">
                             {IconFinal && <Icon />}

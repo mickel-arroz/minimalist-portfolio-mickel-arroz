@@ -1,9 +1,9 @@
 ---
-import Section from "@/components/Section.astro";
+import Section from '@/components/Section.astro';
 
-import { awards } from "@cv";
+import { awards } from '@cv';
 
-import ExternalLink from "@/icons/general/external-link.astro";
+import ExternalLink from '@/icons/general/external-link.astro';
 ---
 
 {
@@ -61,7 +61,7 @@ import ExternalLink from "@/icons/general/external-link.astro";
                       {startMonth}/{startYear}
                     </time>
                   </header>
-                  <p class="card__summary">{summary}</p>
+                  <p class="card__summary" set:html={summary} />
                 </article>
               </li>
             );

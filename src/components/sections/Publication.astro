@@ -1,9 +1,9 @@
 ---
-import Section from "@/components/Section.astro";
+import Section from '@/components/Section.astro';
 
-import ExternalLink from "@/icons/general/external-link.astro";
+import ExternalLink from '@/icons/general/external-link.astro';
 
-import { publications } from "@cv";
+import { publications } from '@cv';
 ---
 
 {
@@ -27,7 +27,7 @@ import { publications } from "@cv";
             releaseDate: string;
           }) => {
             const startYear = new Date(releaseDate).getFullYear();
-            const startMonth = new Date(releaseDate).getMonth() + 1 + "/";
+            const startMonth = new Date(releaseDate).getMonth() + 1 + '/';
             return (
               <li class="list__element">
                 <article class="element__card">
@@ -63,7 +63,7 @@ import { publications } from "@cv";
                     </time>
                   </header>
                   <footer class="card__footer">
-                    <p class="card__summary">{summary}</p>
+                    <p class="card__summary" set:html={summary} />
                   </footer>
                 </article>
               </li>

@@ -1,11 +1,11 @@
 ---
-import Section from "@/components/Section.astro";
-import ExternalLink from "@/icons/general/external-link.astro";
-import { SKILLS_ICONS } from "@/records.astro";
-import { validateHighlight } from "@/services/validateHighliht";
-import ViewMoreButton from "@/components/ViewMoreButton.astro";
+import Section from '@/components/Section.astro';
+import ExternalLink from '@/icons/general/external-link.astro';
+import { SKILLS_ICONS } from '@/records.astro';
+import { validateHighlight } from '@/services/validateHighliht';
+import ViewMoreButton from '@/components/ViewMoreButton.astro';
 
-import { work } from "@cv";
+import { work } from '@cv';
 
 let countWorks = 0;
 ---
@@ -32,12 +32,12 @@ let countWorks = 0;
             summary: string;
             highlights: string[];
           }) => {
-            const startMonth = new Date(startDate).getMonth() + 1 + "/";
+            const startMonth = new Date(startDate).getMonth() + 1 + '/';
             const startYear = new Date(startDate).getFullYear();
             const endYear =
-              endDate != null ? new Date(endDate).getFullYear() : "Actualmente";
+              endDate != null ? new Date(endDate).getFullYear() : 'Actualmente';
             const endMonth =
-              endDate != null ? new Date(endDate).getMonth() + 1 + "/" : "";
+              endDate != null ? new Date(endDate).getMonth() + 1 + '/' : '';
             countWorks++;
             if (countWorks < 4)
               return (
@@ -72,7 +72,7 @@ let countWorks = 0;
                       </time>
                     </header>
                     <footer class="card__footer">
-                      <p class="card__summary">{summary}</p>
+                      <p class="card__summary" set:html={summary} />
                       <div class="footer__list">
                         {highlights.map((highlight) => {
                           const iconName = validateHighlight(highlight);
@@ -81,7 +81,7 @@ let countWorks = 0;
                           const Icon =
                             SKILLS_ICONS[iconName] !== undefined
                               ? (IconFinal = SKILLS_ICONS[iconName])
-                              : (IconFinal = SKILLS_ICONS["Generic"]);
+                              : (IconFinal = SKILLS_ICONS['Generic']);
                           return (
                             <span class="footer__list__element">
                               {IconFinal && <Icon />}
@@ -97,10 +97,7 @@ let countWorks = 0;
           }
         )}
         {work.length > 3 && (
-          <ViewMoreButton
-            text="Trabajos"
-            url="allExperiences"
-          />
+          <ViewMoreButton text="Trabajos" url="allExperiences" />
         )}
       </ul>
     </Section>

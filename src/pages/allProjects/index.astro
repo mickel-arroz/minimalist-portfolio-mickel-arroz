@@ -1,24 +1,24 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Section from "@/components/Section.astro";
-import GitHub from "@/icons/hero/GitHub.astro";
-import ExternalLink from "@/icons/general/external-link.astro";
-import { SKILLS_ICONS } from "@/records.astro";
-import { validateHighlight } from "@/services/validateHighliht";
+import Layout from '@/layouts/Layout.astro';
+import Section from '@/components/Section.astro';
+import GitHub from '@/icons/hero/GitHub.astro';
+import ExternalLink from '@/icons/general/external-link.astro';
+import { SKILLS_ICONS } from '@/records.astro';
+import { validateHighlight } from '@/services/validateHighliht';
 
-import KeyboardManager from "@/components/KeyboardManager.astro";
+import KeyboardManager from '@/components/KeyboardManager.astro';
 
-import { projects, basics } from "@cv";
-import DownloadButton from "@/components/DownloadButton.astro";
+import { projects, basics } from '@cv';
+import DownloadButton from '@/components/DownloadButton.astro';
 
 const { name } = basics;
 
 const primaryLength = projects.filter(
-  (projects) => projects.type == "primary"
+  (projects) => projects.type == 'primary'
 ).length;
 
 const practiceLength = projects.filter(
-  (projects) => projects.type == "practice"
+  (projects) => projects.type == 'practice'
 ).length;
 ---
 
@@ -30,7 +30,7 @@ const practiceLength = projects.filter(
           <ul class="section__list">
             {projects.map(
               ({ name, type, description, url, highlights, github }) => {
-                if (type == "primary")
+                if (type == 'primary')
                   return (
                     <li class="list__element">
                       <article class="element__card">
@@ -70,7 +70,7 @@ const practiceLength = projects.filter(
                               </a>
                             )}
                           </div>
-                          <p class="card__summary">{description}</p>
+                          <p class="card__summary" set:html={description} />
                         </header>
                         <footer class="card__footer">
                           <div class="footer__list">
@@ -80,7 +80,7 @@ const practiceLength = projects.filter(
                               const Icon =
                                 SKILLS_ICONS[iconName] !== undefined
                                   ? (IconFinal = SKILLS_ICONS[iconName])
-                                  : (IconFinal = SKILLS_ICONS["Generic"]);
+                                  : (IconFinal = SKILLS_ICONS['Generic']);
                               return (
                                 <span class="footer__list__element">
                                   {IconFinal && <Icon />}
@@ -105,7 +105,7 @@ const practiceLength = projects.filter(
           <ul class="section__list">
             {projects.map(
               ({ name, type, description, url, highlights, github }) => {
-                if (type == "practice")
+                if (type == 'practice')
                   return (
                     <li class="list__element">
                       <article class="element__card">
@@ -145,7 +145,7 @@ const practiceLength = projects.filter(
                               </a>
                             )}
                           </div>
-                          <p class="card__summary">{description}</p>
+                          <p class="card__summary" set:html={description} />
                         </header>
                         <footer class="card__footer">
                           <div class="footer__list">
@@ -155,7 +155,7 @@ const practiceLength = projects.filter(
                               const Icon =
                                 SKILLS_ICONS[iconName] !== undefined
                                   ? (IconFinal = SKILLS_ICONS[iconName])
-                                  : (IconFinal = SKILLS_ICONS["Generic"]);
+                                  : (IconFinal = SKILLS_ICONS['Generic']);
                               return (
                                 <span class="footer__list__element">
                                   {IconFinal && <Icon />}

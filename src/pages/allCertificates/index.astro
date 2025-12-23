@@ -102,7 +102,7 @@ const knowledgeLength = certificates.filter(
                           </time>
                         </header>
                         <footer class="card__footer">
-                          <p class="card__summary">{summary}</p>
+                          <p class="card__summary" set:html={summary} />
                           <div class="footer__list">
                             {highlights.map((highlight) => {
                               const iconName = validateHighlight(highlight);
@@ -194,7 +194,7 @@ const knowledgeLength = certificates.filter(
                           </time>
                         </header>
                         <footer class="card__footer">
-                          <p class="card__summary">{summary}</p>
+                          <p class="card__summary" set:html={summary} />
                           <div class="footer__list">
                             {highlights.map((highlight) => {
                               const iconName = validateHighlight(highlight);
@@ -285,7 +285,7 @@ const knowledgeLength = certificates.filter(
                           </time>
                         </header>
                         <footer class="card__footer">
-                          <p class="card__summary">{summary}</p>
+                          <p class="card__summary" set:html={summary} />
                           <div class="footer__list">
                             {highlights.map((highlight) => {
                               const iconName = validateHighlight(highlight);
@@ -376,7 +376,7 @@ const knowledgeLength = certificates.filter(
                           </time>
                         </header>
                         <footer class="card__footer">
-                          <p class="card__summary">{summary}</p>
+                          <p class="card__summary" set:html={summary} />
                           <div class="footer__list">
                             {highlights.map((highlight) => {
                               const iconName = validateHighlight(highlight);

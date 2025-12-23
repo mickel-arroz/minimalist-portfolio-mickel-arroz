@@ -1,10 +1,10 @@
 ---
-import Section from "@/components/Section.astro";
+import Section from '@/components/Section.astro';
 
-import ExternalLink from "@/icons/general/external-link.astro";
+import ExternalLink from '@/icons/general/external-link.astro';
 
-import { references } from "@cv";
-import { Image } from "astro:assets";
+import { references } from '@cv';
+import { Image } from 'astro:assets';
 ---
 
 {
@@ -45,7 +45,7 @@ import { Image } from "astro:assets";
                       <h4 class="card__entity">{relationship}</h4>
                     </div>
                   </div>
-                  <p class="card__summary">"{reference}"</p>
+                  <p class="card__summary" set:html={reference} />
                 </header>
               </article>
             </li>

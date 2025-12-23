@@ -1,14 +1,14 @@
 ---
-import Section from "@/components/Section.astro";
-import ExternalLink from "@/icons/general/external-link.astro";
-import { SKILLS_ICONS } from "@/records.astro";
-import { validateHighlight } from "@/services/validateHighliht";
-import ViewMoreButton from "@/components/ViewMoreButton.astro";
+import Section from '@/components/Section.astro';
+import ExternalLink from '@/icons/general/external-link.astro';
+import { SKILLS_ICONS } from '@/records.astro';
+import { validateHighlight } from '@/services/validateHighliht';
+import ViewMoreButton from '@/components/ViewMoreButton.astro';
 
-import { certificates } from "@cv";
+import { certificates } from '@cv';
 
 const primaryLength = certificates.filter(
-  (certificate) => certificate.type == "primary"
+  (certificate) => certificate.type == 'primary'
 ).length;
 
 let countCertificates = 0;
@@ -39,7 +39,7 @@ let countCertificates = 0;
             highlights: string[];
           }) => {
             if (primaryLength >= 3) {
-              if (type == "primary") countCertificates++;
+              if (type == 'primary') countCertificates++;
             } else {
               countCertificates++;
             }
@@ -48,7 +48,7 @@ let countCertificates = 0;
               const startYear = new Date(date).getFullYear();
               const startMonth = new Date(date).getMonth() + 1;
 
-              return (primaryLength >= 3 && type == "primary") ||
+              return (primaryLength >= 3 && type == 'primary') ||
                 primaryLength < 3 ? (
                 <li class="list__element">
                   <article class="element__card">
@@ -83,7 +83,7 @@ let countCertificates = 0;
                       </time>
                     </header>
                     <footer class="card__footer">
-                      <p class="card__summary">{summary}</p>
+                      <p class="card__summary" set:html={summary} />
                       <div class="footer__list">
                         {highlights.map((highlight) => {
                           const iconName = validateHighlight(highlight);
@@ -92,7 +92,7 @@ let countCertificates = 0;
                           const Icon =
                             SKILLS_ICONS[iconName] !== undefined
                               ? (IconFinal = SKILLS_ICONS[iconName])
-                              : (IconFinal = SKILLS_ICONS["Generic"]);
+                              : (IconFinal = SKILLS_ICONS['Generic']);
                           return (
                             <span class="footer__list__element">
                               {IconFinal && <Icon />}
@@ -109,10 +109,7 @@ let countCertificates = 0;
           }
         )}
         {certificates.length > 3 && (
-          <ViewMoreButton
-            text="Certificados"
-            url="allCertificates"
-          />
+          <ViewMoreButton text="Certificados" url="allCertificates" />
         )}
       </ul>
     </Section>

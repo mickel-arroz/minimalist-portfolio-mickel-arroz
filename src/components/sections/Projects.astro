@@ -1,15 +1,15 @@
 ---
-import Section from "@/components/Section.astro";
-import GitHub from "@/icons/hero/GitHub.astro";
-import ExternalLink from "@/icons/general/external-link.astro";
-import { SKILLS_ICONS } from "@/records.astro";
-import { validateHighlight } from "@/services/validateHighliht";
-import ViewMoreButton from "@/components/ViewMoreButton.astro";
+import Section from '@/components/Section.astro';
+import GitHub from '@/icons/hero/GitHub.astro';
+import ExternalLink from '@/icons/general/external-link.astro';
+import { SKILLS_ICONS } from '@/records.astro';
+import { validateHighlight } from '@/services/validateHighliht';
+import ViewMoreButton from '@/components/ViewMoreButton.astro';
 
-import { projects } from "@cv";
+import { projects } from '@cv';
 
 const primaryLength = projects.filter(
-  (projects) => projects.type == "primary"
+  (projects) => projects.type == 'primary'
 ).length;
 
 let countProjects = 0;
@@ -22,13 +22,13 @@ let countProjects = 0;
         {projects.map(
           ({ name, type, description, url, highlights, github }) => {
             if (primaryLength >= 4) {
-              if (type == "primary") countProjects++;
+              if (type == 'primary') countProjects++;
             } else {
               countProjects++;
             }
 
             if (4 >= countProjects) {
-              return (primaryLength >= 4 && type == "primary") ||
+              return (primaryLength >= 4 && type == 'primary') ||
                 primaryLength < 4 ? (
                 <li class="list__element">
                   <article class="element__card">
@@ -68,7 +68,7 @@ let countProjects = 0;
                           </a>
                         )}
                       </div>
-                      <p class="card__summary">{description}</p>
+                      <p class="card__summary" set:html={description} />
                     </header>
                     <footer class="card__footer">
                       <div class="footer__list">
@@ -78,7 +78,7 @@ let countProjects = 0;
                           const Icon =
                             SKILLS_ICONS[iconName] !== undefined
                               ? (IconFinal = SKILLS_ICONS[iconName])
-                              : (IconFinal = SKILLS_ICONS["Generic"]);
+                              : (IconFinal = SKILLS_ICONS['Generic']);
                           return (
                             <span class="footer__list__element">
                               {IconFinal && <Icon />}
@@ -96,10 +96,7 @@ let countProjects = 0;
         )}
       </ul>
       {projects.length > 4 && (
-        <ViewMoreButton
-          text="Proyectos"
-          url="allProjects"
-        />
+        <ViewMoreButton text="Proyectos" url="allProjects" />
       )}
     </Section>
   ) : null
