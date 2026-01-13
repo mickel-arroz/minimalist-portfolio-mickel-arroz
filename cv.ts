@@ -103,6 +103,17 @@ export const cv = {
   awards: [],
   certificates: [
     {
+      name: 'Inmersión Profunda en el Desarrollo Web Moderno',
+      type: CertificateType.Primary,
+      date: '01-12-2026',
+      issuer: 'FullStackOpen',
+      issuerUrl: 'https://fullstackopen.com/en/',
+      url: 'https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/525ba9e396dc76e8602e0022f34eb6e1',
+      summary:
+        'Programa académico oficial de la Universidad de Helsinki, centrado en el desarrollo web Full Stack moderno con especialización en React, Node.js, metodologías de testing y despliegue de aplicaciones.',
+      highlights: ['React', 'Redux', 'Node.js', 'MongoDB', 'Testing', 'CI/CD'],
+    },
+    {
       name: 'Curso de Productividad',
       type: CertificateType.Secondary,
       date: '03-16-2025',
@@ -150,6 +161,7 @@ export const cv = {
         'Formación intensiva de +300h con 5 proyectos prácticos. Dominé React/Redux, SASS avanzado y Bootstrap para interfaces cross-device, demostrando habilidad para resolver problemas complejos en entornos reales mediante soluciones optimizadas.',
       highlights: ['React', 'Redux', 'Bootstrap', 'jQuery', 'Sass'],
     },
+
     {
       name: 'Cómo y Por Qué Desarrollar una Mentalidad de Aprendizaje Continuo',
       type: CertificateType.Secondary,
