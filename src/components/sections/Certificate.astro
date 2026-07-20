@@ -4,6 +4,7 @@ import ExternalLink from '@/icons/general/external-link.astro';
 import { SKILLS_ICONS } from '@/records.astro';
 import { validateHighlight } from '@/services/validateHighliht';
 import ViewMoreButton from '@/components/ViewMoreButton.astro';
+import CertificateModal from '@/components/modals/CertificateModal.astro';
 
 import { certificates } from '@cv';
 
@@ -19,25 +20,30 @@ let countCertificates = 0;
     <Section title="Certificados">
       <ul class="section__list">
         {certificates.map(
-          ({
-            name,
-            url,
-            type,
-            date,
-            issuer,
-            summary,
-            issuerUrl,
-            highlights,
-          }: {
-            name: string;
-            url: string;
-            type: string;
-            date: string;
-            issuer: string;
-            summary: string;
-            issuerUrl: string | null;
-            highlights: string[];
-          }) => {
+          (
+            {
+              name,
+              url,
+              type,
+              date,
+              issuer,
+              summary,
+              details,
+              issuerUrl,
+              highlights,
+            }: {
+              name: string;
+              url: string;
+              type: string;
+              date: string;
+              issuer: string;
+              summary: string;
+              details?: string;
+              issuerUrl: string | null;
+              highlights: string[];
+            },
+            index: number
+          ) => {
             if (primaryLength >= 3) {
               if (type == 'primary') countCertificates++;
             } else {
@@ -54,12 +60,12 @@ let countCertificates = 0;
                   <article class="element__card">
                     <header class="element__card__header">
                       <div class="header__flex-title">
-                        <a
+                        <span
                           class="card__link--title"
-                          href={url}
-                          target="_blank"
-                          title={`Ver el Certificado de ${name}`}
-                          rel="noopener noreferrer"
+                          title={`Ver detalles de ${name}`}
+                          data-modal-open={
+                            details ? `modal-cert-${index}` : undefined
+                          }
                         >
                           <h3 class="card__title">
                             {name}
@@ -67,7 +73,7 @@ let countCertificates = 0;
                               <ExternalLink />
                             </div>
                           </h3>
-                        </a>
+                        </span>
                         <a
                           class="card__link--entity"
                           href={issuerUrl}
@@ -103,6 +109,18 @@ let countCertificates = 0;
                       </div>
                     </footer>
                   </article>
+                  {details && (
+                    <CertificateModal
+                      id={`modal-cert-${index}`}
+                      name={name}
+                      url={url}
+                      date={date}
+                      issuer={issuer}
+                      issuerUrl={issuerUrl}
+                      details={details}
+                      highlights={highlights}
+                    />
+                  )}
                 </li>
               ) : null;
             }

@@ -1,0 +1,90 @@
+---
+import Modal from '@/components/Modal.astro';
+import { SKILLS_ICONS } from '@/records.astro';
+import { validateHighlight } from '@/services/validateHighliht';
+
+interface Props {
+  id: string;
+  name: string;
+  position: string;
+  url: string | null;
+  startDate: string;
+  endDate: string | null;
+  details: string;
+  highlights: string[];
+}
+
+const { id, name, position, startDate, endDate, details, highlights } =
+  Astro.props;
+
+const startMonth = new Date(startDate).getMonth() + 1 + '/';
+const startYear = new Date(startDate).getFullYear();
+const endYear =
+  endDate != null ? new Date(endDate).getFullYear() : 'Actualmente';
+const endMonth = endDate != null ? new Date(endDate).getMonth() + 1 + '/' : '';
+---
+
+<Modal id={id} label={`Detalles de ${name}`}>
+  <header class="element__card__header">
+    <time class="card__date">
+      {`${startMonth}${startYear} - ${endMonth}${endYear}`}
+    </time>
+    <h3 class="card__title">{name}</h3>
+    <h4 class="card__entity">{position}</h4>
+  </header>
+
+  <div class="modal__details" set:html={details} />
+
+  <footer class="card__footer">
+    <div class="footer__list">
+      {
+        highlights.map((highlight) => {
+          const iconName = validateHighlight(highlight);
+          let IconFinal;
+          const Icon =
+            SKILLS_ICONS[iconName] !== undefined
+              ? (IconFinal = SKILLS_ICONS[iconName])
+              : (IconFinal = SKILLS_ICONS['Generic']);
+          return (
+            <span class="footer__list__element">
+              {IconFinal && <Icon />}
+              {highlight}
+            </span>
+          );
+        })
+      }
+    </div>
+  </footer>
+</Modal>
+
+<style>
+  .element__card__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .card__title:hover {
+    color: var(--colorTitleElement);
+    text-decoration: none;
+    cursor: default;
+  }
+
+  .footer__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding-inline: 0;
+  }
+
+  .footer__list__element {
+    color: var(--colorSkill);
+    font-weight: var(--weightSkill);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    line-height: normal;
+    padding-inline: 0.5rem;
+  }
+</style>

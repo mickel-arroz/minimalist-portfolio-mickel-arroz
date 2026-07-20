@@ -48,6 +48,7 @@ interface Work {
   startDate: DateStr;
   endDate: DateStr | null;
   summary: string;
+  details?: string;
   highlights: Highlight;
 }
 
@@ -80,6 +81,7 @@ interface Certificates {
   type: CertificateType; // Enum
   url: string;
   summary: string;
+  details?: string;
   highlights: Highlight;
 }
 
@@ -116,6 +118,7 @@ interface Projects {
   name: string;
   type: ProjectType; // Enum
   description: string;
+  details?: string;
   highlights: Highlight;
   url: string | null;
   github?: string;

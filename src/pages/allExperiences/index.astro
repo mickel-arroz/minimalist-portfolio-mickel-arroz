@@ -8,6 +8,7 @@ import { SKILLS_ICONS } from '@/records.astro';
 import { validateHighlight } from '@/services/validateHighliht';
 import KeyboardManager from '@/components/KeyboardManager.astro';
 import DownloadButton from '@/components/DownloadButton.astro';
+import ExperienceModal from '@/components/modals/ExperienceModal.astro';
 
 const { name } = basics;
 ---
@@ -19,23 +20,28 @@ const { name } = basics;
         <Section title="Experiencia Laboral">
           <ul class="section__list">
             {work.map(
-              ({
-                name,
-                position,
-                url,
-                startDate,
-                endDate,
-                summary,
-                highlights,
-              }: {
-                name: string;
-                position: string;
-                url: string | null;
-                startDate: string;
-                endDate: string | null;
-                summary: string;
-                highlights: string[];
-              }) => {
+              (
+                {
+                  name,
+                  position,
+                  url,
+                  startDate,
+                  endDate,
+                  summary,
+                  details,
+                  highlights,
+                }: {
+                  name: string;
+                  position: string;
+                  url: string | null;
+                  startDate: string;
+                  endDate: string | null;
+                  summary: string;
+                  details?: string;
+                  highlights: string[];
+                },
+                index: number
+              ) => {
                 const startMonth = new Date(startDate).getMonth() + 1 + '/';
                 const startYear = new Date(startDate).getFullYear();
                 const endYear =
@@ -50,24 +56,20 @@ const { name } = basics;
                     <article class="element__card">
                       <header class="element__card__header">
                         <div class="header__flex-title">
-                          {url != null ? (
-                            <a
-                              class="card__link--title"
-                              href={url}
-                              title={`Ver la Empresa: ${name}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <h3 class="card__title">
-                                {name}
-                                <div class="title__externalLink">
-                                  <ExternalLink />
-                                </div>
-                              </h3>
-                            </a>
-                          ) : (
-                            <h3 class="card__title">{name}</h3>
-                          )}
+                          <span
+                            class="card__link--title"
+                            title={`Ver detalles de ${name}`}
+                            data-modal-open={
+                              details ? `modal-work-${index}` : undefined
+                            }
+                          >
+                            <h3 class="card__title">
+                              {name}
+                              <div class="title__externalLink">
+                                <ExternalLink />
+                              </div>
+                            </h3>
+                          </span>
                           <h4 class="card__entity">{position}</h4>
                         </div>
                         <time class="card__date">
@@ -95,6 +97,18 @@ const { name } = basics;
                         </div>
                       </footer>
                     </article>
+                    {details && (
+                      <ExperienceModal
+                        id={`modal-work-${index}`}
+                        name={name}
+                        position={position}
+                        url={url}
+                        startDate={startDate}
+                        endDate={endDate}
+                        details={details}
+                        highlights={highlights}
+                      />
+                    )}
                   </li>
                 );
               }

@@ -1,0 +1,120 @@
+---
+import Modal from '@/components/Modal.astro';
+import { SKILLS_ICONS } from '@/records.astro';
+import { validateHighlight } from '@/services/validateHighliht';
+
+interface Props {
+  id: string;
+  name: string;
+  url: string;
+  date: string;
+  issuer: string;
+  issuerUrl: string | null;
+  details: string;
+  highlights: string[];
+}
+
+const { id, name, url, date, issuer, issuerUrl, details, highlights } =
+  Astro.props;
+
+const startYear = new Date(date).getFullYear();
+const startMonth = new Date(date).getMonth() + 1;
+---
+
+<Modal id={id} label={`Detalles del certificado ${name}`}>
+  <header class="element__card__header">
+    <time class="card__date">{startMonth}/{startYear}</time>
+    <h3 class="card__title">{name}</h3>
+    <a
+      class="card__link--entity"
+      href={issuerUrl}
+      target="_blank"
+      title={`Ir a la pagina de ${issuer}`}
+      rel="noopener noreferrer"
+    >
+      <h4 class="card__entity">{issuer}</h4>
+    </a>
+  </header>
+
+  <p class="modal__resource">
+    Ver Certificado:{' '}
+    <a href={url} target="_blank" rel="noopener noreferrer">{name}</a>
+  </p>
+
+  <div class="modal__details" set:html={details} />
+
+  <footer class="card__footer">
+    <div class="footer__list">
+      {
+        highlights.map((highlight) => {
+          const iconName = validateHighlight(highlight);
+          let IconFinal;
+          const Icon =
+            SKILLS_ICONS[iconName] !== undefined
+              ? (IconFinal = SKILLS_ICONS[iconName])
+              : (IconFinal = SKILLS_ICONS['Generic']);
+          return (
+            <span class="footer__list__element">
+              {IconFinal && <Icon />}
+              {highlight}
+            </span>
+          );
+        })
+      }
+    </div>
+  </footer>
+</Modal>
+
+<style>
+  .element__card__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .card__title:hover {
+    color: var(--colorTitleElement);
+    text-decoration: none;
+    cursor: default;
+  }
+
+  .card__link--entity {
+    display: inline-flex;
+    color: var(--colorButton);
+  }
+
+  .modal__resource {
+    color: var(--colorSummary);
+    font-size: var(--sizeSummary);
+    padding-inline: 0;
+  }
+
+  .modal__resource a {
+    color: var(--colorSkill);
+    font-weight: var(--weightSkill);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .modal__resource a:hover {
+    color: var(--colorLinkHover);
+  }
+
+  .footer__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding-inline: 0;
+  }
+
+  .footer__list__element {
+    color: var(--colorSkill);
+    font-weight: var(--weightSkill);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    line-height: normal;
+    padding-inline: 0.5rem;
+  }
+</style>

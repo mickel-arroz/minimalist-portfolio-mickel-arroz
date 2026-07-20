@@ -1,0 +1,128 @@
+---
+import Modal from '@/components/Modal.astro';
+import GitHub from '@/icons/hero/GitHub.astro';
+import { SKILLS_ICONS } from '@/records.astro';
+import { validateHighlight } from '@/services/validateHighliht';
+
+interface Props {
+  id: string;
+  name: string;
+  url: string | null;
+  github?: string;
+  details: string;
+  highlights: string[];
+}
+
+const { id, name, url, github, details, highlights } = Astro.props;
+---
+
+<Modal id={id} label={`Detalles del proyecto ${name}`}>
+  {
+    github && (
+      <a
+        slot="actions"
+        class="card__link--github"
+        href={github}
+        target="_blank"
+        title={`Ver código fuente del proyecto ${name}`}
+        rel="noopener noreferrer"
+      >
+        <GitHub />
+      </a>
+    )
+  }
+
+  <header class="element__card__header">
+    <h3 class="card__title">{name}</h3>
+  </header>
+
+  {
+    url && (
+      <p class="modal__resource">
+        Ver despliegue en Producción:{' '}
+        <a href={url} target="_blank" rel="noopener noreferrer">
+          {name}
+        </a>
+      </p>
+    )
+  }
+
+  <div class="modal__details" set:html={details} />
+
+  <footer class="card__footer">
+    <div class="footer__list">
+      {
+        highlights.map((highlight) => {
+          const iconName = validateHighlight(highlight);
+          let IconFinal;
+          const Icon =
+            SKILLS_ICONS[iconName] !== undefined
+              ? (IconFinal = SKILLS_ICONS[iconName])
+              : (IconFinal = SKILLS_ICONS['Generic']);
+          return (
+            <span class="footer__list__element">
+              {IconFinal && <Icon />}
+              {highlight}
+            </span>
+          );
+        })
+      }
+    </div>
+  </footer>
+</Modal>
+
+<style>
+  .card__title:hover {
+    color: var(--colorTitleElement);
+    text-decoration: none;
+    cursor: default;
+  }
+
+  .card__link--github {
+    display: inline-flex;
+    color: var(--colorButton);
+    border: var(--borderButton);
+    border-radius: var(--borderRadius);
+    padding: 0.3rem;
+  }
+
+  .card__link--github:hover {
+    background: var(--bgButtonHover);
+    border-color: var(--colorBorderButtonHover);
+    color: var(--colorButtonHover);
+  }
+
+  .modal__resource {
+    color: var(--colorSummary);
+    font-size: var(--sizeSummary);
+    padding-inline: 0;
+  }
+
+  .modal__resource a {
+    color: var(--colorSkill);
+    font-weight: var(--weightSkill);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .modal__resource a:hover {
+    color: var(--colorLinkHover);
+  }
+
+  .footer__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding-inline: 0;
+  }
+
+  .footer__list__element {
+    color: var(--colorSkill);
+    font-weight: var(--weightSkill);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    line-height: normal;
+    padding-inline: 0.5rem;
+  }
+</style>

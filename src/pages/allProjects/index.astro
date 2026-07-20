@@ -10,6 +10,7 @@ import KeyboardManager from '@/components/KeyboardManager.astro';
 
 import { projects, basics } from '@cv';
 import DownloadButton from '@/components/DownloadButton.astro';
+import ProjectModal from '@/components/modals/ProjectModal.astro';
 
 const { name } = basics;
 
@@ -29,36 +30,30 @@ const practiceLength = projects.filter(
         <Section title="Proyectos Principales">
           <ul class="section__list">
             {projects.map(
-              ({ name, type, description, url, highlights, github }) => {
+              (
+                { name, type, description, details, url, highlights, github },
+                index
+              ) => {
                 if (type == 'primary')
                   return (
                     <li class="list__element">
                       <article class="element__card">
                         <header class="element__card__header">
                           <div class="header__flex-title">
-                            {url ? (
-                              <a
-                                class="card__link--title"
-                                href={url}
-                                title={`Ver el proyecto: ${name}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                <h3 class="card__title">
-                                  {name}
-                                  <div class="title__externalLink">
-                                    <ExternalLink />
-                                  </div>
-                                </h3>
-                              </a>
-                            ) : (
-                              <span
-                                class="card__title"
-                                title={`No se puede acceder al despliegue del proyecto ${name}`}
-                              >
-                                <h3 class="flex-title__title">{name}</h3>
-                              </span>
-                            )}
+                            <span
+                              class="card__link--title"
+                              title={`Ver detalles de ${name}`}
+                              data-modal-open={
+                                details ? `modal-project-${index}` : undefined
+                              }
+                            >
+                              <h3 class="card__title">
+                                {name}
+                                <div class="title__externalLink">
+                                  <ExternalLink />
+                                </div>
+                              </h3>
+                            </span>
                             {github && (
                               <a
                                 class="card__link--github"
@@ -91,6 +86,16 @@ const practiceLength = projects.filter(
                           </div>
                         </footer>
                       </article>
+                      {details && (
+                        <ProjectModal
+                          id={`modal-project-${index}`}
+                          name={name}
+                          url={url}
+                          github={github}
+                          details={details}
+                          highlights={highlights}
+                        />
+                      )}
                     </li>
                   );
               }
@@ -104,36 +109,30 @@ const practiceLength = projects.filter(
         <Section title="Proyectos Prácticos">
           <ul class="section__list">
             {projects.map(
-              ({ name, type, description, url, highlights, github }) => {
+              (
+                { name, type, description, details, url, highlights, github },
+                index
+              ) => {
                 if (type == 'practice')
                   return (
                     <li class="list__element">
                       <article class="element__card">
                         <header class="element__card__header">
                           <div class="header__flex-title">
-                            {url ? (
-                              <a
-                                class="card__link--title"
-                                href={url}
-                                title={`Ver el proyecto: ${name}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                <h3 class="card__title">
-                                  {name}
-                                  <div class="title__externalLink">
-                                    <ExternalLink />
-                                  </div>
-                                </h3>
-                              </a>
-                            ) : (
-                              <span
-                                class="card__title"
-                                title={`No se puede acceder al despliegue del proyecto ${name}`}
-                              >
-                                <h3 class="flex-title__title">{name}</h3>
-                              </span>
-                            )}
+                            <span
+                              class="card__link--title"
+                              title={`Ver detalles de ${name}`}
+                              data-modal-open={
+                                details ? `modal-project-${index}` : undefined
+                              }
+                            >
+                              <h3 class="card__title">
+                                {name}
+                                <div class="title__externalLink">
+                                  <ExternalLink />
+                                </div>
+                              </h3>
+                            </span>
                             {github && (
                               <a
                                 class="card__link--github"
@@ -166,6 +165,16 @@ const practiceLength = projects.filter(
                           </div>
                         </footer>
                       </article>
+                      {details && (
+                        <ProjectModal
+                          id={`modal-project-${index}`}
+                          name={name}
+                          url={url}
+                          github={github}
+                          details={details}
+                          highlights={highlights}
+                        />
+                      )}
                     </li>
                   );
               }

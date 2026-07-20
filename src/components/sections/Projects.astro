@@ -5,6 +5,7 @@ import ExternalLink from '@/icons/general/external-link.astro';
 import { SKILLS_ICONS } from '@/records.astro';
 import { validateHighlight } from '@/services/validateHighliht';
 import ViewMoreButton from '@/components/ViewMoreButton.astro';
+import ProjectModal from '@/components/modals/ProjectModal.astro';
 
 import { projects } from '@cv';
 
@@ -20,7 +21,10 @@ let countProjects = 0;
     <Section title="Proyectos">
       <ul class="section__list">
         {projects.map(
-          ({ name, type, description, url, highlights, github }) => {
+          (
+            { name, type, description, details, url, highlights, github },
+            index
+          ) => {
             if (primaryLength >= 4) {
               if (type == 'primary') countProjects++;
             } else {
@@ -34,29 +38,20 @@ let countProjects = 0;
                   <article class="element__card">
                     <header class="element__card__header">
                       <div class="header__flex-title">
-                        {url ? (
-                          <a
-                            class="card__link--title"
-                            href={url}
-                            title={`Ver el proyecto: ${name}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <h3 class="card__title">
-                              {name}
-                              <div class="title__externalLink">
-                                <ExternalLink />
-                              </div>
-                            </h3>
-                          </a>
-                        ) : (
-                          <span
-                            class="card__title"
-                            title={`No se puede acceder al despliegue del proyecto ${name}`}
-                          >
-                            <h3 class="flex-title__title">{name}</h3>
-                          </span>
-                        )}
+                        <span
+                          class="card__link--title"
+                          title={`Ver detalles de ${name}`}
+                          data-modal-open={
+                            details ? `modal-project-${index}` : undefined
+                          }
+                        >
+                          <h3 class="card__title">
+                            {name}
+                            <div class="title__externalLink">
+                              <ExternalLink />
+                            </div>
+                          </h3>
+                        </span>
                         {github && (
                           <a
                             class="card__link--github"
@@ -89,6 +84,16 @@ let countProjects = 0;
                       </div>
                     </footer>
                   </article>
+                  {details && (
+                    <ProjectModal
+                      id={`modal-project-${index}`}
+                      name={name}
+                      url={url}
+                      github={github}
+                      details={details}
+                      highlights={highlights}
+                    />
+                  )}
                 </li>
               ) : null;
             }

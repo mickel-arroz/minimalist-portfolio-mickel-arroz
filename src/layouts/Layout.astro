@@ -369,6 +369,19 @@ import DownloadButton from '@/components/DownloadButton.astro';
       }
     }
 
+    html.light ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+    html.dark ::-webkit-scrollbar-thumb {
+      background: #666;
+    }
+    html.light {
+      scrollbar-color: #888 #f1f1f1;
+    }
+    html.dark {
+      scrollbar-color: #666 #2c2c2c;
+    }
+
     /* -------- ESTILOS SNIPET BACKGROUND ------- */
     .parent {
       position: relative;
