@@ -45,14 +45,14 @@ export const cv = {
       summary:
         'Desarrollando enfocado en crear soluciones personalizadas siguiendo patrones de diseño, buenas prácticas de accesibilidad y UX. Trabajando con clientes internacionales, donde destaca mi participación en la obtención del Premio de Oro en la categoría "Experiencia del Cliente" en los premios Fintech Americas 2026 junto a Mercantil Seguros. Además, de ser parte del desarrollo de las Landing Pages para Venezuela y Panamá, así como de la creación de diversas aplicaciones "backoffice" para la gestión de sus múltiples procesos internos.',
       details: `
-<p>Trabajo como <strong>Frontend Engineer Junior</strong> en <a href="https://www.avilatek.com/" target="_blank" rel="noopener noreferrer">Avila Tek</a>, armando soluciones web para clientes internacionales. Me enfoco bastante en la accesibilidad, la experiencia de usuario y en seguir buenos patrones de diseño.</p>
-<h4>En qué ando</h4>
+<p>Actualmente, me dedico al desarrollo de aplicaciones web Front-End de alto rendimiento, con un enfoque constante en crear soluciones responsivas, accesibles y con un diseño centrado en la <strong>Experiencia del Usuario (UX/UI)</strong>. Mi objetivo principal es traducir los requisitos del negocio en interfaces funcionales y agradables que satisfacen eficientemente las necesidades específicas de cada cliente.</p>
+<p>Trabajo activamente para clientes clave como <strong>Mercantil Seguros</strong>, donde opero en un entorno de alta demanda que abarca usuarios tanto en <strong>Venezuela</strong> como en <strong>Panamá</strong>. Mis responsabilidades principales incluyen el desarrollo y optimización del <strong>Portal del Cliente</strong> y el <strong>Backoffice</strong> de gestión de la plataforma completa.</p>
+<h4>Aportes y valor agregado</h4>
 <ul>
-  <li>Desarrollo de las <strong>Landing Pages</strong> de Venezuela y Panamá.</li>
-  <li>Aplicaciones <em>backoffice</em> para manejar procesos internos.</li>
-  <li>Día a día con <strong>Next.js</strong>, <strong>TypeScript</strong> y <strong>Tailwind</strong>.</li>
+  <li><strong>Aporte al cliente (Mercantil Seguros):</strong> Mi contribución al desarrollo de la "Plataforma de Comercialización Digital de Seguros" ayudó para que el proyecto obtuviera el <strong>Premio de Oro</strong> en la categoría "Experiencia del Cliente" en los Premios País a los Innovadores Financieros en las Américas 2026 de <strong>Fintech Americas</strong>, destacando entre más de 350 nominaciones.</li>
+  <li><strong>Eficiencia del código:</strong> Mi desarrollo sigue rigurosamente patrones de diseño y buenas prácticas establecidas en la industria. Esto asegura que el código fuente que entrego es limpio, modular y altamente escalable, facilitando el mantenimiento a largo plazo y la integración de futuras funcionalidades.</li>
+  <li><strong>Valor como desarrollador:</strong> Mi valor reside en la capacidad de fusionar la destreza técnica del Front-End con una perspectiva de diseño centrada en el usuario. Me aseguro de que cada línea de código no solo funcione, sino que eleve la calidad y accesibilidad del producto final.</li>
 </ul>
-<p>Un momento que recuerdo con cariño: fui parte del proyecto que ganó el <strong>Premio de Oro</strong> en "Experiencia del Cliente" en los Fintech Americas 2026, junto a Mercantil Seguros.</p>
 `,
       highlights: ['Next.js', 'TypeScript', 'Tailwind', 'Patrones de Diseño'],
     },
@@ -65,15 +65,14 @@ export const cv = {
       summary:
         'Me especialicé en el desarrollo, mantenimiento y optimización de aplicaciones web, tanto para uso interno de la empresa como para clientes, asegurando soluciones específicas para cumplir con las necesidades. Además, colaboré en auditorías de procesos tecnológicos en el área de RAS (Risk Assurance Services) para clientes principalmente enfocados en el area bancaria y financiera.',
       details: `
-<p>Estuve como <strong>Software Development Associate</strong> en <a href="https://www.pwc.com/ve/es.html" target="_blank" rel="noopener noreferrer">PwC Venezuela</a>, desarrollando y manteniendo aplicaciones web, tanto internas como para clientes.</p>
-<h4>Lo que hacía</h4>
+<p>Durante mi rol como <strong>Asistente</strong> en el área de <strong>Risk Assurance Services (RAS)</strong>, me enfoqué en la auditoría de servidores y sistemas informáticos, asegurando la integridad del sistema y el cumplimiento de las mejores prácticas y recomendaciones de seguridad de la información. Me especialicé en clientes del sector financiero y bancario, contribuyendo directamente a fortalecer su postura de seguridad y mitigar riesgos, lo que se tradujo en una mayor confianza operativa para nuestros clientes.</p>
+<h4>Logros clave y valor agregado</h4>
 <ul>
-  <li>Construir soluciones según lo que cada cliente necesitaba.</li>
-  <li>Mantener y mejorar aplicaciones que ya estaban en marcha.</li>
-  <li>Apoyar en <strong>auditorías tecnológicas</strong> del área de RAS (Risk Assurance Services).</li>
-  <li>Automatizar y analizar datos con <strong>Alteryx Designer</strong>.</li>
+  <li><strong>Impacto en la seguridad y cumplimiento:</strong> Ejecuté auditorías críticas que garantizaron el cumplimiento normativo y la integridad de los datos en entornos bancarios complejos, un aporte directo a la confiabilidad de las operaciones de nuestros clientes y el cumplimiento de los entes reguladores.</li>
+  <li><strong>Gestión de datos:</strong> Me integré al equipo de manejo y gestión de datos, donde mi enfoque principal fue la limpieza, depuración y el análisis de asientos y cuentas de empresas. Mi trabajo resultó en la entrega de cálculos y análisis de data precisos y fiables, fundamentales para la toma de decisiones estratégicas del cliente y la validez de sus cuentas contables.</li>
+  <li><strong>Innovación interna (desarrollo de software):</strong> Demostré mi versatilidad asumiendo el rol de Desarrollador de Software para productos internos de PwC Venezuela. Me centré en el desarrollo web, implementando nuevas funcionalidades y realizando el mantenimiento esencial, lo que optimizó procesos internos y contribuyó a la eficiencia operativa de la firma.</li>
 </ul>
-<p>Trabajé sobre todo con clientes del sector <u>bancario y financiero</u>, donde aprendí a cuidar mucho el detalle y la seguridad.</p>
+<p>Mi valor agregado reside en esta doble capacidad: garantizar un control de riesgos y seguridad de la información con conocimiento del sector financiero, complementado con sólidas habilidades analíticas de datos y la capacidad de desarrollar soluciones tecnológicas para impulsar la eficiencia y la innovación.</p>
 `,
       highlights: [
         'Angular',
